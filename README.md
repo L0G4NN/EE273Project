@@ -1,2 +1,1 @@
-# EE273Project
-antichess
+# EE273 ANTICHESS
