@@ -12,11 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
-#include <QtWidgets/QGridLayout>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QScrollArea>
+#include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
 
@@ -26,10 +25,8 @@ class Ui_MainWindow
 {
 public:
     QWidget *centralwidget;
-    QWidget *gridLayoutWidget;
-    QGridLayout *gridLayout;
-    QScrollArea *scrollArea;
-    QWidget *scrollAreaWidgetContents;
+    QPushButton *pushButton;
+    QPushButton *pushButton_2;
     QMenuBar *menubar;
     QMenu *menuAntichess;
     QStatusBar *statusbar;
@@ -38,27 +35,22 @@ public:
     {
         if (MainWindow->objectName().isEmpty())
             MainWindow->setObjectName("MainWindow");
-        MainWindow->resize(800, 600);
+        MainWindow->setEnabled(true);
+        MainWindow->resize(1280, 720);
         centralwidget = new QWidget(MainWindow);
         centralwidget->setObjectName("centralwidget");
-        gridLayoutWidget = new QWidget(centralwidget);
-        gridLayoutWidget->setObjectName("gridLayoutWidget");
-        gridLayoutWidget->setGeometry(QRect(280, 150, 160, 80));
-        gridLayout = new QGridLayout(gridLayoutWidget);
-        gridLayout->setObjectName("gridLayout");
-        gridLayout->setContentsMargins(0, 0, 0, 0);
-        scrollArea = new QScrollArea(centralwidget);
-        scrollArea->setObjectName("scrollArea");
-        scrollArea->setGeometry(QRect(260, 380, 120, 85));
-        scrollArea->setWidgetResizable(true);
-        scrollAreaWidgetContents = new QWidget();
-        scrollAreaWidgetContents->setObjectName("scrollAreaWidgetContents");
-        scrollAreaWidgetContents->setGeometry(QRect(0, 0, 118, 83));
-        scrollArea->setWidget(scrollAreaWidgetContents);
+        pushButton = new QPushButton(centralwidget);
+        pushButton->setObjectName("pushButton");
+        pushButton->setGeometry(QRect(640, 200, 83, 29));
+        pushButton_2 = new QPushButton(centralwidget);
+        pushButton_2->setObjectName("pushButton_2");
+        pushButton_2->setGeometry(QRect(640, 250, 83, 29));
+        pushButton_2->setCheckable(false);
+        pushButton_2->setAutoDefault(false);
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 800, 25));
+        menubar->setGeometry(QRect(0, 0, 1280, 25));
         menuAntichess = new QMenu(menubar);
         menuAntichess->setObjectName("menuAntichess");
         MainWindow->setMenuBar(menubar);
@@ -75,7 +67,9 @@ public:
 
     void retranslateUi(QMainWindow *MainWindow)
     {
-        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "MainWindow", nullptr));
+        MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "Antichess", nullptr));
+        pushButton->setText(QCoreApplication::translate("MainWindow", "Start game", nullptr));
+        pushButton_2->setText(QCoreApplication::translate("MainWindow", "Rules", nullptr));
         menuAntichess->setTitle(QCoreApplication::translate("MainWindow", "Antichess", nullptr));
     } // retranslateUi
 
