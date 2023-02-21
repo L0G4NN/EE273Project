@@ -16,11 +16,14 @@
   <property name="windowTitle">
    <string>Antichess</string>
   </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Triangular</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="pushButton">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>575</x>
       <y>200</y>
       <width>83</width>
       <height>29</height>
@@ -33,7 +36,7 @@
    <widget class="QPushButton" name="pushButton_2">
     <property name="geometry">
      <rect>
-      <x>640</x>
+      <x>575</x>
       <y>250</y>
       <width>83</width>
       <height>29</height>
@@ -63,10 +66,31 @@
     <property name="title">
      <string>Antichess</string>
     </property>
+    <addaction name="actionBy_Elias_and_Logan"/>
+    <addaction name="actionExit"/>
    </widget>
    <addaction name="menuAntichess"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionBy_Elias_and_Logan">
+   <property name="text">
+    <string>By Elias and Logan</string>
+   </property>
+  </action>
+  <action name="actionExit">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
+   <property name="checked">
+    <bool>false</bool>
+   </property>
+   <property name="text">
+    <string>Exit</string>
+   </property>
+   <property name="menuRole">
+    <enum>QAction::QuitRole</enum>
+   </property>
+  </action>
  </widget>
  <resources/>
  <connections/>
