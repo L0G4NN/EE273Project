@@ -1,0 +1,11 @@
+# ninja log v5
+4	35	0	C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	21a11f81401ed421
+788	2847	6986919568652923	CMakeFiles/Antichess.dir/main.cpp.obj	566fa50228075f52
+1	783	6986919546493796	Antichess_autogen/timestamp	efc4e54813576669
+1	783	6986919546493796	C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp	efc4e54813576669
+1	783	6986919546493796	Antichess_autogen/mocs_compilation.cpp	efc4e54813576669
+1	783	6986919546493796	C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp	efc4e54813576669
+783	2753	6986919567712896	CMakeFiles/Antichess.dir/Antichess_autogen/mocs_compilation.cpp.obj	bd603b19df85eaf2
+794	2873	6986919568922864	CMakeFiles/Antichess.dir/mainwindow.cpp.obj	3d645a278a58b8bd
+2874	3123	6986919571353104	Antichess.exe	2461a45fd1d960a0
+3	32	0	C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/cmake.verify_globs	21a11f81401ed421
