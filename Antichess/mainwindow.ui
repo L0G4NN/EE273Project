@@ -2,95 +2,41 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
-  <property name="enabled">
-   <bool>true</bool>
-  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>800</width>
+    <height>600</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Antichess</string>
   </property>
-  <property name="tabShape">
-   <enum>QTabWidget::Triangular</enum>
-  </property>
-  <widget class="QWidget" name="centralwidget">
-   <widget class="QPushButton" name="pushButton">
-    <property name="geometry">
-     <rect>
-      <x>575</x>
-      <y>200</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Start game</string>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="pushButton_2">
-    <property name="geometry">
-     <rect>
-      <x>575</x>
-      <y>250</y>
-      <width>83</width>
-      <height>29</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Rules</string>
-    </property>
-    <property name="checkable">
-     <bool>false</bool>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-   </widget>
-  </widget>
+  <widget class="QWidget" name="centralwidget"/>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1280</width>
-     <height>25</height>
+     <width>800</width>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAntichess">
     <property name="title">
      <string>Antichess</string>
     </property>
-    <addaction name="actionBy_Elias_and_Logan"/>
-    <addaction name="actionExit"/>
+    <widget class="QMenu" name="menuDeveloped_by_Elias_and_Logan">
+     <property name="title">
+      <string>Developed by Elias and Logan</string>
+     </property>
+    </widget>
+    <addaction name="menuDeveloped_by_Elias_and_Logan"/>
    </widget>
    <addaction name="menuAntichess"/>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
-  <action name="actionBy_Elias_and_Logan">
-   <property name="text">
-    <string>By Elias and Logan</string>
-   </property>
-  </action>
-  <action name="actionExit">
-   <property name="checkable">
-    <bool>false</bool>
-   </property>
-   <property name="checked">
-    <bool>false</bool>
-   </property>
-   <property name="text">
-    <string>Exit</string>
-   </property>
-   <property name="menuRole">
-    <enum>QAction::QuitRole</enum>
-   </property>
-  </action>
  </widget>
  <resources/>
  <connections/>

@@ -1,5 +1,5 @@
-C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/logan/Desktop/EE273Project/Antichess/mainwindow.h \
-  C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/moc_predefs.h \
+C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/EWIEGA46WW/moc_mainwindow.cpp: C:/Users/izeeq/Desktop/EE273Project/Antichess/mainwindow.h \
+  C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/moc_predefs.h \
   C:/Qt/6.4.2/mingw_64/include/QtCore/qalgorithms.h \
   C:/Qt/6.4.2/mingw_64/include/QtCore/qanystringview.h \
   C:/Qt/6.4.2/mingw_64/include/QtCore/qarraydata.h \

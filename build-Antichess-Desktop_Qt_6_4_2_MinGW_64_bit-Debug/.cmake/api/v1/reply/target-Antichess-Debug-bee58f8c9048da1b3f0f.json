@@ -51,7 +51,7 @@
 			{
 				"command" : 3,
 				"file" : 1,
-				"line" : 26,
+				"line" : 23,
 				"parent" : 0
 			},
 			{
@@ -75,13 +75,13 @@
 			{
 				"command" : 4,
 				"file" : 1,
-				"line" : 62,
+				"line" : 55,
 				"parent" : 0
 			},
 			{
 				"command" : 5,
 				"file" : 1,
-				"line" : 52,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
@@ -325,7 +325,7 @@
 			[
 				{
 					"backtrace" : 0,
-					"path" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/include"
+					"path" : "C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/include"
 				},
 				{
 					"backtrace" : 14,
@@ -493,7 +493,7 @@
 			"sourceIndexes" : 
 			[
 				3,
-				6
+				5
 			]
 		},
 		{
@@ -501,15 +501,14 @@
 			"sourceIndexes" : 
 			[
 				4,
-				5,
-				7
+				6
 			]
 		},
 		{
 			"name" : "CMake Rules",
 			"sourceIndexes" : 
 			[
-				8
+				7
 			]
 		}
 	],
@@ -519,7 +518,7 @@
 			"backtrace" : 0,
 			"compileGroupIndex" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp",
+			"path" : "C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp",
 			"sourceGroupIndex" : 0
 		},
 		{
@@ -545,26 +544,21 @@
 			"sourceGroupIndex" : 2
 		},
 		{
-			"backtrace" : 4,
-			"path" : "Antichess_en_GB.ts",
-			"sourceGroupIndex" : 2
-		},
-		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/include/ui_mainwindow.h",
+			"path" : "C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/include/ui_mainwindow.h",
 			"sourceGroupIndex" : 1
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp",
+			"path" : "C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp",
 			"sourceGroupIndex" : 2
 		},
 		{
 			"backtrace" : 0,
 			"isGenerated" : true,
-			"path" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp.rule",
+			"path" : "C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp.rule",
 			"sourceGroupIndex" : 3
 		}
 	],
