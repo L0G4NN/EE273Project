@@ -1,0 +1,9 @@
+# ninja log v5
+2	2050	6987062992337705	Antichess_autogen/timestamp	42fd9af4b73e9b5f
+2	2050	6987062992337705	Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+2	2050	6987062992337705	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp	42fd9af4b73e9b5f
+2	2050	6987062992337705	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+2051	4689	6987063021651845	CMakeFiles/Antichess.dir/Antichess_autogen/mocs_compilation.cpp.obj	6a819b7947e32b70
+2097	4772	6987063022471837	CMakeFiles/Antichess.dir/mainwindow.cpp.obj	8603e515f4dfc336
+2073	4795	6987063022721836	CMakeFiles/Antichess.dir/main.cpp.obj	87fa72c3661d654f
+4796	5148	6987063026217107	Antichess.exe	2461a45fd1d960a0
