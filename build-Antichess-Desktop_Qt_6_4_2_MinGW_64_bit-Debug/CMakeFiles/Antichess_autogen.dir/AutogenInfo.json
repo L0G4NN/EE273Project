@@ -253,6 +253,12 @@
 	"HEADERS" : 
 	[
 		[
+			"C:/Users/logan/Desktop/EE273Project/Antichess/Chess/move.h",
+			"MU",
+			"SYY7GYASSJ/moc_move.cpp",
+			null
+		],
+		[
 			"C:/Users/logan/Desktop/EE273Project/Antichess/mainwindow.h",
 			"MU",
 			"EWIEGA46WW/moc_mainwindow.cpp",
@@ -328,6 +334,11 @@
 	"SETTINGS_FILE" : "C:/Users/logan/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/CMakeFiles/Antichess_autogen.dir/AutogenUsed.txt",
 	"SOURCES" : 
 	[
+		[
+			"C:/Users/logan/Desktop/EE273Project/Antichess/Chess/move.cpp",
+			"MU",
+			null
+		],
 		[ "C:/Users/logan/Desktop/EE273Project/Antichess/main.cpp", "MU", null ],
 		[
 			"C:/Users/logan/Desktop/EE273Project/Antichess/mainwindow.cpp",
