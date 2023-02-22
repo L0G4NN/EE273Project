@@ -28,3 +28,9 @@ void MainWindow::on_startButton_clicked()
     std::cout << "START GAME PRESSED" << std::endl;
 }
 
+
+void MainWindow::on_rulesButton_2_clicked()
+{
+    std::cout << "EXITING GAME" << std::endl;
+}
+

@@ -1,0 +1,27 @@
+# ninja log v5
+2	2002	6987860413770146	Antichess_autogen/timestamp	42fd9af4b73e9b5f
+2	2002	6987860413770146	Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+2	2002	6987860413770146	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp	42fd9af4b73e9b5f
+2	2002	6987860413770146	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+2079	2964	6987860426220564	CMakeFiles/Antichess.dir/Chess/move.cpp.obj	d46e5e99b00c2c77
+2004	4978	6987860446356028	CMakeFiles/Antichess.dir/Antichess_autogen/mocs_compilation.cpp.obj	6a819b7947e32b70
+2051	5045	6987860447036017	CMakeFiles/Antichess.dir/main.cpp.obj	87fa72c3661d654f
+2026	6932	6987860465908941	CMakeFiles/Antichess.dir/mainwindow.cpp.obj	8603e515f4dfc336
+6947	7319	6987860469748947	Antichess.exe	fd028e66e86dfc7b
+18	1559	6987862050074786	Antichess_autogen/timestamp	42fd9af4b73e9b5f
+18	1559	6987862050074786	Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+18	1559	6987862050074786	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp	42fd9af4b73e9b5f
+18	1559	6987862050074786	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+1560	4447	6987862081965352	CMakeFiles/Antichess.dir/Antichess_autogen/mocs_compilation.cpp.obj	6a819b7947e32b70
+1584	4491	6987862082415358	CMakeFiles/Antichess.dir/main.cpp.obj	87fa72c3661d654f
+0	124	0	CMakeFiles/clean.additional	baedbe210acaa455
+124	150	0	clean	577b940aee94fbd7
+12	1759	6987862941540304	Antichess_autogen/timestamp	42fd9af4b73e9b5f
+12	1759	6987862941540304	Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+12	1759	6987862941540304	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/timestamp	42fd9af4b73e9b5f
+12	1759	6987862941540304	C:/Users/izeeq/Desktop/EE273Project/build-Antichess-Desktop_Qt_6_4_2_MinGW_64_bit-Debug/Antichess_autogen/mocs_compilation.cpp	42fd9af4b73e9b5f
+1813	2192	6987862948983962	CMakeFiles/Antichess.dir/Chess/move.cpp.obj	d46e5e99b00c2c77
+1760	4708	6987862974134408	CMakeFiles/Antichess.dir/Antichess_autogen/mocs_compilation.cpp.obj	6a819b7947e32b70
+1842	4849	6987862975554770	CMakeFiles/Antichess.dir/main.cpp.obj	87fa72c3661d654f
+1784	6828	6987862995340522	CMakeFiles/Antichess.dir/mainwindow.cpp.obj	8603e515f4dfc336
+6829	7213	6987862999130003	Antichess.exe	fd028e66e86dfc7b
