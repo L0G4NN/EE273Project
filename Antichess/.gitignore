@@ -4,8 +4,7 @@
 #IGNORE EVERYTHING EXCEPT SOURCE FILES
 *
 
-#Except
-
+#Exceptions
 !*.md
 !.gitignore
 !*.cpp
@@ -15,4 +14,5 @@
 
 #even in sub dir
 !*/
+!*/*/
 
