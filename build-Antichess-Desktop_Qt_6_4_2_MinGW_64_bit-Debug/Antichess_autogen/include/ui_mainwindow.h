@@ -68,7 +68,7 @@ public:
         rulesButton_2->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
-        menubar->setGeometry(QRect(0, 0, 1280, 22));
+        menubar->setGeometry(QRect(0, 0, 1280, 25));
         menuAbout = new QMenu(menubar);
         menuAbout->setObjectName("menuAbout");
         menuAntichess = new QMenu(menubar);
