@@ -32,5 +32,6 @@ void MainWindow::on_startButton_clicked()
 void MainWindow::on_rulesButton_2_clicked()
 {
     std::cout << "EXITING GAME" << std::endl;
+    QApplication::quit();
 }
 

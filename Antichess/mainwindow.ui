@@ -84,7 +84,7 @@ background-color: rgb(207, 207, 207);</string>
      <x>0</x>
      <y>0</y>
      <width>1280</width>
-     <height>22</height>
+     <height>25</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuAbout">
