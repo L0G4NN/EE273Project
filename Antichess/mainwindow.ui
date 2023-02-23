@@ -54,7 +54,7 @@ background-color: rgb(207, 207, 207);</string>
      <bool>false</bool>
     </property>
    </widget>
-   <widget class="QPushButton" name="rulesButton_2">
+   <widget class="QPushButton" name="exitButton">
     <property name="geometry">
      <rect>
       <x>550</x>
@@ -76,7 +76,7 @@ background-color: rgb(207, 207, 207);</string>
    </widget>
    <zorder>rulesButton</zorder>
    <zorder>startButton</zorder>
-   <zorder>rulesButton_2</zorder>
+   <zorder>exitButton</zorder>
   </widget>
   <widget class="QMenuBar" name="menubar">
    <property name="geometry">

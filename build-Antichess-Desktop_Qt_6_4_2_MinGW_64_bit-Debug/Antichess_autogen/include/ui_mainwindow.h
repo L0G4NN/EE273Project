@@ -29,7 +29,7 @@ public:
     QWidget *centralwidget;
     QPushButton *startButton;
     QPushButton *rulesButton;
-    QPushButton *rulesButton_2;
+    QPushButton *exitButton;
     QMenuBar *menubar;
     QMenu *menuAbout;
     QMenu *menuAntichess;
@@ -57,15 +57,15 @@ public:
         rulesButton->setGeometry(QRect(550, 500, 160, 60));
         rulesButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
 "background-color: rgb(207, 207, 207);"));
-        rulesButton_2 = new QPushButton(centralwidget);
-        rulesButton_2->setObjectName("rulesButton_2");
-        rulesButton_2->setGeometry(QRect(550, 570, 160, 60));
-        rulesButton_2->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
+        exitButton = new QPushButton(centralwidget);
+        exitButton->setObjectName("exitButton");
+        exitButton->setGeometry(QRect(550, 570, 160, 60));
+        exitButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
 "background-color: rgb(207, 207, 207);"));
         MainWindow->setCentralWidget(centralwidget);
         rulesButton->raise();
         startButton->raise();
-        rulesButton_2->raise();
+        exitButton->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1280, 25));
@@ -86,7 +86,7 @@ public:
         retranslateUi(MainWindow);
 
         rulesButton->setDefault(false);
-        rulesButton_2->setDefault(false);
+        exitButton->setDefault(false);
 
 
         QMetaObject::connectSlotsByName(MainWindow);
@@ -99,7 +99,7 @@ public:
         actionCreated_by_Elias_and_Logan->setText(QCoreApplication::translate("MainWindow", "Created by Elias and Logan", nullptr));
         startButton->setText(QCoreApplication::translate("MainWindow", "Start game", nullptr));
         rulesButton->setText(QCoreApplication::translate("MainWindow", "Rules", nullptr));
-        rulesButton_2->setText(QCoreApplication::translate("MainWindow", "Exit game", nullptr));
+        exitButton->setText(QCoreApplication::translate("MainWindow", "Exit game", nullptr));
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
         menuAntichess->setTitle(QCoreApplication::translate("MainWindow", "Antichess", nullptr));
     } // retranslateUi

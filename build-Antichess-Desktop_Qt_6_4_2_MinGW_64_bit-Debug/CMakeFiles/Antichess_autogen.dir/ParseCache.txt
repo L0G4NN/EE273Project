@@ -348,3 +348,5 @@ C:/Users/logan/Desktop/EE273Project/Antichess/Chess/move.cpp
 C:/Users/logan/Desktop/EE273Project/Antichess/main.cpp
 C:/Users/logan/Desktop/EE273Project/Antichess/mainwindow.cpp
  uic:./ui_mainwindow.h
+C:/Users/logan/Desktop/EE273Project/Antichess/Chess/board.h
+C:/Users/logan/Desktop/EE273Project/Antichess/Chess/board.cpp

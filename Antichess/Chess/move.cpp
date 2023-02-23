@@ -9,7 +9,7 @@ Pieces::Pieces(int x, int y)
 
 Pieces::~Pieces()
 {
-    delete this;
+
 }
 
 void Pieces::setCords(int x, int y)

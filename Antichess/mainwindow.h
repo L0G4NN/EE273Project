@@ -24,7 +24,7 @@ private slots:
 
     void on_startButton_clicked();
 
-    void on_rulesButton_2_clicked();
+    void on_exitButton_clicked();
 
 private:
     Ui::MainWindow *ui;

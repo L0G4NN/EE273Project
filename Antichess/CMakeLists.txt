@@ -20,7 +20,9 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
         Chess/move.h
-        Chess/move.cpp)
+        Chess/move.cpp
+        Chess/board.h
+        Chess/board.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Antichess
