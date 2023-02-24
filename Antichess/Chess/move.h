@@ -36,9 +36,7 @@ private:
 class Pawn : public Pieces
 {
 public:
-
 private:
-
 };
 
 class Knight : public Pieces
