@@ -13,19 +13,28 @@
 
 #pragma once
 #include <vector>
+<<<<<<< Updated upstream
+=======
+using namespace std;
+>>>>>>> Stashed changes
 
 class Pieces {
+
 public:
     Pieces();
     ~Pieces();
 
-    Pieces(int x, int y);
+    Pieces(char colour,int x, int y);
 
-    int getCords(int x, int y);
+    bool isActive(); //true if player has piece selected
+
+    vector<pair<int,int>> getMoves(Pieces piece);
+    vector<int> getCords();
+    vector<int> getTakes(); // return a vector of all coordinates that the opponent could lose their piece in the next move
     void setCords(int x, int y); //for initial game setup
 
     void move();
-    bool check_move();
+    virtual void show_moves();
     void take_piece();
 
 private:
@@ -37,36 +46,45 @@ private:
 class Pawn : public Pieces
 {
 public:
+    void show_moves();
 private:
 };
 
 class Knight : public Pieces
 {
 public:
+    void show_moves();
 private:
 };
 
 class Rook : public Pieces
 {
 public:
+    void show_moves();
+
 private:
 };
 
 class Bishop : public Pieces
 {
 public:
+    void show_moves();
 private:
 };
 
 class King : public Pieces
 {
 public:
+    void show_moves();
+
 private:
 };
 
 class Queen : public Pieces
 {
 public:
+    void show_moves();
+
 private:
 };
 

@@ -1,7 +1,9 @@
 #include <iostream>
 #include "move.h"
+#include "board.h"
 
-Pieces::Pieces(int x, int y)
+
+Pieces::Pieces(char colour, int x, int y)
 {
     this->x = x;
     this->y = y;
@@ -18,11 +20,88 @@ void Pieces::setCords(int x, int y)
     this->y = y;
 }
 
-int Pieces::getCords(int x, int y)
+vector<int> Pieces::getCords()
 {
     std::cout << "x: " << this->x << std::endl;
     std::cout << "y: " << this->y << std::endl;
+    vector<int> cords;
 
-    return x; //return type should perhaps be a vector to express x and y cords
+    return cords; //return type should perhaps be a vector to express x and y cords
 }
 
+
+
+void Pawn::show_moves(){
+
+    vector<pair<int,int>> moves;
+    int x = this->getCords()[0];
+    int y = this->getCords()[1];
+
+
+}
+
+void Knight::show_moves(){
+
+}
+
+void Rook::show_moves(){
+
+    vector<pair<int,int>> moves;
+    int x = this->getCords()[0];
+    int y = this->getCords()[1];
+
+    for (int a = 0; a <=7; a++)
+    {
+        for (int b = 0; b <=7; b++)
+        {
+            if(x == a || y ==b){ //indicates only horizontal and vertical movement
+                moves.push_back({a,b});
+            }
+        }
+
+
+    }
+
+}
+
+void Bishop::show_moves(){
+
+    vector<pair<int,int>> moves;
+    int count;
+    int x = this->getCords()[0];
+    int y = this->getCords()[1];
+
+    for (int a = 0; a <=7; a++)
+    {
+
+         moves.push_back({a,a+(y-x)});
+         moves.push_back({a,(2*y) - (a+(y-x))});
+
+    }
+
+
+}
+
+void King::show_moves(){
+
+    vector<pair<int,int>> moves;
+    int count;
+    int x = this->getCords()[0];
+    int y = this->getCords()[1];
+
+    for (int a = x-1; a <=x+1; a++)
+    {
+
+        moves.push_back({a,a+(y-x)});
+        moves.push_back({a,(2*y) - a+(y-x)});
+
+    }
+
+}
+
+void Queen::show_moves(){
+
+
+
+
+}

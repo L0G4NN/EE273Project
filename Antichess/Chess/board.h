@@ -11,7 +11,9 @@ public:
      * bool isSetup();
      * bool resetBoard();
      * bool isNewGame();
+     *
      */
+    bool isOccupied(int x, int y);
 
 private:
     int size = 8; //chess board is 8x8 size
