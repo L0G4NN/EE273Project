@@ -5,12 +5,16 @@
 *
 
 #Exceptions
+
 !*.md
 !.gitignore
 !*.cpp
 !*.h
 !*.hpp
 !*.txt
+
+#image files
+!*.png
 
 #even in sub dir
 !*/

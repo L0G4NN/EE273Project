@@ -12,10 +12,10 @@
 #include <QtCore/QVariant>
 #include <QtGui/QAction>
 #include <QtWidgets/QApplication>
+#include <QtWidgets/QLabel>
 #include <QtWidgets/QMainWindow>
 #include <QtWidgets/QMenu>
 #include <QtWidgets/QMenuBar>
-#include <QtWidgets/QPlainTextEdit>
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QStatusBar>
 #include <QtWidgets/QWidget>
@@ -31,7 +31,7 @@ public:
     QPushButton *startButton;
     QPushButton *rulesButton;
     QPushButton *exitButton;
-    QPlainTextEdit *plainTextEdit;
+    QLabel *image;
     QMenuBar *menubar;
     QMenu *menuAbout;
     QMenu *menuAntichess;
@@ -64,16 +64,18 @@ public:
         exitButton->setGeometry(QRect(550, 570, 160, 60));
         exitButton->setStyleSheet(QString::fromUtf8("color: rgb(255, 0, 0);\n"
 "background-color: rgb(207, 207, 207);"));
-        plainTextEdit = new QPlainTextEdit(centralwidget);
-        plainTextEdit->setObjectName("plainTextEdit");
-        plainTextEdit->setGeometry(QRect(240, 100, 800, 230));
-        plainTextEdit->setTabChangesFocus(false);
-        plainTextEdit->setReadOnly(true);
+        image = new QLabel(centralwidget);
+        image->setObjectName("image");
+        image->setEnabled(true);
+        image->setGeometry(QRect(280, 70, 671, 311));
+        image->setPixmap(QPixmap(QString::fromUtf8("images/placeholder.png")));
+        image->setScaledContents(true);
+        image->setWordWrap(false);
         MainWindow->setCentralWidget(centralwidget);
         rulesButton->raise();
         startButton->raise();
         exitButton->raise();
-        plainTextEdit->raise();
+        image->raise();
         menubar = new QMenuBar(MainWindow);
         menubar->setObjectName("menubar");
         menubar->setGeometry(QRect(0, 0, 1280, 22));
@@ -108,8 +110,7 @@ public:
         startButton->setText(QCoreApplication::translate("MainWindow", "Start game", nullptr));
         rulesButton->setText(QCoreApplication::translate("MainWindow", "Rules", nullptr));
         exitButton->setText(QCoreApplication::translate("MainWindow", "Exit game", nullptr));
-        plainTextEdit->setPlainText(QCoreApplication::translate("MainWindow", "ANTICHESS\n"
-"", nullptr));
+        image->setText(QString());
         menuAbout->setTitle(QCoreApplication::translate("MainWindow", "About", nullptr));
         menuAntichess->setTitle(QCoreApplication::translate("MainWindow", "Antichess", nullptr));
     } // retranslateUi

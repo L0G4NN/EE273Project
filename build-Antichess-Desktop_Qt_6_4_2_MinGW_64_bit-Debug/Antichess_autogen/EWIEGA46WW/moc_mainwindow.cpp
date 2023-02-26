@@ -32,7 +32,7 @@ struct qt_meta_stringdata_MainWindow_t {
     char stringdata2[1];
     char stringdata3[23];
     char stringdata4[22];
-    char stringdata5[29];
+    char stringdata5[19];
 };
 #define QT_MOC_LITERAL(ofs, len) \
     uint(sizeof(qt_meta_stringdata_MainWindow_t::offsetsAndSizes) + ofs), len 
@@ -43,14 +43,14 @@ Q_CONSTINIT static const qt_meta_stringdata_MainWindow_t qt_meta_stringdata_Main
         QT_MOC_LITERAL(34, 0),  // ""
         QT_MOC_LITERAL(35, 22),  // "on_startButton_clicked"
         QT_MOC_LITERAL(58, 21),  // "on_exitButton_clicked"
-        QT_MOC_LITERAL(80, 28)   // "on_plainTextEdit_textChanged"
+        QT_MOC_LITERAL(80, 18)   // "on_image_destroyed"
     },
     "MainWindow",
     "on_rulesButton_clicked",
     "",
     "on_startButton_clicked",
     "on_exitButton_clicked",
-    "on_plainTextEdit_textChanged"
+    "on_image_destroyed"
 };
 #undef QT_MOC_LITERAL
 } // unnamed namespace
@@ -98,7 +98,7 @@ Q_CONSTINIT const QMetaObject MainWindow::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'on_exitButton_clicked'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        // method 'on_plainTextEdit_textChanged'
+        // method 'on_image_destroyed'
         QtPrivate::TypeAndForceComplete<void, std::false_type>
     >,
     nullptr
