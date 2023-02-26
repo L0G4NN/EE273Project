@@ -26,6 +26,8 @@ private slots:
 
     void on_exitButton_clicked();
 
+    void on_plainTextEdit_textChanged();
+
 private:
     Ui::MainWindow *ui;
 };

@@ -29,9 +29,12 @@ void MainWindow::on_startButton_clicked()
     //ui->startButton->setVisible(false);
     //ui->rulesButton->setVisible(false);
 
-    //calling the delete function more memory effecient
+    //calling the delete function to prevent memory leak instead of "hiding the objects"
     delete ui->startButton;
     delete ui->rulesButton;
+    delete ui->plainTextEdit;
+
+    //delete ui->centralwidget; //deletes entire page -- clean page
 
     std::cout << "BUTTONS HIDDEN" << std::endl;
 }
@@ -41,4 +44,5 @@ void MainWindow::on_exitButton_clicked()
     std::cout << "EXITING GAME" << std::endl;
     QApplication::quit();
 }
+
 
