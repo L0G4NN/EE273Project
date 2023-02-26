@@ -12,6 +12,7 @@
 */
 
 #pragma once
+#include <vector>
 
 class Pieces {
 public:

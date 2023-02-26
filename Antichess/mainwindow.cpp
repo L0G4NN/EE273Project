@@ -26,6 +26,14 @@ void MainWindow::on_rulesButton_clicked()
 void MainWindow::on_startButton_clicked()
 {
     std::cout << "START GAME PRESSED" << std::endl;
+    //ui->startButton->setVisible(false);
+    //ui->rulesButton->setVisible(false);
+
+    //calling the delete function more memory effecient
+    delete ui->startButton;
+    delete ui->rulesButton;
+
+    std::cout << "BUTTONS HIDDEN" << std::endl;
 }
 
 void MainWindow::on_exitButton_clicked()
