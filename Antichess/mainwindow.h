@@ -26,6 +26,8 @@ private slots:
 
     void on_exitButton_clicked();
 
+    void on_image_destroyed();
+
 private:
     Ui::MainWindow *ui;
 };

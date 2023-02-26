@@ -8,11 +8,15 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
+
+//    QPixmap pix("C:/Users/izeeq/Desktop/EE273Project/Antichess/images/placeholder.png");
+//    ui->image->setPixmap(pix);
 }
 
 
@@ -26,6 +30,17 @@ void MainWindow::on_rulesButton_clicked()
 void MainWindow::on_startButton_clicked()
 {
     std::cout << "START GAME PRESSED" << std::endl;
+    //ui->startButton->setVisible(false);
+    //ui->rulesButton->setVisible(false);
+
+    //calling the delete function to prevent memory leak instead of "hiding the objects"
+    delete ui->startButton;
+    delete ui->rulesButton;
+    delete ui->image;
+
+    //delete ui->centralwidget; //deletes entire page -- clean page
+
+    std::cout << "BUTTONS HIDDEN" << std::endl;
 }
 
 void MainWindow::on_exitButton_clicked()
