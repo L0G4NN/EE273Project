@@ -13,10 +13,10 @@
 
 #pragma once
 #include <vector>
-<<<<<<< Updated upstream
-=======
+//<<<<<<< Updated upstream
+//=======
 using namespace std;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 
 class Pieces {
 
@@ -34,7 +34,7 @@ public:
     void setCords(int x, int y); //for initial game setup
 
     void move();
-    virtual void show_moves();
+    void show_moves(); //had a build issue with virtual func - removed temp
     void take_piece();
 
 private:

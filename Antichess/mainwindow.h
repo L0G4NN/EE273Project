@@ -6,6 +6,7 @@
 #include <QMainWindow>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
+#include <QStackedWidget>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -20,16 +21,12 @@ public:
     ~MainWindow();
 
 private slots:
-    void on_rulesButton_clicked();
 
     void on_startButton_clicked();
 
-    void on_exitButton_clicked();
-
-    void on_image_destroyed();
-
 private:
     Ui::MainWindow *ui;
+    QStackedWidget *stackedWidget;
 };
 
 

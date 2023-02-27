@@ -9,43 +9,24 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    stackedWidget = new QStackedWidget(this);
+    stackedWidget->addWidget(ui->StartPage);
+    stackedWidget->addWidget(ui->Game);
+
+    stackedWidget->setCurrentIndex(0);
+    connect(ui->startButton, SIGNAL(clicked()), this, SLOT(startButtonClicked()));
+
+    setCentralWidget(stackedWidget);
+
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-
-//    QPixmap pix("C:/Users/izeeq/Desktop/EE273Project/Antichess/images/placeholder.png");
-//    ui->image->setPixmap(pix);
 }
-
-
-void MainWindow::on_rulesButton_clicked()
-{
-    std::cout << "RULES BUTTON PRESSED" << std::endl;
-    QDesktopServices::openUrl(QUrl("https://brainking.com/en/GameRules?tp=17", QUrl::TolerantMode));
-}
-
 
 void MainWindow::on_startButton_clicked()
 {
-    std::cout << "START GAME PRESSED" << std::endl;
-    //ui->startButton->setVisible(false);
-    //ui->rulesButton->setVisible(false);
 
-    //calling the delete function to prevent memory leak instead of "hiding the objects"
-    delete ui->startButton;
-    delete ui->rulesButton;
-    delete ui->image;
-
-    //delete ui->centralwidget; //deletes entire page -- clean page
-
-    std::cout << "BUTTONS HIDDEN" << std::endl;
-}
-
-void MainWindow::on_exitButton_clicked()
-{
-    std::cout << "EXITING GAME" << std::endl;
-    QApplication::quit();
 }
 
