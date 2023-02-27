@@ -24,6 +24,12 @@ private slots:
 
     void on_startButton_clicked();
 
+    void on_rulesButton_clicked();
+
+    void on_exitGame_clicked();
+
+    void on_mainMenuButton_clicked();
+
 private:
     Ui::MainWindow *ui;
     QStackedWidget *stackedWidget;

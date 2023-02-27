@@ -6,12 +6,15 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1280</width>
-    <height>720</height>
+    <width>1024</width>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>Antichess</string>
+  </property>
+  <property name="windowOpacity">
+   <double>1.000000000000000</double>
   </property>
   <property name="styleSheet">
    <string notr="true"/>
@@ -32,14 +35,17 @@
     <property name="styleSheet">
      <string notr="true"/>
     </property>
+    <property name="currentIndex">
+     <number>0</number>
+    </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
       <property name="geometry">
        <rect>
-        <x>450</x>
-        <y>320</y>
+        <x>412</x>
+        <y>300</y>
         <width>200</width>
-        <height>40</height>
+        <height>65</height>
        </rect>
       </property>
       <property name="styleSheet">
@@ -52,14 +58,80 @@
      <widget class="QLabel" name="label">
       <property name="geometry">
        <rect>
-        <x>390</x>
+        <x>362</x>
         <y>110</y>
-        <width>311</width>
+        <width>300</width>
         <height>181</height>
        </rect>
       </property>
+      <property name="autoFillBackground">
+       <bool>false</bool>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 14pt &quot;Franklin Gothic Heavy&quot;;</string>
+      </property>
       <property name="text">
-       <string>ANTICHESS GAME</string>
+       <string>ANTICHESS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="rulesButton">
+      <property name="geometry">
+       <rect>
+        <x>412</x>
+        <y>370</y>
+        <width>200</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>RULES</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="exitGame">
+      <property name="geometry">
+       <rect>
+        <x>412</x>
+        <y>440</y>
+        <width>200</width>
+        <height>65</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>EXIT GAME</string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="Start_image">
+      <property name="geometry">
+       <rect>
+        <x>80</x>
+        <y>100</y>
+        <width>271</width>
+        <height>371</height>
+       </rect>
+      </property>
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Ignored" vsizetype="Ignored">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+      <property name="minimumSize">
+       <size>
+        <width>211</width>
+        <height>371</height>
+       </size>
+      </property>
+      <property name="maximumSize">
+       <size>
+        <width>861</width>
+        <height>371</height>
+       </size>
+      </property>
+      <property name="text">
+       <string/>
       </property>
      </widget>
     </widget>
@@ -70,6 +142,38 @@
      <property name="autoFillBackground">
       <bool>false</bool>
      </property>
+     <widget class="QLabel" name="label_2">
+      <property name="geometry">
+       <rect>
+        <x>362</x>
+        <y>160</y>
+        <width>381</width>
+        <height>141</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Arial</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="text">
+       <string>GAMEPLAY WINDOW</string>
+      </property>
+     </widget>
+     <widget class="QCommandLinkButton" name="mainMenuButton">
+      <property name="geometry">
+       <rect>
+        <x>820</x>
+        <y>20</y>
+        <width>183</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Back to main menu</string>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>
