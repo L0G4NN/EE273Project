@@ -11,7 +11,12 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     //add the image to the homescreen
-    QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");
+    //QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");
+
+
+    //TODO : FIX
+    QString imagePath = QDir::currentPath() + "/images/placeholder.png"; //using currentPath to access the folder local to the user and pull the image file
+    QPixmap pix(imagePath);
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
