@@ -9,6 +9,8 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+   // chessBoard = new QGraphicsScene(this);
+   // QGraphicsTextItem *text = chessBoard->addText("bogotobogo.com", QFont("Arial", 20) );
 
     //add the image to the homescreen
     //QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");

@@ -31,18 +31,21 @@ vector<int> Pieces::getCords()
 
 
 
+
 void Pawn::show_moves(){
 
     vector<pair<int,int>> moves;
     int x = this->getCords()[0];
-    int y = this->getCords()[1];
-
+    int y = this->getCords()[1];   
 
 }
+
+
 
 void Knight::show_moves(){
 
 }
+
 
 void Rook::show_moves(){
 
@@ -52,16 +55,13 @@ void Rook::show_moves(){
 
     for (int a = 0; a <=7; a++)
     {
-        for (int b = 0; b <=7; b++)
-        {
-            if(x == a || y ==b){ //indicates only horizontal and vertical movement
-                moves.push_back({a,b});
-            }
-        }
-
+        moves.push_back({x,a});
+        moves.push_back({a,y});
     }
 
 }
+
+
 
 void Bishop::show_moves(){
 
@@ -81,6 +81,7 @@ void Bishop::show_moves(){
 
 }
 
+
 void King::show_moves(){
 
     vector<pair<int,int>> moves;
@@ -94,9 +95,9 @@ void King::show_moves(){
         moves.push_back({a,(2*y) - a+(y-x)});
     }
 
-
-
 }
+
+
 
 void Queen::show_moves(){
 
@@ -120,9 +121,6 @@ void Queen::show_moves(){
        moves.push_back({a,c});
        moves.push_back({a,b});
    }
-
-
-
 
 
 }

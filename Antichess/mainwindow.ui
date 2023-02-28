@@ -36,7 +36,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -172,6 +172,16 @@
       </property>
       <property name="text">
        <string>Back to main menu</string>
+      </property>
+     </widget>
+     <widget class="QGraphicsView" name="chessBoard">
+      <property name="geometry">
+       <rect>
+        <x>240</x>
+        <y>50</y>
+        <width>511</width>
+        <height>421</height>
+       </rect>
       </property>
      </widget>
     </widget>

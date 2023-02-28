@@ -46,6 +46,8 @@ private:
 class Pawn : public Pieces
 {
 public:
+    Pawn();
+    ~Pawn();
     void show_moves();
 private:
 };
@@ -53,6 +55,8 @@ private:
 class Knight : public Pieces
 {
 public:
+    Knight();
+    ~Knight();
     void show_moves();
 private:
 };
@@ -60,6 +64,8 @@ private:
 class Rook : public Pieces
 {
 public:
+    Rook();
+    ~Rook();
     void show_moves();
 
 private:
@@ -68,6 +74,8 @@ private:
 class Bishop : public Pieces
 {
 public:
+    Bishop();
+    ~Bishop();
     void show_moves();
 private:
 };
@@ -75,6 +83,8 @@ private:
 class King : public Pieces
 {
 public:
+    King();
+    ~King();
     void show_moves();
 
 private:
@@ -83,6 +93,8 @@ private:
 class Queen : public Pieces
 {
 public:
+    Queen();
+    ~Queen();
     void show_moves();
 
 private:
