@@ -54,6 +54,9 @@
       <property name="text">
        <string>START GAME</string>
       </property>
+      <property name="checkable">
+       <bool>false</bool>
+      </property>
      </widget>
      <widget class="QLabel" name="label">
       <property name="geometry">
@@ -104,6 +107,9 @@
       </property>
      </widget>
      <widget class="QLabel" name="Start_image">
+      <property name="enabled">
+       <bool>true</bool>
+      </property>
       <property name="geometry">
        <rect>
         <x>80</x>
@@ -145,8 +151,8 @@
      <widget class="QLabel" name="label_2">
       <property name="geometry">
        <rect>
-        <x>362</x>
-        <y>160</y>
+        <x>450</x>
+        <y>220</y>
         <width>381</width>
         <height>141</height>
        </rect>
@@ -164,8 +170,8 @@
      <widget class="QCommandLinkButton" name="mainMenuButton">
       <property name="geometry">
        <rect>
-        <x>820</x>
-        <y>20</y>
+        <x>830</x>
+        <y>10</y>
         <width>183</width>
         <height>41</height>
        </rect>
@@ -173,7 +179,12 @@
       <property name="text">
        <string>Back to main menu</string>
       </property>
+      <property name="icon">
+       <iconset theme="appointment-missed">
+        <normaloff>.</normaloff>.</iconset>
+      </property>
      </widget>
+<<<<<<< Updated upstream
      <widget class="QGraphicsView" name="chessBoard">
       <property name="geometry">
        <rect>
@@ -184,6 +195,50 @@
        </rect>
       </property>
      </widget>
+=======
+     <widget class="QGraphicsView" name="boardGraphic">
+      <property name="geometry">
+       <rect>
+        <x>40</x>
+        <y>60</y>
+        <width>931</width>
+        <height>481</height>
+       </rect>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::Box</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Plain</enum>
+      </property>
+      <property name="lineWidth">
+       <number>2</number>
+      </property>
+      <property name="midLineWidth">
+       <number>0</number>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="PawnTest">
+      <property name="geometry">
+       <rect>
+        <x>130</x>
+        <y>460</y>
+        <width>83</width>
+        <height>29</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Pawn_test</string>
+      </property>
+      <property name="checkable">
+       <bool>true</bool>
+      </property>
+     </widget>
+     <zorder>mainMenuButton</zorder>
+     <zorder>boardGraphic</zorder>
+     <zorder>label_2</zorder>
+     <zorder>PawnTest</zorder>
+>>>>>>> Stashed changes
     </widget>
    </widget>
   </widget>

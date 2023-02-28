@@ -2,6 +2,8 @@
 #include "./ui_mainwindow.h"
 #include <QtCore>
 #include <QDesktopServices>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
 #include <iostream>
 
 MainWindow::MainWindow(QWidget *parent)
@@ -17,8 +19,10 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //TODO : FIX
-    QString imagePath = QDir::currentPath() + "/images/placeholder.png"; //using currentPath to access the folder local to the user and pull the image file
-    QPixmap pix(imagePath);
+    QString basePath = QDir::currentPath();
+    QString relativePath = basePath + "images/placeholder.png";
+
+    QPixmap pix(relativePath);
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -66,6 +70,10 @@ void MainWindow::on_exitGame_clicked()
     QApplication::exit();
 }
 
+void MainWindow::on_PawnTest_pressed()
+{
+    std::cout << "PAWN PRESSED\n";
 
 
+}
 

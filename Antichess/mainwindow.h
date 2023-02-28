@@ -1,8 +1,6 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
-#include <iostream>
-
 #include <QMainWindow>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
@@ -29,6 +27,8 @@ private slots:
     void on_exitGame_clicked();
 
     void on_mainMenuButton_clicked();
+
+    void on_PawnTest_pressed();
 
 private:
     Ui::MainWindow *ui;
