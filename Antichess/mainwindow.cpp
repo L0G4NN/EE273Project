@@ -1,29 +1,31 @@
+//#include "mainwindow.h"
+//#include "./ui_mainwindow.h"
+#include "ui_mainwindow.h"
 #include "mainwindow.h"
-#include "./ui_mainwindow.h"
 #include <QtCore>
 #include <QDesktopServices>
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
+#include <QVBoxLayout>
 #include <iostream>
+
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-   // chessBoard = new QGraphicsScene(this);
-   // QGraphicsTextItem *text = chessBoard->addText("bogotobogo.com", QFont("Arial", 20) );
 
     //add the image to the homescreen
     //QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");
 
 
     //TODO : FIX
-    QString basePath = QDir::currentPath();
-    QString relativePath = basePath + "images/placeholder.png";
+    //QString basePath = QDir::currentPath();
+    //QString relativePath = basePath + "images/placeholder.png";
 
-    QPixmap pix(relativePath);
-    ui->Start_image->setPixmap(pix);
+    //QPixmap pix(relativePath);
+    //ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
     stackedWidget = new QStackedWidget(this);
@@ -35,6 +37,22 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
 
     setCentralWidget(stackedWidget);
+
+
+    QPixmap pixmap("C:/Users/Elias/Documents/UNI/Year 2/EE273/Semester 2/GroupProject/EE273Project/Antichess/images/chess-board-vector_.jpg");
+
+
+    Scene = new QGraphicsScene(this);
+    Scene->addPixmap(pixmap.scaledToHeight(500));
+    ui->boardGraphic->setScene(Scene);
+
+
+
+
+
+
+
+
 
 }
 

@@ -5,6 +5,10 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QStackedWidget>
+#include <QGraphicsRectItem>
+#include <QGraphicsPixMapItem>
+#include <QPixmap>
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -33,7 +37,11 @@ private slots:
 private:
     Ui::MainWindow *ui;
     QStackedWidget *stackedWidget;
-    QGraphicsScene *chessBoard;
+    QGraphicsScene *Scene;
+    QGraphicsRectItem *rect;
+    QGraphicsPixmapItem *board;
+
+
 };
 
 
