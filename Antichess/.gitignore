@@ -15,6 +15,7 @@
 
 #image files
 !*.png
+!.jpg
 
 #even in sub dir
 !*/
