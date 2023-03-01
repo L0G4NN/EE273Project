@@ -7,6 +7,7 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QVBoxLayout>
+#include <QFileDialog>
 #include <iostream>
 
 
@@ -20,12 +21,9 @@ MainWindow::MainWindow(QWidget *parent)
     //QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");
 
 
-    //TODO : FIX
-    //QString basePath = QDir::currentPath();
-    //QString relativePath = basePath + "images/placeholder.png";
-
-    //QPixmap pix(relativePath);
-    //ui->Start_image->setPixmap(pix);
+    QString relativePath = "../Antichess/images/placeholder.png";
+    QPixmap pix(relativePath);
+    ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
     stackedWidget = new QStackedWidget(this);
@@ -39,7 +37,7 @@ MainWindow::MainWindow(QWidget *parent)
     setCentralWidget(stackedWidget);
 
 
-    QPixmap pixmap("C:/Users/Elias/Documents/UNI/Year 2/EE273/Semester 2/GroupProject/EE273Project/Antichess/images/chess-board-vector_.jpg");
+    QPixmap pixmap("../Antichess/images/chess-board-vector_.jpg"); //DOUBLE CHECK THIS STILL WORKS AND THEN UPLOAD .JPG TO GIT REPO
 
 
     Scene = new QGraphicsScene(this);
