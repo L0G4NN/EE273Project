@@ -12,7 +12,50 @@ Board::~Board()
 
 void Board::setBoard()
 {
-//maybe just here to have constructors for each piece and their coords
-//i.e. Rook(0,0)
-//     Knight(1,0)
+    this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
+
+    //maybe just here to have constructors for each piece and their coords
+    //i.e. Rook(0,0)
+    //     Knight(1,0)
+
+    /*Each team requires
+    * 1 king
+    * 1 queen
+    * 2 bishop
+    * 2 knights
+    * 2 rooks
+    * 8 pawns
+    */
+
+    //setup white pieces
+
+    /* Draw king @ (0,3)
+     * draw queen @ (0,4)
+     * draw bishops @ (0,2) & (0,5)
+     * draw knights @ (0,1) & (0,6)
+     * draw rooks @ (0,0) & (0,7)
+     * draw pawns @ (1, full_row)
+     */
+
+    //setup black pieces
+
+    /* Draw king @ (7,3)
+     * draw queen @ (7,4)
+     * draw bishops @ (7,2) & (7,5)
+     * draw knights @ (7,1) & (7,6)
+     * draw rooks @ (7,0) & (7,7)
+     * draw pawns @ (6, full_row)
+     */
+}
+
+bool Board::resetBoard()
+{
+    bool reset_flag = false;
+    /*if button is pressed
+     * {
+     * Board::setBoard();
+     * }
+     */
+
+    return false;
 }

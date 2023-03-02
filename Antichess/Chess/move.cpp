@@ -29,9 +29,6 @@ vector<int> Pieces::getCords()
     return cords; //return type should perhaps be a vector to express x and y cords
 }
 
-
-
-
 void Pawn::show_moves(){
 
     vector<pair<int,int>> moves;

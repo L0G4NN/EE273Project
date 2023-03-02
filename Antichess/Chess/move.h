@@ -11,12 +11,11 @@
  * Queen
 */
 
+//SVG image set for pieces - CBurnett chess pieces - https://commons.wikimedia.org/wiki/Category:SVG_chess_pieces
+
 #pragma once
 #include <vector>
-//<<<<<<< Updated upstream
-//=======
 using namespace std;
-//>>>>>>> Stashed changes
 
 class Pieces {
 

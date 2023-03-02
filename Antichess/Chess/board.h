@@ -14,10 +14,12 @@ public:
      * bool isNewGame();
      * bool or int playerTurn();
      */
+
     bool isOccupied(int x, int y);
 
 private:
-    int size = 8; //chess board is 8x8 size
+    int rows = 8; //chess board is 8x8 size
+    int cols = 8;
     std::vector<std::vector<int>> boardVector;
 };
 
