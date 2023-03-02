@@ -73,6 +73,8 @@ void MainWindow::on_exitGame_clicked()
 void MainWindow::on_PawnTest_pressed()
 {
     std::cout << "PAWN PRESSED\n";
+    //IN UI FILE ISSUE WITH BUTTON WHEN MOVED INTO GAME WINDOW
+    //BUTTON AUTOSNAPS TO FILL THE SIZE OF THE GAMELAYOUT WIDTH
 
 
 }
