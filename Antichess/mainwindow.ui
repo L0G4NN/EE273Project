@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1024</width>
-    <height>543</height>
+    <height>576</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -187,22 +187,6 @@
         <normaloff>.</normaloff>.</iconset>
       </property>
      </widget>
-     <widget class="QPushButton" name="PawnTest">
-      <property name="geometry">
-       <rect>
-        <x>130</x>
-        <y>460</y>
-        <width>83</width>
-        <height>29</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>Pawn_test</string>
-      </property>
-      <property name="checkable">
-       <bool>true</bool>
-      </property>
-     </widget>
      <widget class="QWidget" name="verticalLayoutWidget">
       <property name="geometry">
        <rect>
@@ -216,12 +200,36 @@
        <item>
         <widget class="QGraphicsView" name="boardGraphic"/>
        </item>
+       <item>
+        <widget class="QPushButton" name="PawnTest">
+         <property name="sizePolicy">
+          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
+           <horstretch>0</horstretch>
+           <verstretch>0</verstretch>
+          </sizepolicy>
+         </property>
+         <property name="minimumSize">
+          <size>
+           <width>50</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>75</width>
+           <height>29</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Pawn_test</string>
+         </property>
+         <property name="checkable">
+          <bool>true</bool>
+         </property>
+        </widget>
+       </item>
       </layout>
      </widget>
-     <zorder>label_2</zorder>
-     <zorder>PawnTest</zorder>
-     <zorder>mainMenuButton</zorder>
-     <zorder>verticalLayoutWidget</zorder>
     </widget>
    </widget>
   </widget>
