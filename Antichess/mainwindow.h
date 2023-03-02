@@ -41,7 +41,6 @@ private:
     QGraphicsRectItem *rect;
     QGraphicsPixmapItem *board;
 
-
 };
 
 

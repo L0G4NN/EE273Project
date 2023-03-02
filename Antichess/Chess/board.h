@@ -7,11 +7,12 @@ public:
     Board();
     ~Board();
     void setBoard(); //uknown args atm
+    bool isSetup();
+    bool resetBoard();
+
     /*possible funcs
-     * bool isSetup();
-     * bool resetBoard();
      * bool isNewGame();
-     *
+     * bool or int playerTurn();
      */
     bool isOccupied(int x, int y);
 

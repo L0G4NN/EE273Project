@@ -7,7 +7,6 @@
 #include <QGraphicsRectItem>
 #include <QGraphicsScene>
 #include <QVBoxLayout>
-#include <QFileDialog>
 #include <iostream>
 
 
@@ -17,12 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    //add the image to the homescreen
-    //QPixmap pix("C:/Users/logan/Desktop/EE273Project/Antichess/images/placeholder.png");
-
-
-    QString relativePath = "../Antichess/images/placeholder.png";
-    QPixmap pix(relativePath);
+    QPixmap pix("../Antichess/images/placeholder.png");
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -36,21 +30,11 @@ MainWindow::MainWindow(QWidget *parent)
 
     setCentralWidget(stackedWidget);
 
-
     QPixmap pixmap("../Antichess/images/chess-board-vector_.jpg"); //DOUBLE CHECK THIS STILL WORKS AND THEN UPLOAD .JPG TO GIT REPO
-
 
     Scene = new QGraphicsScene(this);
     Scene->addPixmap(pixmap.scaledToHeight(500));
     ui->boardGraphic->setScene(Scene);
-
-
-
-
-
-
-
-
 
 }
 
