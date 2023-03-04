@@ -1,8 +1,11 @@
-@@ -1,124 +1,152 @@
 #include <iostream>
 #include <Qstring>
 #include "move.h"
 #include "board.h"
+
+Pieces::Pieces(){
+
+}
 
 
 Pieces::Pieces(char colour, int x, int y)
@@ -32,7 +35,6 @@ vector<int> Pieces::getCords()
     return cords; //return type should perhaps be a vector to express x and y cords
 }
 
-//Pawn
 
 Pawn::Pawn(char colour){
 
@@ -45,14 +47,92 @@ Pawn::Pawn(char colour){
         case('w'):
             setIcon("../Antichess/images/Pieces/pawn_w");
         break;
-
-
     }
-
 
 }
 
-void Pawn::setIcon(QString address){
+
+Knight::Knight(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/knight_b");
+        break;
+
+        case('w'):
+           setIcon("../Antichess/images/Pieces/knight_w");
+        break;
+    }
+
+}
+
+
+Rook::Rook(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/rook_b");
+        break;
+
+        case('w'):
+           setIcon("../Antichess/images/Pieces/rook_w");
+        break;
+    }
+
+}
+
+
+Bishop::Bishop(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/bishop_b");
+        break;
+
+        case('w'):
+           setIcon("../Antichess/images/Pieces/bishop_w");
+        break;
+    }
+
+}
+
+King::King(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/king_b");
+        break;
+
+        case('w'):
+           setIcon("../Antichess/images/Pieces/king_w");
+        break;
+    }
+
+}
+
+Queen::Queen(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/queen_b");
+        break;
+
+        case('w'):
+           setIcon("../Antichess/images/Pieces/queen_w");
+        break;
+    }
+
+}
+
+
+
+
+void Pieces::setIcon(QString address){
     QPixmap icon(address);
 }
 

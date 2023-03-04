@@ -1,10 +1,10 @@
-
 #include "board.h"
 #include "move.h"
 #include <sstream>
 #include <iostream>
+#include <vector>
 
-Board::Board()
+/*Board::Board()
 {
 
 }
@@ -12,20 +12,18 @@ Board::Board()
 Board::~Board()
 {
 
-}
+}*/
 
 void Board::setBoard()
 {
     this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
-
-
 
     //maybe just here to have constructors for each piece and their coords
     //i.e. Rook(0,0)
     //     Knight(1,0)
 
     //BLACK
-    vector<Pawn> bPawns;
+    std::vector<Pawn> bPawns;
     King bKing('b');
     Queen bQueen('b');
 
@@ -41,7 +39,9 @@ void Board::setBoard()
     for(int x = 0;x<8;x++){
         Pawn bPawn('w');
         bPawns.push_back(bPawn);
-    }    for(int x = 0;x<8;x++){
+    }
+
+    for(int x = 0;x<8;x++){
         Pawn bPawn('w');
         bPawns.push_back(bPawn);
     }
@@ -69,7 +69,7 @@ void Board::setBoard()
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
     std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
     setFEN(startBoard);
-
+}
     /*Each team requires
     * 1 king
     * 1 queen
@@ -98,7 +98,7 @@ void Board::setBoard()
      * draw rooks @ (7,0) & (7,7)
      * draw pawns @ (6, full_row)
      */
-}
+
 
 bool Board::resetBoard()
 {
@@ -108,7 +108,6 @@ bool Board::resetBoard()
      * Board::setBoard();
      * }
      */
-
     return false;
 }
 

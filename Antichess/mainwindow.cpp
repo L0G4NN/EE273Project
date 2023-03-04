@@ -1,4 +1,4 @@
-@@ -1,82 +1,94 @@
+
 //#include "mainwindow.h"
 //#include "./ui_mainwindow.h"
 #include "ui_mainwindow.h"
@@ -18,7 +18,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("../Antichess/images/placeholder.png");
+    QPixmap pix("../Antichess/images/background.png");
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -43,9 +43,9 @@ MainWindow::MainWindow(QWidget *parent)
     Scene->addPixmap(pixmap.scaledToHeight(500));
     ui->boardGraphic->setScene(Scene);
 
-    QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
+    //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
 
-    std::cout<< item <<std::endl;
+    //std::cout<< item <<std::endl;
 
 
 

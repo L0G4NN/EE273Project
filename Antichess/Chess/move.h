@@ -33,6 +33,7 @@ public:
     vector<int> getCords();
     vector<int> getTakes(); // return a vector of all coordinates that the opponent could lose their piece in the next move
     void setCords(int x, int y); //for initial game setup
+    void setIcon(QString address);
 
     void move();
     void show_moves(); //had a build issue with virtual func - removed temp
@@ -47,68 +48,82 @@ private:
 class Pawn : public Pieces
 {
 public:
-    Pawn();
-    void setIcon(QString address);
     Pawn(char colour);
-    ~Pawn();
+
+
     void show_moves();
 
 private:
     QPixmap icon;
 };
 
+
+
 class Knight : public Pieces
 {
 public:
-    Knight();
+
     Knight(char colour);
-    ~Knight();
+
+
     void show_moves();
 private:
     QPixmap icon();
 };
+
+
 
 class Rook : public Pieces
 {
 public:
-    Rook();
+
     Rook(char colour);
-    ~Rook();
+
+
     void show_moves();
 
 private:
     QPixmap icon();
 };
+
+
 
 class Bishop : public Pieces
 {
 public:
-    Bishop();
+
     Bishop(char colour);
-    ~Bishop();
+
+
     void show_moves();
 private:
     QPixmap icon();
 };
+
+
 
 class King : public Pieces
 {
 public:
-    King();
+
     King(char colour);
-    ~King();
+
+
     void show_moves();
 
 private:
     QPixmap icon();
 };
 
+
+
 class Queen : public Pieces
 {
 public:
-    Queen();
+
     Queen(char colour);
-    ~Queen();
+
+
     void show_moves();
 
 private:

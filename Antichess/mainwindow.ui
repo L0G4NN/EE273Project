@@ -10,15 +10,12 @@
     <height>576</height>
    </rect>
   </property>
-<<<<<<< HEAD
   <property name="maximumSize">
    <size>
     <width>202222</width>
     <height>3902373</height>
    </size>
   </property>
-=======
->>>>>>> parent of bdbb378 (implementation of Forsyth Edwards notation)
   <property name="windowTitle">
    <string>Antichess</string>
   </property>
@@ -45,7 +42,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -216,7 +213,7 @@ color: &quot;yellow&quot;;</string>
         <x>250</x>
         <y>10</y>
         <width>521</width>
-        <height>511</height>
+        <height>541</height>
        </rect>
       </property>
       <layout class="QVBoxLayout" name="gameLayout">
