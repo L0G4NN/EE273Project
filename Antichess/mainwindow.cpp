@@ -16,7 +16,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("../Antichess/images/placeholder.png");
+    QPixmap pix("../Antichess/images/background.png");
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages

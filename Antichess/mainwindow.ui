@@ -10,6 +10,12 @@
     <height>576</height>
    </rect>
   </property>
+  <property name="maximumSize">
+   <size>
+    <width>202222</width>
+    <height>3902373</height>
+   </size>
+  </property>
   <property name="windowTitle">
    <string>Antichess</string>
   </property>
@@ -36,7 +42,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -64,14 +70,23 @@
         <x>362</x>
         <y>110</y>
         <width>300</width>
-        <height>181</height>
+        <height>150</height>
        </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Franklin Gothic Heavy</family>
+        <pointsize>20</pointsize>
+        <italic>false</italic>
+        <bold>false</bold>
+       </font>
       </property>
       <property name="autoFillBackground">
        <bool>false</bool>
       </property>
       <property name="styleSheet">
-       <string notr="true">font: 14pt &quot;Franklin Gothic Heavy&quot;;</string>
+       <string notr="true">font: 20pt &quot;Franklin Gothic Heavy&quot;;
+color: &quot;yellow&quot;;</string>
       </property>
       <property name="text">
        <string>ANTICHESS</string>
@@ -112,10 +127,10 @@
       </property>
       <property name="geometry">
        <rect>
-        <x>80</x>
-        <y>100</y>
-        <width>271</width>
-        <height>371</height>
+        <x>0</x>
+        <y>0</y>
+        <width>1024</width>
+        <height>576</height>
        </rect>
       </property>
       <property name="sizePolicy">
@@ -132,8 +147,8 @@
       </property>
       <property name="maximumSize">
        <size>
-        <width>861</width>
-        <height>371</height>
+        <width>1024</width>
+        <height>576</height>
        </size>
       </property>
       <property name="text">
@@ -143,6 +158,11 @@
        <bool>true</bool>
       </property>
      </widget>
+     <zorder>Start_image</zorder>
+     <zorder>startButton</zorder>
+     <zorder>label</zorder>
+     <zorder>rulesButton</zorder>
+     <zorder>exitGame</zorder>
     </widget>
     <widget class="QWidget" name="Game">
      <property name="enabled">
@@ -233,7 +253,6 @@
     </widget>
    </widget>
   </widget>
-  <widget class="QStatusBar" name="statusbar"/>
   <action name="action">
    <property name="text">
     <string>Rules</string>
