@@ -1,5 +1,7 @@
 #pragma once
 #include <vector>
+#include <QString>
+#include <sstream>
 
 class Board
 {
@@ -9,6 +11,8 @@ public:
     void setBoard(); //uknown args atm
     bool isSetup();
     bool resetBoard();
+    void setFEN(std::stringstream& setup);
+    void readFEN();
 
     /*possible funcs
      * bool isNewGame();

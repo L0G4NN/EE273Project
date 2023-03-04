@@ -15,6 +15,7 @@
 
 #pragma once
 #include <vector>
+#include <QPixmap>
 using namespace std;
 
 class Pieces {
@@ -45,57 +46,65 @@ private:
 class Pawn : public Pieces
 {
 public:
-    Pawn();
+    void setIcon(QString address);
+    Pawn(char colour);
     ~Pawn();
     void show_moves();
+
 private:
+    QPixmap icon;
 };
 
 class Knight : public Pieces
 {
 public:
-    Knight();
+    Knight(char colour);
     ~Knight();
     void show_moves();
 private:
+    QPixmap icon();
 };
 
 class Rook : public Pieces
 {
 public:
-    Rook();
+    Rook(char colour);
     ~Rook();
     void show_moves();
 
 private:
+    QPixmap icon();
 };
 
 class Bishop : public Pieces
 {
 public:
-    Bishop();
+    Bishop(char colour);
     ~Bishop();
     void show_moves();
 private:
+    QPixmap icon();
 };
 
 class King : public Pieces
 {
 public:
-    King();
+    King(char colour);
     ~King();
     void show_moves();
 
 private:
+    QPixmap icon();
 };
 
 class Queen : public Pieces
 {
 public:
-    Queen();
+    Queen(char colour);
     ~Queen();
     void show_moves();
 
 private:
+    QPixmap icon();
 };
 

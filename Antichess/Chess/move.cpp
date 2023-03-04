@@ -1,4 +1,5 @@
 #include <iostream>
+#include <Qstring>
 #include "move.h"
 #include "board.h"
 
@@ -7,6 +8,7 @@ Pieces::Pieces(char colour, int x, int y)
 {
     this->x = x;
     this->y = y;
+
 }
 
 Pieces::~Pieces()
@@ -29,6 +31,30 @@ vector<int> Pieces::getCords()
     return cords; //return type should perhaps be a vector to express x and y cords
 }
 
+//Pawn
+
+Pawn::Pawn(char colour){
+
+    switch(colour){
+
+        case('b'):
+           setIcon("../Antichess/images/Pieces/pawn_b");
+        break;
+
+        case('w'):
+            setIcon("../Antichess/images/Pieces/pawn_w");
+        break;
+
+
+    }
+
+
+}
+
+void Pawn::setIcon(QString address){
+    QPixmap icon(address);
+}
+
 void Pawn::show_moves(){
 
     vector<pair<int,int>> moves;
@@ -38,12 +64,13 @@ void Pawn::show_moves(){
 }
 
 
-
+//Knight
 void Knight::show_moves(){
 
 }
 
 
+//Rook
 void Rook::show_moves(){
 
     vector<pair<int,int>> moves;
@@ -59,7 +86,7 @@ void Rook::show_moves(){
 }
 
 
-
+//Bishop
 void Bishop::show_moves(){
 
     vector<pair<int,int>> moves;
@@ -79,6 +106,7 @@ void Bishop::show_moves(){
 }
 
 
+//King
 void King::show_moves(){
 
     vector<pair<int,int>> moves;
@@ -95,7 +123,7 @@ void King::show_moves(){
 }
 
 
-
+//Queen
 void Queen::show_moves(){
 
     vector<pair<int,int>> moves;

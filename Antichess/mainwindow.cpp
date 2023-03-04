@@ -5,6 +5,7 @@
 #include <QtCore>
 #include <QDesktopServices>
 #include <QGraphicsRectItem>
+#include <QPainter>
 #include <QGraphicsScene>
 #include <QVBoxLayout>
 #include <iostream>
@@ -23,18 +24,28 @@ MainWindow::MainWindow(QWidget *parent)
     stackedWidget = new QStackedWidget(this);
     stackedWidget->addWidget(ui->StartPage);
     stackedWidget->addWidget(ui->Game);
-
     stackedWidget->setCurrentIndex(0);
+
+    //implementation of start and menu buttons
     connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButtonClicked()));
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
 
     setCentralWidget(stackedWidget);
 
+    //import chess board image
     QPixmap pixmap("../Antichess/images/chess-board-vector_.jpg"); //DOUBLE CHECK THIS STILL WORKS AND THEN UPLOAD .JPG TO GIT REPO
 
+
+    //create new graphics scene to position the board on the GUI
     Scene = new QGraphicsScene(this);
     Scene->addPixmap(pixmap.scaledToHeight(500));
     ui->boardGraphic->setScene(Scene);
+
+    QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
+
+    std::cout<< item <<std::endl;
+
+
 
 }
 
@@ -42,6 +53,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 void MainWindow::on_startButton_clicked()
 {

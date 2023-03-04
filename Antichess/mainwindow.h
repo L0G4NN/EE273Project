@@ -7,6 +7,7 @@
 #include <QStackedWidget>
 #include <QGraphicsRectItem>
 #include <QGraphicsPixMapItem>
+#include <QPainter>
 #include <QPixmap>
 
 
@@ -24,6 +25,7 @@ public:
 
 private slots:
 
+
     void on_startButton_clicked();
 
     void on_rulesButton_clicked();
@@ -40,6 +42,7 @@ private:
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
     QGraphicsPixmapItem *board;
+    QPainter gridPainter;
 
 };
 
