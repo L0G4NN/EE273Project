@@ -1,3 +1,4 @@
+@@ -1,124 +1,152 @@
 #include <iostream>
 #include <Qstring>
 #include "move.h"
@@ -59,9 +60,10 @@ void Pawn::show_moves(){
 
     vector<pair<int,int>> moves;
     int x = this->getCords()[0];
-    int y = this->getCords()[1];   
+    int y = this->getCords()[1];
 
 }
+
 
 
 //Knight
@@ -84,6 +86,7 @@ void Rook::show_moves(){
     }
 
 }
+
 
 
 //Bishop
@@ -121,6 +124,7 @@ void King::show_moves(){
     }
 
 }
+
 
 
 //Queen

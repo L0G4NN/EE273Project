@@ -10,12 +10,15 @@
     <height>576</height>
    </rect>
   </property>
+<<<<<<< HEAD
   <property name="maximumSize">
    <size>
     <width>202222</width>
     <height>3902373</height>
    </size>
   </property>
+=======
+>>>>>>> parent of bdbb378 (implementation of Forsyth Edwards notation)
   <property name="windowTitle">
    <string>Antichess</string>
   </property>

@@ -1,3 +1,4 @@
+
 /* move.h
  * Antichess
  * Elias and Logan
@@ -46,6 +47,7 @@ private:
 class Pawn : public Pieces
 {
 public:
+    Pawn();
     void setIcon(QString address);
     Pawn(char colour);
     ~Pawn();
@@ -58,6 +60,7 @@ private:
 class Knight : public Pieces
 {
 public:
+    Knight();
     Knight(char colour);
     ~Knight();
     void show_moves();
@@ -68,6 +71,7 @@ private:
 class Rook : public Pieces
 {
 public:
+    Rook();
     Rook(char colour);
     ~Rook();
     void show_moves();
@@ -79,6 +83,7 @@ private:
 class Bishop : public Pieces
 {
 public:
+    Bishop();
     Bishop(char colour);
     ~Bishop();
     void show_moves();
@@ -89,6 +94,7 @@ private:
 class King : public Pieces
 {
 public:
+    King();
     King(char colour);
     ~King();
     void show_moves();
@@ -100,6 +106,7 @@ private:
 class Queen : public Pieces
 {
 public:
+    Queen();
     Queen(char colour);
     ~Queen();
     void show_moves();
@@ -107,4 +114,3 @@ public:
 private:
     QPixmap icon();
 };
-

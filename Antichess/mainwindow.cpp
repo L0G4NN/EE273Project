@@ -1,3 +1,4 @@
+@@ -1,82 +1,94 @@
 //#include "mainwindow.h"
 //#include "./ui_mainwindow.h"
 #include "ui_mainwindow.h"
@@ -17,13 +18,14 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
-    QPixmap pix("../Antichess/images/background.png");
+    QPixmap pix("../Antichess/images/placeholder.png");
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
     stackedWidget = new QStackedWidget(this);
     stackedWidget->addWidget(ui->StartPage);
     stackedWidget->addWidget(ui->Game);
+
     stackedWidget->setCurrentIndex(0);
 
     //implementation of start and menu buttons
