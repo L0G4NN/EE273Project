@@ -31,6 +31,7 @@ vector<string> Board::setBoard()
 
     return init;
 }
+
     /*Each team requires
     * 1 king
     * 1 queen
@@ -61,15 +62,19 @@ vector<string> Board::setBoard()
      */
 
 
-bool Board::resetBoard()
+void Board::resetBoard(bool reset_flag)
 {
-    bool reset_flag = false;
-    /*if button is pressed
-     * {
-     * Board::setBoard();
-     * }
-     */
-    return false;
+    if (reset_flag == true)
+    {
+        //reset the game
+        std::cerr << "Resetting game!\n";
+        //Board::setBoard(); //currently causes crashes when enabled
+
+    }
+    else
+    {
+        std::cerr << "An error occured resetting the board\n";
+    }
 }
 
 vector<std::string> Board::setFEN(stringstream& setup){

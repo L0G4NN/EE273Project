@@ -31,9 +31,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     stackedWidget->setCurrentIndex(0);
 
-    //implementation of start and menu buttons
+    //implementation of buttons
     connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButtonClicked()));
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
+    //connect(ui->resetButton, SIGNAL(clicked()), this, SLOT(on_resetButton_clicked()));
 
     setCentralWidget(stackedWidget);
 
@@ -119,37 +120,37 @@ void MainWindow::updateGUI(vector<string> setup){
 
 void MainWindow::on_startButton_clicked()
 {
-    std::cout << "START GAME PRESSED\n";
+    std::cerr << "START GAME PRESSED\n";
     stackedWidget->setCurrentWidget(ui->Game);
 }
 
 
 void MainWindow::on_rulesButton_clicked()
 {
-    std::cout << "OPENING RULES\n";
+    std::cerr << "OPENING RULES\n";
     QDesktopServices::openUrl(QUrl("https://www.antichess.org/antichess-basics/", QUrl::TolerantMode));
 }
 
 
 void MainWindow::on_mainMenuButton_clicked()
 {
-    std::cout << "GOING TO MAIN MENU\n";
+    std::cerr << "GOING TO MAIN MENU\n";
     stackedWidget->setCurrentWidget(ui->StartPage);
 }
 
 
 void MainWindow::on_exitGame_clicked()
 {
-    std::cout << "EXITING GAME\n";
+    std::cerr << "EXITING GAME\n";
     QApplication::exit();
 }
 
-void MainWindow::on_PawnTest_pressed()
-{
-    std::cout << "PAWN PRESSED\n";
-    //IN UI FILE ISSUE WITH BUTTON WHEN MOVED INTO GAME WINDOW
-    //BUTTON AUTOSNAPS TO FILL THE SIZE OF THE GAMELAYOUT WIDTH
 
+void MainWindow::on_resetButton_clicked()
+{
+    bool reset_flag = true;
+    Board *boardPtr;
+    boardPtr->resetBoard(reset_flag);
 
 }
 

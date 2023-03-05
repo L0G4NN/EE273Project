@@ -11,7 +11,7 @@ public:
     ~Board();
     std::vector<std::string> setBoard(); //uknown args atm
     bool isSetup();
-    bool resetBoard();
+    void resetBoard(bool reset_flag);
     std::vector<std::string> setFEN(std::stringstream& setup);
     void readFEN();
 
