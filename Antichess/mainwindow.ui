@@ -220,34 +220,6 @@ color: &quot;yellow&quot;;</string>
        <item>
         <widget class="QGraphicsView" name="boardGraphic"/>
        </item>
-       <item>
-        <widget class="QPushButton" name="PawnTest">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>29</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>75</width>
-           <height>29</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pawn_test</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
-       </item>
       </layout>
      </widget>
      <widget class="QWidget" name="gridLayoutWidget">
@@ -776,6 +748,22 @@ color: &quot;yellow&quot;;</string>
       <zorder>label_58</zorder>
       <zorder>_60</zorder>
       <zorder>_20</zorder>
+     </widget>
+     <widget class="QCommandLinkButton" name="resetButton">
+      <property name="geometry">
+       <rect>
+        <x>840</x>
+        <y>50</y>
+        <width>185</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset board</string>
+      </property>
+      <property name="icon">
+       <iconset theme="accessories-dictionary"/>
+      </property>
      </widget>
     </widget>
    </widget>
