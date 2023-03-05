@@ -105,7 +105,8 @@ color: &quot;yellow&quot;;</string>
        </rect>
       </property>
       <property name="text">
-       <string>RULES</string>
+       <string>RULES
+(Open in browser)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="exitGame">
@@ -219,34 +220,6 @@ color: &quot;yellow&quot;;</string>
       <layout class="QVBoxLayout" name="gameLayout">
        <item>
         <widget class="QGraphicsView" name="boardGraphic"/>
-       </item>
-       <item>
-        <widget class="QPushButton" name="PawnTest">
-         <property name="sizePolicy">
-          <sizepolicy hsizetype="Ignored" vsizetype="Fixed">
-           <horstretch>0</horstretch>
-           <verstretch>0</verstretch>
-          </sizepolicy>
-         </property>
-         <property name="minimumSize">
-          <size>
-           <width>50</width>
-           <height>29</height>
-          </size>
-         </property>
-         <property name="maximumSize">
-          <size>
-           <width>75</width>
-           <height>29</height>
-          </size>
-         </property>
-         <property name="text">
-          <string>Pawn_test</string>
-         </property>
-         <property name="checkable">
-          <bool>true</bool>
-         </property>
-        </widget>
        </item>
       </layout>
      </widget>
@@ -459,7 +432,13 @@ color: &quot;yellow&quot;;</string>
        <item row="7" column="1">
         <widget class="QLabel" name="_20">
          <property name="text">
-          <string/>
+          <string>wKnight_t</string>
+         </property>
+         <property name="wordWrap">
+          <bool>false</bool>
+         </property>
+         <property name="textInteractionFlags">
+          <set>Qt::NoTextInteraction</set>
          </property>
         </widget>
        </item>
@@ -709,6 +688,22 @@ color: &quot;yellow&quot;;</string>
         </widget>
        </item>
       </layout>
+     </widget>
+     <widget class="QCommandLinkButton" name="resetButton">
+      <property name="geometry">
+       <rect>
+        <x>830</x>
+        <y>60</y>
+        <width>151</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>Reset game</string>
+      </property>
+      <property name="icon">
+       <iconset theme="accessories-dictionary"/>
+      </property>
      </widget>
     </widget>
    </widget>

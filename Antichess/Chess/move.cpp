@@ -141,8 +141,6 @@ Queen::Queen(char colour){
 
 
 
-
-
 void Pawn::show_moves(){
 
     vector<pair<int,int>> moves;
