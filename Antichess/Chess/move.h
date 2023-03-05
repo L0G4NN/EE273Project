@@ -34,12 +34,14 @@ public:
     vector<int> getTakes(); // return a vector of all coordinates that the opponent could lose their piece in the next move
     void setCords(int x, int y); //for initial game setup
     void setIcon(QString address);
+    QPixmap getIcon();
 
     void move();
     void show_moves(); //had a build issue with virtual func - removed temp
     void take_piece();
 
 private:
+    QPixmap icon;
     int x;
     int y;
 
@@ -68,7 +70,7 @@ public:
 
     void show_moves();
 private:
-    QPixmap icon();
+    QPixmap icon;
 };
 
 
@@ -83,7 +85,7 @@ public:
     void show_moves();
 
 private:
-    QPixmap icon();
+    QPixmap icon;
 };
 
 
@@ -97,7 +99,7 @@ public:
 
     void show_moves();
 private:
-    QPixmap icon();
+    QPixmap icon;
 };
 
 
@@ -112,7 +114,7 @@ public:
     void show_moves();
 
 private:
-    QPixmap icon();
+    QPixmap icon;
 };
 
 
@@ -127,5 +129,5 @@ public:
     void show_moves();
 
 private:
-    QPixmap icon();
+    QPixmap icon;
 };

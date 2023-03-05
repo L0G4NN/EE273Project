@@ -1,10 +1,12 @@
 #include "board.h"
 #include "move.h"
+#include "../mainwindow.h"
 #include <sstream>
 #include <iostream>
+#include <map>
 #include <vector>
 
-/*Board::Board()
+Board::Board()
 {
 
 }
@@ -12,9 +14,9 @@
 Board::~Board()
 {
 
-}*/
+}
 
-void Board::setBoard()
+vector<string> Board::setBoard()
 {
     this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
 
@@ -22,53 +24,12 @@ void Board::setBoard()
     //i.e. Rook(0,0)
     //     Knight(1,0)
 
-    //BLACK
-    std::vector<Pawn> bPawns;
-    King bKing('b');
-    Queen bQueen('b');
-
-    Bishop bBishop1('b');
-    Bishop bBishop2('b');
-
-    Knight bKnight1('b');
-    Knight bKnight2('b');
-
-    Rook bRook1('b');
-    Rook bRook2('b');
-
-    for(int x = 0;x<8;x++){
-        Pawn bPawn('w');
-        bPawns.push_back(bPawn);
-    }
-
-    for(int x = 0;x<8;x++){
-        Pawn bPawn('w');
-        bPawns.push_back(bPawn);
-    }
-
-    //WHITE
-    vector<Pawn> wPawns;
-
-    King wKing('w');
-    Queen wQueen('w');
-
-    Bishop wBishop1('w');
-    Bishop wBishop2('w');
-
-    Knight wKnight1('w');
-    Knight wKnight2('w');
-
-    Rook wRook1('w');
-    Rook wRook2('w');
-
-    for(int x = 0;x<8;x++){
-        Pawn wPawn('w');
-        wPawns.push_back(wPawn);
-    }
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
     std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-    setFEN(startBoard);
+    vector<string> init = setFEN(startBoard);
+
+    return init;
 }
     /*Each team requires
     * 1 king
@@ -111,7 +72,7 @@ bool Board::resetBoard()
     return false;
 }
 
-void Board::setFEN(stringstream& setup){
+vector<std::string> Board::setFEN(stringstream& setup){
 
     vector<string> boardSetup;
 
@@ -121,6 +82,6 @@ void Board::setFEN(stringstream& setup){
         boardSetup.push_back(temp);
 
     }
-
+    return boardSetup;
 
 }

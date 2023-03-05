@@ -35,17 +35,26 @@ vector<int> Pieces::getCords()
     return cords; //return type should perhaps be a vector to express x and y cords
 }
 
+void Pieces::setIcon(QString address){
+    QPixmap icon(address);
+}
+
+QPixmap Pieces::getIcon(){
+    return this->icon;
+}
+
+
 
 Pawn::Pawn(char colour){
 
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/pawn_b");
+           setIcon("../Antichess/images/Pieces/pawn_b.svg");
         break;
 
         case('w'):
-            setIcon("../Antichess/images/Pieces/pawn_w");
+            setIcon("../Antichess/images/Pieces/pawn_w.svg");
         break;
     }
 
@@ -57,11 +66,11 @@ Knight::Knight(char colour){
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/knight_b");
+           setIcon("../Antichess/images/Pieces/knight_b.svg");
         break;
 
         case('w'):
-           setIcon("../Antichess/images/Pieces/knight_w");
+           setIcon("../Antichess/images/Pieces/knight_w.svg");
         break;
     }
 
@@ -73,15 +82,16 @@ Rook::Rook(char colour){
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/rook_b");
+           setIcon("../Antichess/images/Pieces/rook_b.svg");
         break;
 
         case('w'):
-           setIcon("../Antichess/images/Pieces/rook_w");
+           setIcon("../Antichess/images/Pieces/rook_w.svg");
         break;
     }
 
 }
+
 
 
 Bishop::Bishop(char colour){
@@ -89,11 +99,11 @@ Bishop::Bishop(char colour){
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/bishop_b");
+           setIcon("../Antichess/images/Pieces/bishop_b.svg");
         break;
 
         case('w'):
-           setIcon("../Antichess/images/Pieces/bishop_w");
+           setIcon("../Antichess/images/Pieces/bishop_w.svg");
         break;
     }
 
@@ -104,11 +114,11 @@ King::King(char colour){
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/king_b");
+           setIcon("../Antichess/images/Pieces/king_b.svg");
         break;
 
         case('w'):
-           setIcon("../Antichess/images/Pieces/king_w");
+           setIcon("../Antichess/images/Pieces/king_w.svg");
         break;
     }
 
@@ -119,11 +129,11 @@ Queen::Queen(char colour){
     switch(colour){
 
         case('b'):
-           setIcon("../Antichess/images/Pieces/queen_b");
+           setIcon("../Antichess/images/Pieces/queen_b.svg");
         break;
 
         case('w'):
-           setIcon("../Antichess/images/Pieces/queen_w");
+           setIcon("../Antichess/images/Pieces/queen_w.svg");
         break;
     }
 
@@ -132,9 +142,6 @@ Queen::Queen(char colour){
 
 
 
-void Pieces::setIcon(QString address){
-    QPixmap icon(address);
-}
 
 void Pawn::show_moves(){
 

@@ -3,6 +3,8 @@
 //#include "./ui_mainwindow.h"
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
+#include "Chess/board.h"
+#include "Chess/move.h"
 #include <QtCore>
 #include <QDesktopServices>
 #include <QGraphicsRectItem>
@@ -19,6 +21,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->setupUi(this);
 
     QPixmap pix("../Antichess/images/background.png");
+    Board gameBoard;
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -39,9 +42,12 @@ MainWindow::MainWindow(QWidget *parent)
 
 
     //create new graphics scene to position the board on the GUI
+
     Scene = new QGraphicsScene(this);
     Scene->addPixmap(pixmap.scaledToHeight(500));
     ui->boardGraphic->setScene(Scene);
+    vector<string> init = gameBoard.setBoard();
+    updateGUI(init);
 
     //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
 
@@ -55,6 +61,59 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
+
+void MainWindow::updateGUI(vector<string> setup){
+
+    map<char,QPixmap>::iterator it;
+
+
+    King bKing('b');
+    Queen bQueen('b');
+    Bishop bBishop('b');
+    Knight bKnight('b');
+    Rook bRook('b');
+    Pawn bPawn('b');
+
+    King wKing('w');
+    Queen wQueen('w');
+    Bishop wBishop('w');
+    Knight wKnight('w');
+    Rook wRook('w');
+    Pawn wPawn('w');
+
+    map<char,QPixmap> icons;
+
+    icons = {
+        {'k',bKing.getIcon()},
+        {'q',bQueen.getIcon()},
+        {'b',bBishop.getIcon()},
+        {'n',bKnight.getIcon()},
+        {'r',bRook.getIcon()},
+        {'p',bPawn.getIcon()},
+
+        {'K',wKing.getIcon()},
+        {'Q',wQueen.getIcon()},
+        {'B',wBishop.getIcon()},
+        {'N',wKnight.getIcon()},
+        {'R',wRook.getIcon()},
+        {'P',wPawn.getIcon()}
+    };
+
+    for(int a =0;a<2;a++){
+        QPixmap pic("../Antichess/images/Pieces/knight_w.svg");
+        for(int b =0; b<2;b++){
+            QLabel *label = new QLabel();
+            //ui->label->raise();
+            //ui->label->setPixmap(pic);//icons.at(setup[a][b]
+            //ui->squares->addWidget(label);
+
+
+        }
+    }
+
+}
+
 
 
 void MainWindow::on_startButton_clicked()

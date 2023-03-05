@@ -9,10 +9,10 @@ class Board
 public:
     Board();
     ~Board();
-    void setBoard(); //uknown args atm
+    std::vector<std::string> setBoard(); //uknown args atm
     bool isSetup();
     bool resetBoard();
-    void setFEN(std::stringstream& setup);
+    std::vector<std::string> setFEN(std::stringstream& setup);
     void readFEN();
 
     /*possible funcs
