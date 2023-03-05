@@ -97,16 +97,17 @@ void MainWindow::updateGUI(vector<string> setup){
         {'B',wBishop.getIcon()},
         {'N',wKnight.getIcon()},
         {'R',wRook.getIcon()},
-        {'P',wPawn.getIcon()}
+        {'P',wPawn.getIcon()},
+        {'8',wPawn.getIcon()}
     };
 
     for(int a =0;a<2;a++){
         QPixmap pic("../Antichess/images/Pieces/knight_w.svg");
-        for(int b =0; b<2;b++){
+        for(int b =0; b<8;b++){
             QLabel *label = new QLabel();
             //ui->label->raise();
-            //ui->label->setPixmap(pic);//icons.at(setup[a][b]
-            //ui->squares->addWidget(label);
+            label->setPixmap(icons.at(setup[a][b]));//icons.at(setup[a][b]
+            ui->squares->addWidget(label,a,b);
 
 
         }

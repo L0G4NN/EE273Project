@@ -36,7 +36,8 @@ vector<int> Pieces::getCords()
 }
 
 void Pieces::setIcon(QString address){
-    QPixmap icon(address);
+    QPixmap icon;
+    this->icon = address;
 }
 
 QPixmap Pieces::getIcon(){
