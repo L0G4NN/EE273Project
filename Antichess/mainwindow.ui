@@ -42,7 +42,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>1</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -105,7 +105,8 @@ color: &quot;yellow&quot;;</string>
        </rect>
       </property>
       <property name="text">
-       <string>RULES</string>
+       <string>RULES
+ (Open in browser)</string>
       </property>
      </widget>
      <widget class="QPushButton" name="exitGame">
@@ -752,9 +753,9 @@ color: &quot;yellow&quot;;</string>
      <widget class="QCommandLinkButton" name="resetButton">
       <property name="geometry">
        <rect>
-        <x>840</x>
-        <y>50</y>
-        <width>185</width>
+        <x>830</x>
+        <y>55</y>
+        <width>151</width>
         <height>41</height>
        </rect>
       </property>

@@ -45,7 +45,7 @@ MainWindow::MainWindow(QWidget *parent)
     //create new graphics scene to position the board on the GUI
 
     Scene = new QGraphicsScene(this);
-    Scene->addPixmap(pixmap.scaledToHeight(500));
+    Scene->addPixmap(pixmap.scaledToHeight(520));
     ui->boardGraphic->setScene(Scene);
     vector<string> init = gameBoard.setBoard();
     updateGUI(init);
