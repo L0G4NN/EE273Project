@@ -149,8 +149,7 @@ void MainWindow::on_exitGame_clicked()
 void MainWindow::on_resetButton_clicked()
 {
     bool reset_flag = true;
-    Board *boardPtr;
-    boardPtr->resetBoard(reset_flag);
+    gameBoard.resetBoard(reset_flag);
 
 }
 

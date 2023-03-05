@@ -42,7 +42,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -219,7 +219,17 @@ color: &quot;yellow&quot;;</string>
       </property>
       <layout class="QVBoxLayout" name="gameLayout">
        <item>
-        <widget class="QGraphicsView" name="boardGraphic"/>
+        <widget class="QGraphicsView" name="boardGraphic">
+         <property name="acceptDrops">
+          <bool>true</bool>
+         </property>
+         <property name="verticalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+         <property name="horizontalScrollBarPolicy">
+          <enum>Qt::ScrollBarAlwaysOff</enum>
+         </property>
+        </widget>
        </item>
       </layout>
      </widget>
@@ -602,6 +612,9 @@ color: &quot;yellow&quot;;</string>
          <property name="enabled">
           <bool>false</bool>
          </property>
+         <property name="acceptDrops">
+          <bool>false</bool>
+         </property>
         </widget>
        </item>
        <item row="4" column="6">
@@ -763,7 +776,8 @@ color: &quot;yellow&quot;;</string>
        <string>Reset board</string>
       </property>
       <property name="icon">
-       <iconset theme="accessories-dictionary"/>
+       <iconset theme="accessories-dictionary">
+        <normaloff>.</normaloff>.</iconset>
       </property>
      </widget>
     </widget>
