@@ -23,6 +23,7 @@ set(PROJECT_SOURCES
         Chess/move.cpp
         Chess/board.h
         Chess/board.cpp
+<<<<<<< Updated upstream
         Chess/Pieces.h
         Chess/Pieces.cpp
         Chess/Pawn.h
@@ -37,6 +38,12 @@ set(PROJECT_SOURCES
         Chess/King.cpp
         Chess/Queen.h
         Chess/Queen.cpp)
+=======
+
+	  utils/clickableLabels.h
+	  utils/clickableLabels.cpp
+)
+>>>>>>> Stashed changes
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Antichess

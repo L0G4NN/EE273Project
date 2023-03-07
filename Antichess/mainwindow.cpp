@@ -4,6 +4,7 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "Chess/board.h"
+<<<<<<< Updated upstream
 #include "Chess/Pieces.h"
 #include "Chess/King.h"
 #include "Chess/Queen.h"
@@ -11,6 +12,10 @@
 #include "Chess/Bishop.h"
 #include "Chess/Knight.h"
 #include "Chess/Rook.h"
+=======
+#include "Chess/move.h"
+#include "utils/clickableLabels.h"
+>>>>>>> Stashed changes
 #include <QtCore>
 #include <QDesktopServices>
 #include <QGraphicsRectItem>
@@ -60,9 +65,6 @@ MainWindow::MainWindow(QWidget *parent)
     //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
 
     //std::cout<< item <<std::endl;
-
-
-
 }
 
 MainWindow::~MainWindow()
@@ -115,13 +117,17 @@ void MainWindow::updateGUI(vector<string> setup){
             continue;
         }
         for(int b =0; b<8;b++){
-            QLabel *label = new QLabel();
+            clickablelabels *label = new clickablelabels(this);
+            //cout << a << "," << b << endl;
             //ui->label->raise();
             label->setPixmap(icons.at(setup[a][b]));//icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
 
+<<<<<<< Updated upstream
 
 
+=======
+>>>>>>> Stashed changes
         }
     }
 
