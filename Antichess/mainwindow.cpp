@@ -4,7 +4,13 @@
 #include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "Chess/board.h"
-#include "Chess/move.h"
+#include "Chess/Pieces.h"
+#include "Chess/King.h"
+#include "Chess/Queen.h"
+#include "Chess/Pawn.h"
+#include "Chess/Bishop.h"
+#include "Chess/Knight.h"
+#include "Chess/Rook.h"
 #include <QtCore>
 #include <QDesktopServices>
 #include <QGraphicsRectItem>
@@ -49,6 +55,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->boardGraphic->setScene(Scene);
     vector<string> init = gameBoard.setBoard();
     updateGUI(init);
+
 
     //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
 
@@ -112,6 +119,7 @@ void MainWindow::updateGUI(vector<string> setup){
             //ui->label->raise();
             label->setPixmap(icons.at(setup[a][b]));//icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
+
 
 
         }

@@ -1,5 +1,5 @@
 #include "board.h"
-#include "move.h"
+#include "Pieces.h"
 #include "../mainwindow.h"
 #include <sstream>
 #include <iostream>

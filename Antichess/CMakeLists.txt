@@ -22,7 +22,21 @@ set(PROJECT_SOURCES
         Chess/move.h
         Chess/move.cpp
         Chess/board.h
-        Chess/board.cpp)
+        Chess/board.cpp
+        Chess/Pieces.h
+        Chess/Pieces.cpp
+        Chess/Pawn.h
+        Chess/Pawn.cpp
+        Chess/Rook.h
+        Chess/Rook.cpp
+        Chess/Knight.h
+        Chess/Knight.cpp
+        Chess/Bishop.h
+        Chess/Bishop.cpp
+        Chess/King.h
+        Chess/King.cpp
+        Chess/Queen.h
+        Chess/Queen.cpp)
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(Antichess
