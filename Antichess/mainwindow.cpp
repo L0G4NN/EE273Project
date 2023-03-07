@@ -102,8 +102,11 @@ void MainWindow::updateGUI(vector<string> setup){
         {'8',wPawn.getIcon()}
     };
 
-    for(int a =0;a<2;a++){
-        QPixmap pic("../Antichess/images/Pieces/knight_w.svg");
+    for(int a =0;a<8;a++){
+
+        if(setup[a][0] == '8'){
+            continue;
+        }
         for(int b =0; b<8;b++){
             QLabel *label = new QLabel();
             //ui->label->raise();

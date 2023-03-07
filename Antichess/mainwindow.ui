@@ -237,9 +237,9 @@ color: &quot;yellow&quot;;</string>
       <property name="geometry">
        <rect>
         <x>270</x>
-        <y>29</y>
-        <width>481</width>
-        <height>471</height>
+        <y>39</y>
+        <width>491</width>
+        <height>481</height>
        </rect>
       </property>
       <layout class="QGridLayout" name="squares">
