@@ -36,9 +36,9 @@ set(PROJECT_SOURCES
         Chess/King.h
         Chess/King.cpp
         Chess/Queen.h
-        Chess/Queen.cpp)
-	  utils/clickableLabels.h
-	  utils/clickableLabels.cpp
+        Chess/Queen.cpp
+        utils/clickableLabels.h
+        utils/clickableLabels.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
