@@ -4,7 +4,7 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <iostream>
-
+#pragma once
 /*
  *  -- TURNING QLABELS INTO CLICKABLE LABEL TYPES --
  *  CREATE THE CLICKABLELABELS CLASS INHERTITED FROM QLABEL
@@ -13,7 +13,7 @@
 
 //to include in ui_mainwindow.h -- #include "../../../Antichess/utils/clickablelabels.h"
 
-class clickablelabels : public QWidget
+class clickablelabels : public QLabel
 {
     Q_OBJECT
 public:
@@ -23,6 +23,9 @@ public:
 signals:
     void mouse_pressed();
     void mouse_pos(); //unsure if needed yet
+
+private:
+    int clickCount;
 
 };
 

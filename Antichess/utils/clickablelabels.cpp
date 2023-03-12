@@ -1,10 +1,10 @@
-#include "clickablelabels.h"
+#include "clickableLabels.h"
 #include "../mainwindow.h"
 #include <QDialog>
 
 
 clickablelabels::clickablelabels(QWidget *parent)
-    : QWidget{parent}
+    : QLabel{parent}
 {
 
 }
@@ -13,7 +13,18 @@ clickablelabels::clickablelabels(QWidget *parent)
 
 void clickablelabels::mousePressEvent(QMouseEvent *event)
 {
+
     emit mouse_pressed();
     std::cerr << "LABEL CLICKED " << std::endl;
+    this->setStyleSheet("background-color: rgb(85, 170, 255)");
+    clickCount +=1;
+    if(clickCount == 2){
+        this->setStyleSheet("");
+        clickCount = 0;
+    }
+
+
+
 
 }
+

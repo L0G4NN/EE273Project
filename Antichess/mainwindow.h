@@ -11,6 +11,7 @@
 #include <QGraphicsPixMapItem>
 #include <QPainter>
 #include <QPixmap>
+#include "../../../Antichess/utils/clickablelabels.h"
 
 using namespace std;
 

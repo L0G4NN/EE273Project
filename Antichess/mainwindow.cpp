@@ -73,8 +73,6 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateGUI(vector<string> setup){
 
-    map<char,QPixmap>::iterator it;
-
 
     King bKing('b');
     Queen bQueen('b');
@@ -117,8 +115,9 @@ void MainWindow::updateGUI(vector<string> setup){
         for(int b =0; b<8;b++){
             clickablelabels *label = new clickablelabels;
             cout << a << "," << b << endl;
-            //label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
+            label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
+
 
         }
     }
