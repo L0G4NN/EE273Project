@@ -1,28 +1,28 @@
-#ifndef CLICKABLELABELS_H
-#define CLICKABLELABELS_H
+//#ifndef CLICKABLELABELS_H
+//#define CLICKABLELABELS_H
 
-#include <Qt>
-#include <QLabel>
-#include <QWidget>
+//#include <Qt>
+//#include <QLabel>
+//#include <QWidget>
 
-class clickablelabels : public QLabel
-{
-    Q_OBJECT
+//class clickablelabels : public QLabel
+//{
+//    Q_OBJECT
 
-public:
-    clickablelabels();
-    ~clickablelabels();
+//public:
+//    clickablelabels();
+//    ~clickablelabels();
 
-    clickablelabels(const QString & text,QWidget* parent = 0);
+//    clickablelabels(const QString & text,QWidget* parent = 0);
 
-signals:
-    void clicked();
+//signals:
+//    void clicked();
 
-public slots:
-    void slotClicked();
+//public slots:
+//    void slotClicked();
 
-protected:
-    void mousePressEvent(QMouseEvent* event);
-};
+//protected:
+//    void mousePressEvent(QMouseEvent* event);
+//};
 
-#endif
+//#endif

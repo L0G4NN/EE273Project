@@ -1,10 +1,6 @@
 #include "board.h"
 #include "Pieces.h"
 #include "../mainwindow.h"
-#include <sstream>
-#include <iostream>
-#include <map>
-#include <vector>
 
 Board::Board()
 {
@@ -26,7 +22,7 @@ vector<string> Board::setBoard()
 
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
-    std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+    std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR");
     vector<string> init = setFEN(startBoard);
 
     return init;
@@ -62,18 +58,21 @@ vector<string> Board::setBoard()
      */
 
 
-void Board::resetBoard(bool reset_flag)
+bool Board::resetBoard(bool reset_flag)
 {
     if (reset_flag == true)
     {
         //reset the game
         std::cerr << "Resetting game!\n";
         //Board::setBoard(); //currently causes crashes when enabled
+        //Board.setFEN(this->defaultBoard);
+        return true;
 
     }
     else
     {
         std::cerr << "An error occured resetting the board\n";
+        return false;
     }
 }
 

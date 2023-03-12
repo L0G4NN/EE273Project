@@ -28,6 +28,7 @@ MainWindow::MainWindow(QWidget *parent)
 {
     ui->setupUi(this);
 
+    //draw the board onto the screen
     QPixmap pix("../Antichess/images/background.png");
     Board gameBoard;
     ui->Start_image->setPixmap(pix);
@@ -108,16 +109,15 @@ void MainWindow::updateGUI(vector<string> setup){
         {'8',wPawn.getIcon()}
     };
 
-    for(int a =0;a<8;a++){
+    for(int a =0;a<8;a++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
         if(setup[a][0] == '8'){
             continue;
         }
         for(int b =0; b<8;b++){
-            clickablelabels *label = new clickablelabels(this);
-            //cout << a << "," << b << endl;
-            //ui->label->raise();
-            label->setPixmap(icons.at(setup[a][b]));//icons.at(setup[a][b]
+            QLabel *label = new QLabel;
+            cout << a << "," << b << endl;
+            label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
 
         }
