@@ -22,7 +22,7 @@ vector<string> Board::setBoard()
 
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
-    std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR");
+    std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
     vector<string> init = setFEN(startBoard);
 
     return init;

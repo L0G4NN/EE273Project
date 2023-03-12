@@ -1,7 +1,7 @@
 
 //#include "mainwindow.h"
-//#include "./ui_mainwindow.h"
-#include "ui_mainwindow.h"
+#include "./ui_mainwindow.h"
+//#include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "Chess/board.h"
 #include "Chess/Pieces.h"
@@ -115,9 +115,9 @@ void MainWindow::updateGUI(vector<string> setup){
             continue;
         }
         for(int b =0; b<8;b++){
-            QLabel *label = new QLabel;
+            clickablelabels *label = new clickablelabels;
             cout << a << "," << b << endl;
-            label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
+            //label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
 
         }
@@ -161,4 +161,5 @@ void MainWindow::on_resetButton_clicked()
     gameBoard.resetBoard(reset_flag);
 
 }
+
 

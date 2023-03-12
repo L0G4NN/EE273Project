@@ -42,7 +42,6 @@ private slots:
 
     void on_resetButton_clicked();
 
-
 private:
     Ui::MainWindow *ui;
     QStackedWidget *stackedWidget;

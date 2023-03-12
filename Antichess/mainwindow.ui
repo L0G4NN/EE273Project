@@ -51,7 +51,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="StartPage">
      <widget class="QPushButton" name="startButton">
@@ -240,371 +240,377 @@ color: &quot;yellow&quot;;</string>
       </property>
       <layout class="QGridLayout" name="squares">
        <item row="2" column="6">
-        <widget class="QLabel" name="label_66">
+        <widget class="clickablelabels" name="label_66">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="4">
-        <widget class="QLabel" name="label_48">
+        <widget class="clickablelabels" name="label_48">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="2">
-        <widget class="QLabel" name="label_25">
+        <widget class="clickablelabels" name="label_25">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="4">
-        <widget class="QLabel" name="label_43">
+        <widget class="clickablelabels" name="label_43">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="5">
-        <widget class="QLabel" name="label_49">
+        <widget class="clickablelabels" name="label_49">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="6">
-        <widget class="QLabel" name="label_35">
+        <widget class="clickablelabels" name="label_35">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="5">
-        <widget class="QLabel" name="label_39">
+        <widget class="clickablelabels" name="label_39">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="5">
-        <widget class="QLabel" name="label_62">
+        <widget class="clickablelabels" name="label_62">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="7">
-        <widget class="QLabel" name="label_41">
+        <widget class="clickablelabels" name="label_41">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="7">
-        <widget class="QLabel" name="label_3">
+        <widget class="clickablelabels" name="label_3">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="6">
-        <widget class="QLabel" name="label_50">
+        <widget class="clickablelabels" name="label_50">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="7">
-        <widget class="QLabel" name="label_51">
+        <widget class="clickablelabels" name="label_51">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="6">
-        <widget class="QLabel" name="label_63">
+        <widget class="clickablelabels" name="label_63">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="2">
-        <widget class="QLabel" name="label_31">
+        <widget class="clickablelabels" name="label_31">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="7">
-        <widget class="QLabel" name="label_60">
+        <widget class="clickablelabels" name="label_60">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="2">
-        <widget class="QLabel" name="label_26">
+        <widget class="clickablelabels" name="label_26">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="1">
-        <widget class="QLabel" name="label_20">
+        <widget class="clickablelabels" name="label_20">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="4">
-        <widget class="QLabel" name="label_55">
+        <widget class="clickablelabels" name="label_55">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="1">
-        <widget class="QLabel" name="label_23">
+        <widget class="clickablelabels" name="label_23">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="5">
-        <widget class="QLabel" name="label_44">
+        <widget class="clickablelabels" name="label_44">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="7">
-        <widget class="QLabel" name="label_46">
+        <widget class="clickablelabels" name="label_46">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="0">
-        <widget class="QLabel" name="label_14">
+        <widget class="clickablelabels" name="label_14">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="0">
-        <widget class="QLabel" name="label_15">
+        <widget class="clickablelabels" name="label_15">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="3">
-        <widget class="QLabel" name="label_42">
+        <widget class="clickablelabels" name="label_42">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="0">
-        <widget class="QLabel" name="label_16">
+        <widget class="clickablelabels" name="label_16">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="7">
-        <widget class="QLabel" name="label_36">
+        <widget class="clickablelabels" name="label_36">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="2">
-        <widget class="QLabel" name="label_30">
+        <widget class="clickablelabels" name="label_30">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="2">
-        <widget class="QLabel" name="_30">
+        <widget class="clickablelabels" name="_30">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="4">
-        <widget class="QLabel" name="label_38">
+        <widget class="clickablelabels" name="label_38">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="7">
-        <widget class="QLabel" name="label_64">
+        <widget class="clickablelabels" name="label_64">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="3">
-        <widget class="QLabel" name="label_47">
+        <widget class="clickablelabels" name="label_47">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="2">
-        <widget class="QLabel" name="label_28">
+        <widget class="clickablelabels" name="label_28">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="3">
-        <widget class="QLabel" name="label_54">
+        <widget class="clickablelabels" name="label_54">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="4">
-        <widget class="QLabel" name="label_56">
+        <widget class="clickablelabels" name="label_56">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="4">
-        <widget class="QLabel" name="label_57">
+        <widget class="clickablelabels" name="label_57">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="6">
-        <widget class="QLabel" name="label_59">
+        <widget class="clickablelabels" name="label_59">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="0">
-        <widget class="QLabel" name="_10">
+        <widget class="clickablelabels" name="_10">
          <property name="enabled">
+          <bool>false</bool>
+         </property>
+         <property name="focusPolicy">
+          <enum>Qt::ClickFocus</enum>
+         </property>
+         <property name="scaledContents">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="1">
-        <widget class="QLabel" name="label_18">
+        <widget class="clickablelabels" name="label_18">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="2">
-        <widget class="QLabel" name="label_27">
+        <widget class="clickablelabels" name="label_27">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="1">
-        <widget class="QLabel" name="label_24">
+        <widget class="clickablelabels" name="label_24">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="7">
-        <widget class="QLabel" name="label_65">
+        <widget class="clickablelabels" name="label_65">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="5">
-        <widget class="QLabel" name="label_34">
+        <widget class="clickablelabels" name="label_34">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="5">
-        <widget class="QLabel" name="label_61">
+        <widget class="clickablelabels" name="label_61">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="2">
-        <widget class="QLabel" name="label_29">
+        <widget class="clickablelabels" name="label_29">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="3" column="1">
-        <widget class="QLabel" name="label_21">
+        <widget class="clickablelabels" name="label_21">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="6">
-        <widget class="QLabel" name="label_6">
+        <widget class="clickablelabels" name="label_6">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="0">
-        <widget class="QLabel" name="_70">
+        <widget class="clickablelabels" name="_70">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="3">
-        <widget class="QLabel" name="label_32">
+        <widget class="clickablelabels" name="label_32">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="6">
-        <widget class="QLabel" name="label_40">
+        <widget class="clickablelabels" name="label_40">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="4">
-        <widget class="QLabel" name="_50">
+        <widget class="clickablelabels" name="_50">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="3">
-        <widget class="QLabel" name="label_52">
+        <widget class="clickablelabels" name="label_52">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="3">
-        <widget class="QLabel" name="_40">
+        <widget class="clickablelabels" name="_40">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="0" column="0">
-        <widget class="QLabel" name="label_17">
+        <widget class="clickablelabels" name="label_17">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -614,77 +620,77 @@ color: &quot;yellow&quot;;</string>
         </widget>
        </item>
        <item row="4" column="6">
-        <widget class="QLabel" name="label_45">
+        <widget class="clickablelabels" name="label_45">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="1">
-        <widget class="QLabel" name="label_22">
+        <widget class="clickablelabels" name="label_22">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="1">
-        <widget class="QLabel" name="label_19">
+        <widget class="clickablelabels" name="label_19">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="6" column="4">
-        <widget class="QLabel" name="label_33">
+        <widget class="clickablelabels" name="label_33">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="4" column="0">
-        <widget class="QLabel" name="label_13">
+        <widget class="clickablelabels" name="label_13">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="1" column="3">
-        <widget class="QLabel" name="label_53">
+        <widget class="clickablelabels" name="label_53">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="0">
-        <widget class="QLabel" name="label_12">
+        <widget class="clickablelabels" name="label_12">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="5" column="3">
-        <widget class="QLabel" name="label_37">
+        <widget class="clickablelabels" name="label_37">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="2" column="5">
-        <widget class="QLabel" name="label_58">
+        <widget class="clickablelabels" name="label_58">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="5">
-        <widget class="QLabel" name="_60">
+        <widget class="clickablelabels" name="_60">
          <property name="enabled">
           <bool>false</bool>
          </property>
         </widget>
        </item>
        <item row="7" column="1">
-        <widget class="QLabel" name="_20">
+        <widget class="clickablelabels" name="_20">
          <property name="enabled">
           <bool>false</bool>
          </property>
@@ -790,6 +796,13 @@ color: &quot;yellow&quot;;</string>
    </property>
   </action>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>clickablelabels</class>
+   <extends>QLabel</extends>
+   <header location="global">clickablelabels.h</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
