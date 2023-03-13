@@ -25,7 +25,7 @@ signals:
     void mouse_pos(); //unsure if needed yet
 
 private:
-    int clickCount;
+    int clickCount{0}; //initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
 
 };
 
