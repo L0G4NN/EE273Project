@@ -31,9 +31,9 @@ signals:
 
 private:
     int clickCount{0};
-    vector<pair<int,int>> getClickLocation(QPoint point);//initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
+    pair<int,int> getClickLocation(QPoint point);//initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
 
-    QLabel prev;
+
 };
 
 #endif // CLICKABLELABELS_H

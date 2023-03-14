@@ -37,6 +37,8 @@ set(PROJECT_SOURCES
         Chess/King.cpp
         Chess/Queen.h
         Chess/Queen.cpp
+        Chess/Points.cpp
+        Chess/Points.h
         utils/clickableLabels.h
         utils/clickableLabels.cpp
 )

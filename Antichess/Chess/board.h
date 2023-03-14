@@ -1,14 +1,15 @@
 
-#pragma once
+
+#include "Points.h"
 #include <vector>
 #include <QString>
 #include <sstream>
 #include <iostream>
 #include <map>
 #include <vector>
+#pragma once
 
-
-class Board
+class Board: public Points
 {
 public:
     Board();

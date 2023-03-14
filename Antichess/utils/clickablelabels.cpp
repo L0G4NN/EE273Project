@@ -1,4 +1,5 @@
 #include "clickableLabels.h"
+#include "C:\Users\Elias\Documents\UNI\Year 2\EE273\Semester 2\GroupProject\EE273Project\Antichess\Chess\Points.h"
 #include "../mainwindow.h"
 #include "C:\Users\Elias\Documents\UNI\Year 2\EE273\Semester 2\GroupProject\EE273Project\Antichess\Chess\Pieces.h"
 #include <QDialog>
@@ -28,18 +29,19 @@ void clickablelabels::mousePressEvent(QMouseEvent *event)
         this->setStyleSheet("background-color: rgb(0,0,0,0)");
         clickCount = 0;}
 
-    QPoint point;
-    point = this->pos();
+    Points point(this);
     this->getClickLocation(point);
+
 
 }
 
-vector<pair<int,int>> clickablelabels::getClickLocation(QPoint Point){
+pair<int,int> clickablelabels::getClickLocation(QPoint Point){
 
-    vector<pair<int,int>> position{};
-    position.push_back({Point.x(),Point.y()});
-    cout<<ceil(Point.x()/this->width())<<","<<7-((Point.y())/this->height())<<endl;
+    pair<int,int> position{};
+    int x = Point.x()/this->width();
+    int y = 7-((Point.y())/this->height());
 
-    return position;
+     cout<<x<<endl;
+    return {x,y};
 }
 

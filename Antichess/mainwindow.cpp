@@ -118,8 +118,6 @@ void MainWindow::updateGUI(vector<string> setup){
             label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
 
-
-
         }
     }
 
