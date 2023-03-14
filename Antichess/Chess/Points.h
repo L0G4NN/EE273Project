@@ -16,7 +16,7 @@ public:
     pair<int,int> getClickLocation();
 
 private:
-    vector<pair<int,int>>moves;
+
     int x;
     int y;
 };
