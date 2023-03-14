@@ -2,7 +2,7 @@
 #define POINTS_H
 
 #include <QPoint>
-#include "C:\Users\Elias\Documents\UNI\Year 2\EE273\Semester 2\GroupProject\EE273Project\Antichess\utils\clickableLabels.h"
+#include "../../../Antichess/utils/clickablelabels.h"
 #endif // POINTS_H
 #pragma once
 
