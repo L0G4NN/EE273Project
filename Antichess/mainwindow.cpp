@@ -74,48 +74,16 @@ MainWindow::~MainWindow()
 void MainWindow::updateGUI(vector<string> setup){
 
 
-    King bKing('b');
-    Queen bQueen('b');
-    Bishop bBishop('b');
-    Knight bKnight('b');
-    Rook bRook('b');
-    Pawn bPawn('b');
-
-    King wKing('w');
-    Queen wQueen('w');
-    Bishop wBishop('w');
-    Knight wKnight('w');
-    Rook wRook('w');
-    Pawn wPawn('w');
-
-    map<char,QPixmap> icons;
-
-    icons = {
-        {'k',bKing.getIcon()},
-        {'q',bQueen.getIcon()},
-        {'b',bBishop.getIcon()},
-        {'n',bKnight.getIcon()},
-        {'r',bRook.getIcon()},
-        {'p',bPawn.getIcon()},
-
-        {'K',wKing.getIcon()},
-        {'Q',wQueen.getIcon()},
-        {'B',wBishop.getIcon()},
-        {'N',wKnight.getIcon()},
-        {'R',wRook.getIcon()},
-        {'P',wPawn.getIcon()},
-        {'8',wPawn.getIcon()}
-    };
-
     for(int a =0;a<8;a++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
         if(setup[a][0] == '8'){
             continue;
         }
         for(int b =0; b<8;b++){
+
             clickablelabels *label = new clickablelabels;
             cout << "Drawing icon @: " << a << "," << b << ". ";
-            label->setPixmap(icons.at(setup[a][b])); //icons.at(setup[a][b]
+            label->setPixmap(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
         }
     }

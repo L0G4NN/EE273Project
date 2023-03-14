@@ -1,5 +1,6 @@
 #include "Pawn.h"
-
+#include <iostream>
+using namespace std;
 Pawn::Pawn(char colour){
 
     switch(colour){
@@ -11,6 +12,8 @@ Pawn::Pawn(char colour){
         case('w'):
             setIcon("../Antichess/images/Pieces/pawn_w.svg");
         break;
+
+
     }
 
 }

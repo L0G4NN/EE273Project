@@ -1,9 +1,46 @@
 #include "board.h"
 #include "Pieces.h"
+#include "Pieces.h"
+#include "King.h"
+#include "Queen.h"
+#include "Pawn.h"
+#include "Bishop.h"
+#include "Knight.h"
+#include "Rook.h"
 #include "../mainwindow.h"
 
 Board::Board()
 {
+    King bKing('b');
+    Queen bQueen('b');
+    Bishop bBishop('b');
+    Knight bKnight('b');
+    Rook bRook('b');
+    Pawn bPawn('b');
+
+    King wKing('w');
+    Queen wQueen('w');
+    Bishop wBishop('w');
+    Knight wKnight('w');
+    Rook wRook('w');
+    Pawn wPawn('w');
+
+    icons = {
+        {'k',bKing.getIcon()},
+        {'q',bQueen.getIcon()},
+        {'b',bBishop.getIcon()},
+        {'n',bKnight.getIcon()},
+        {'r',bRook.getIcon()},
+        {'p',bPawn.getIcon()},
+
+        {'K',wKing.getIcon()},
+        {'Q',wQueen.getIcon()},
+        {'B',wBishop.getIcon()},
+        {'N',wKnight.getIcon()},
+        {'R',wRook.getIcon()},
+        {'P',wPawn.getIcon()},
+        {'8',wPawn.getIcon()}
+    };
 
 }
 
@@ -19,7 +56,6 @@ vector<string> Board::setBoard()
     //maybe just here to have constructors for each piece and their coords
     //i.e. Rook(0,0)
     //     Knight(1,0)
-
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
     std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");

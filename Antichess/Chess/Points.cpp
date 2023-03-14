@@ -21,5 +21,4 @@ Points::Points(clickablelabels* label){
 
 pair<int,int> Points::getClickLocation(){
     return{x,y};
-
 }
