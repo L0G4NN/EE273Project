@@ -119,6 +119,7 @@ void MainWindow::updateGUI(vector<string> setup){
             ui->squares->addWidget(label,a,b);
 
 
+
         }
     }
 

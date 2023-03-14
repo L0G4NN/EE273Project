@@ -4,7 +4,12 @@
 #include <QLabel>
 #include <QMouseEvent>
 #include <iostream>
+#include <QPoint>
+#include <vector>
 #pragma once
+
+
+using namespace std;
 /*
  *  -- TURNING QLABELS INTO CLICKABLE LABEL TYPES --
  *  CREATE THE CLICKABLELABELS CLASS INHERTITED FROM QLABEL
@@ -25,8 +30,10 @@ signals:
     void mouse_pos(); //unsure if needed yet
 
 private:
-    int clickCount{0}; //initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
+    int clickCount{0};
+    vector<pair<int,int>> getClickLocation(QPoint point);//initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
 
+    QLabel prev;
 };
 
 #endif // CLICKABLELABELS_H
