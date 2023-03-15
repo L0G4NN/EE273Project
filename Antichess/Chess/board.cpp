@@ -49,7 +49,7 @@ Board::~Board()
 
 }
 
-vector<string> Board::setBoard()
+vector<string> Board::setBoard(string FEN )
 {
     this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
 
@@ -58,10 +58,10 @@ vector<string> Board::setBoard()
     //     Knight(1,0)
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
-    std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-    vector<string> init = setFEN(startBoard);
+    std::stringstream startBoard(FEN);
+    board = setFEN(startBoard);
 
-    return init;
+    return board;
 }
 
     /*Each team requires
@@ -124,4 +124,54 @@ vector<std::string> Board::setFEN(stringstream& setup){
     }
     return boardSetup;
 
+}
+
+
+vector<pair<int,int>> Board::showMoves(){
+
+    pair<int,int> location = this->getClickLocation();
+    vector<pair<int,int>> moves;
+
+    int x = get<0>(location);
+    int y = get<1>(location);
+
+
+    switch(board[get<0>(location)][get<1>(location)]){
+
+        case('k'):
+
+        break;
+
+        case('q'):
+
+        break;
+
+        case('b'):
+
+        for (int a = 0; a <=7; a++)
+        {
+             cout<<a<<endl;
+             moves.push_back({a,a+(y-x)});
+             moves.push_back({a,(2*y) - (a+(y-x))});
+
+        }
+
+        break;
+
+        case('n'):
+
+        break;
+
+        case('r'):
+
+        break;
+
+        case('p'):
+
+        break;
+    }
+    for(auto c:moves){
+
+    }
+    return moves;
 }

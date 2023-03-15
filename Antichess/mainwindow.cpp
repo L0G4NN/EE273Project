@@ -56,7 +56,7 @@ MainWindow::MainWindow(QWidget *parent)
     Scene = new QGraphicsScene(this);
     Scene->addPixmap(pixmap.scaledToHeight(520));
     ui->boardGraphic->setScene(Scene);
-    vector<string> init = gameBoard.setBoard();
+    vector<string> init = gameBoard.setBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
     updateGUI(init);
 
 

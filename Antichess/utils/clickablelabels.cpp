@@ -41,7 +41,8 @@ pair<int,int> clickablelabels::getClickLocation(QPoint Point){
     int x = Point.x()/this->width();
     int y = 7-((Point.y())/this->height());
 
-     cout<<x<<endl;
+    cout<<x<<endl;
     return {x,y};
+
 }
 
