@@ -11,6 +11,7 @@
 #include <QGraphicsPixMapItem>
 #include <QPainter>
 #include <QPixmap>
+#include "qgridlayout.h"
 #include "../../../Antichess/utils/clickablelabels.h"
 
 using namespace std;
@@ -43,14 +44,16 @@ private slots:
 
     void on_resetButton_clicked();
 
-private:
+protected:
     Ui::MainWindow *ui;
+private:
     QStackedWidget *stackedWidget;
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
-    QGraphicsPixmapItem *board;
+    //QGraphicsPixmapItem *board;
     QPainter gridPainter;
     Board gameBoard;
+
 
 };
 

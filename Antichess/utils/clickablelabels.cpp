@@ -23,7 +23,7 @@ void clickablelabels::mousePressEvent(QMouseEvent *event)
     //emit mouse_pressed();
 
     std::cerr << "LABEL CLICKED " << " ";
-    this->setStyleSheet("background-color: rgb(85, 170, 255)");
+    //this->setStyleSheet("background-color: rgb(85, 170, 255)");
 
     std::cerr << clickCount << std::endl;
     if(clickCount == 2){
@@ -31,6 +31,7 @@ void clickablelabels::mousePressEvent(QMouseEvent *event)
         clickCount = 0;}
 
     Points point(this);
+
     //this->getClickLocation(point);
 
 }

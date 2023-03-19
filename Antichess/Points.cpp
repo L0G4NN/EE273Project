@@ -2,7 +2,7 @@
 #include "../../../Antichess/utils/clickablelabels.h"
 #include "./ui_mainwindow.h"
 //#include "ui_mainwindow.h"
-#include "board.h"
+#include "Chess/board.h"
 #include <QPoint>
 
 
@@ -11,23 +11,27 @@ Points::Points(){
 }
 Points::Points(clickablelabels* label){
 
+
+    dotLabel = label;
     QPoint point = label->pos();
-    x = point.x()/label->width();
-    y = 7-(point.y()/label->height());
+    m_x = point.x()/label->width();
+    m_y = 7-(point.y()/label->height());
+    showMoves();
 
 
-    std::cout  << "piece selected @ : " << x << ", " << y << std::endl; //show coordinates where clicked
+    std::cout  << "piece selected @ : " << m_x << ", " << m_y << std::endl; //show coordinates where clicked
 
 
 }
 
 
 pair<int,int> Points::getClickLocation(){
-    return{x,y};
+    return{m_x,m_y};
 }
 
 void Points::showMoves(){
-    QPixmap dot("../Antichess/images/dot.svg");
+
+    QPixmap dot("../Antichess/images/Pieces/bishop_w.svg");
     int a = 0;
     int b = 0;
 
@@ -38,7 +42,7 @@ void Points::showMoves(){
     int y = get<1>(location);
 
 
-    switch(board[get<0>(location)][get<1>(location)]){
+    /*switch(board[get<0>(location)][get<1>(location)]){
 
         case('k'):
 
@@ -71,14 +75,17 @@ void Points::showMoves(){
         case('p'):
 
         break;
-    }
-    for(int b =0; b<8;b++){
-
-        clickablelabels *label = new clickablelabels;
-        cout << "Drawing icon @: " << a << "," << b << ". ";
-        label->setPixmap(dot); //icons.at(setup[a][b]
-        //ui->squares->addWidget(label,moves[a].first,moves[a].second);
+    }*/
 
 
-}
+        clickablelabels* mlabel = new clickablelabels;
+        cout << "dot placed @: " << x+1 << "," << y+1 << ". ";
+        mlabel->setPixmap(dot);
+        ui->squares->addWidget(mlabel,3,4);
+        //ui-> label_20 -> show();
+        //ui->squares->addWidget(dotLabel,3,4);//icons.at(setup[a][b]
+        //ui->squares->addWidget(mlabel,x,y);
+
+
+
 }

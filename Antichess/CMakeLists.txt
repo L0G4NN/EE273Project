@@ -18,7 +18,6 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        mainwindow.ui
         Chess/move.h
         Chess/move.cpp
         Chess/board.h
@@ -37,10 +36,12 @@ set(PROJECT_SOURCES
         Chess/King.cpp
         Chess/Queen.h
         Chess/Queen.cpp
-        Chess/Points.cpp
-        Chess/Points.h
+        Points.cpp
+        Points.h
         utils/clickableLabels.h
         utils/clickableLabels.cpp
+
+
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

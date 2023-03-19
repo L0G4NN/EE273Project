@@ -1,7 +1,6 @@
 
 //#include "mainwindow.h"
 #include "./ui_mainwindow.h"
-//#include "ui_mainwindow.h"
 #include "mainwindow.h"
 #include "Chess/board.h"
 #include "Chess/Pieces.h"
@@ -85,6 +84,7 @@ void MainWindow::updateGUI(vector<string> setup){
             cout << "Drawing icon @: " << a << "," << b << ". ";
             label->setPixmap(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
             ui->squares->addWidget(label,a,b);
+
         }
     }
     cout << endl;

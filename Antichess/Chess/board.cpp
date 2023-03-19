@@ -11,6 +11,7 @@
 
 Board::Board()
 {
+
     King bKing('b');
     Queen bQueen('b');
     Bishop bBishop('b');
@@ -129,49 +130,5 @@ vector<std::string> Board::setFEN(stringstream& setup){
 
 vector<pair<int,int>> Board::showMoves(){
 
-    pair<int,int> location = this->getClickLocation();
-    vector<pair<int,int>> moves;
 
-    int x = get<0>(location);
-    int y = get<1>(location);
-
-
-    switch(board[get<0>(location)][get<1>(location)]){
-
-        case('k'):
-
-        break;
-
-        case('q'):
-
-        break;
-
-        case('b'):
-
-        for (int a = 0; a <=7; a++)
-        {
-             cout<<a<<endl;
-             moves.push_back({a,a+(y-x)});
-             moves.push_back({a,(2*y) - (a+(y-x))});
-
-        }
-
-        break;
-
-        case('n'):
-
-        break;
-
-        case('r'):
-
-        break;
-
-        case('p'):
-
-        break;
-    }
-    for(auto c:moves){
-
-    }
-    return moves;
 }

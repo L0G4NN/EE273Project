@@ -4,7 +4,7 @@
 #include <QPoint>
 #include "../../../Antichess/utils/clickablelabels.h"
 #include "C:\Users\Elias\Documents\UNI\Year 2\EE273\Semester 2\GroupProject\EE273Project\Antichess\mainwindow.h"
-#include "board.h"
+#include "Chess/board.h"
 
 #endif // POINTS_H
 #pragma once
@@ -20,7 +20,10 @@ public:
     void showMoves();
 
 private:
-    vector<pair<int,int>>moves;
-    int x;
-    int y;
+    vector<pair<int,int>>m_moves;
+    clickablelabels* dotLabel;
+    int m_x;
+    int m_y;
+
+
 };

@@ -1,7 +1,6 @@
 
 
 #include "King.h"
-#include "Points.h"
 #include <vector>
 #include <QString>
 #include <sstream>
@@ -17,8 +16,9 @@
 #include <vector>
 #pragma once
 
-class Board: public Points
-{
+class Board {
+
+
 public:
     Board();
     ~Board();
@@ -46,7 +46,11 @@ private:
     int cols = 8;
 
     std::vector<std::vector<int>> boardVector;
+protected:
     vector<string> board;
+
+
+
 
     //std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 };

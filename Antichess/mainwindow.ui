@@ -354,7 +354,7 @@ color: &quot;yellow&quot;;</string>
        <item row="4" column="1">
         <widget class="clickablelabels" name="label_20">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
@@ -556,7 +556,7 @@ color: &quot;yellow&quot;;</string>
        <item row="3" column="1">
         <widget class="clickablelabels" name="label_21">
          <property name="enabled">
-          <bool>false</bool>
+          <bool>true</bool>
          </property>
         </widget>
        </item>
