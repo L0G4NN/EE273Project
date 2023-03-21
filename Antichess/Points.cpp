@@ -3,23 +3,24 @@
 #include "./ui_mainwindow.h"
 //#include "ui_mainwindow.h"
 #include "Chess/board.h"
+#include <QPushButton>
 #include <QPoint>
 
 
 Points::Points(){
 
 }
-Points::Points(clickablelabels* label){
+Points::Points(QPushButton* pos){
 
-
-    dotLabel = label;
-    QPoint point = label->pos();
-    m_x = point.x()/label->width();
-    m_y = 7-(point.y()/label->height());
+    QPixmap dote("../Antichess/images/Pieces/bishop_w.svg");
+    //dotLabel = label;
+    cout<<pos->x()<<","<<pos->width()<<endl;
+    m_x = floor(pos->x()/pos->width());
+    m_y = floor(7-(pos->y()/pos->height()));
     showMoves();
 
 
-    std::cout  << "piece selected @ : " << m_x << ", " << m_y << std::endl; //show coordinates where clicked
+    //std::cout  << "piece selected @ : " << m_x << ", " << m_y << std::endl; //show coordinates where clicked
 
 
 }
@@ -29,63 +30,38 @@ pair<int,int> Points::getClickLocation(){
     return{m_x,m_y};
 }
 
+
 void Points::showMoves(){
 
-    QPixmap dot("../Antichess/images/Pieces/bishop_w.svg");
+    QPixmap dote("../Antichess/images/Pieces/bishop_w.svg");
     int a = 0;
     int b = 0;
 
-    pair<int,int> location = this->getClickLocation();
+
     vector<pair<int,int>> moves;
 
-    int x = get<0>(location);
-    int y = get<1>(location);
+        cout<<m_x<<","<<m_y<<endl;
 
-
-    /*switch(board[get<0>(location)][get<1>(location)]){
-
-        case('k'):
-
-        break;
-
-        case('q'):
-
-        break;
-
-        case('b'):
-
-        for (int a = 0; a <=7; a++)
+        for (int a = 0; a <=14; a++)
         {
              cout<<a<<endl;
-             moves.push_back({a,a+(y-x)});
-             moves.push_back({a,(2*y) - (a+(y-x))});
+             moves.push_back({a,a+(m_y-m_x)});
+             moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
+        if(moves[a].second >= 0){
+             cout << "dot placed @: " << moves[a].first << "," << moves[a].second << ". "<<"\n";
 
         }
-
-        break;
-
-        case('n'):
-
-        break;
-
-        case('r'):
-
-        break;
-
-        case('p'):
-
-        break;
-    }*/
+        }
+        m_moves = moves;
 
 
-        clickablelabels* mlabel = new clickablelabels;
-        cout << "dot placed @: " << x+1 << "," << y+1 << ". ";
-        mlabel->setPixmap(dot);
-        ui->squares->addWidget(mlabel,3,4);
-        //ui-> label_20 -> show();
-        //ui->squares->addWidget(dotLabel,3,4);//icons.at(setup[a][b]
-        //ui->squares->addWidget(mlabel,x,y);
 
+        //connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
+        //label->lower();
+
+
+
+       // clickablelabels* mlabel = new clickablelabels;
 
 
 }

@@ -10,10 +10,12 @@
 #include "Chess/Bishop.h"
 #include "Chess/Knight.h"
 #include "Chess/Rook.h"
+#include "Points.h"
 #include "Chess/move.h"
 #include "utils/clickableLabels.h"
 #include <QtCore>
 #include <QDesktopServices>
+#include <QPushButton>
 #include <QGraphicsRectItem>
 #include <QPainter>
 #include <QGraphicsScene>
@@ -43,7 +45,16 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButtonClicked()));
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
     //connect(ui->resetButton, SIGNAL(clicked()), this, SLOT(on_resetButton_clicked()));
-
+    /*QPushButton *label = new QPushButton;
+    label->setFlat(true);
+    label->setFixedSize(50,50);
+    label->setIconSize(QSize(50,50));
+    //cout << "Drawing icon @: " << a << "," << b << ". ";
+    label->setIcon(QPixmap("../Antichess/images/Pieces/bishop_w.svg")); //icons.at(setup[a][b]
+    connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
+    //label->lower();
+    ui->squares->addWidget(label,3,4);
+*/
     setCentralWidget(stackedWidget);
 
     //import chess board image
@@ -53,7 +64,9 @@ MainWindow::MainWindow(QWidget *parent)
     //create new graphics scene to position the board on the GUI
 
     Scene = new QGraphicsScene(this);
-    Scene->addPixmap(pixmap.scaledToHeight(520));
+
+
+    Scene->addPixmap(pixmap.scaledToHeight(512));
     ui->boardGraphic->setScene(Scene);
     vector<string> init = gameBoard.setBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
     updateGUI(init);
@@ -80,10 +93,17 @@ void MainWindow::updateGUI(vector<string> setup){
         }
         for(int b =0; b<8;b++){
 
-            clickablelabels *label = new clickablelabels;
+            QPushButton *label = new QPushButton;
+            label->setFlat(true);
+            label->setFixedSize(54,56);
+            label->setIconSize(QSize(50,50));
             cout << "Drawing icon @: " << a << "," << b << ". ";
-            label->setPixmap(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
-            ui->squares->addWidget(label,a,b);
+            label->setIcon(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
+
+            connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
+            //label->lower();
+            ui->squares->addWidget(label,a,b,Qt::AlignCenter);
+
 
         }
     }
@@ -91,6 +111,22 @@ void MainWindow::updateGUI(vector<string> setup){
 
 }
 
+void MainWindow::keyPressed(){
+
+
+    QPushButton* pos = qobject_cast<QPushButton*>(sender());
+    Points point(pos);
+
+
+
+
+}
+
+
+vector<pair<int,int>> MainWindow::getMoves(){
+
+    return m_moves ;
+}
 
 
 void MainWindow::on_startButton_clicked()

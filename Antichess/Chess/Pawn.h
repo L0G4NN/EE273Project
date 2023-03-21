@@ -10,7 +10,6 @@ class Pawn : public Pieces
 public:
     Pawn(char colour);
 
-
     void show_moves();
 
 private:

@@ -1,4 +1,6 @@
 #include "mainwindow.h"
+#include "Points.h"
+#include "Chess/board.h"
 
 
 #include <QApplication>

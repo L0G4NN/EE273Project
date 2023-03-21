@@ -12,6 +12,7 @@
 #include <QPainter>
 #include <QPixmap>
 #include "qgridlayout.h"
+#include <QPushButton>
 #include "../../../Antichess/utils/clickablelabels.h"
 
 using namespace std;
@@ -31,8 +32,10 @@ public:
     void updateGUI(vector<string> setup);
 
 
+
 private slots:
 
+    void keyPressed();
 
     void on_startButton_clicked();
 
@@ -44,15 +47,25 @@ private slots:
 
     void on_resetButton_clicked();
 
+    vector<pair<int,int>> getMoves();
+
 protected:
     Ui::MainWindow *ui;
+    Board gameBoard;
+    vector<pair<int,int>> m_moves;
+
 private:
     QStackedWidget *stackedWidget;
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;
     QPainter gridPainter;
-    Board gameBoard;
+
+    int m_x;
+    int m_y;
+
+
+
 
 
 };

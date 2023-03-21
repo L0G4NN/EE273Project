@@ -2,6 +2,7 @@
 #include "../../../Antichess/chess/Points.h"
 #include "../mainwindow.h"
 #include "../../../Antichess/Chess/Pieces.h"
+#include "QAbstractButton.h"
 #include <QDialog>
 #include <QPoint>
 #include <vector>
@@ -30,11 +31,14 @@ void clickablelabels::mousePressEvent(QMouseEvent *event)
         this->setStyleSheet("background-color: rgb(0,0,0,0)");
         clickCount = 0;}
 
-    Points point(this);
+
+    //Points point(this);
 
     //this->getClickLocation(point);
 
 }
+
+
 
 //POSSIBLY REDUNDANT FUNCTION -- DOES NOT WORK AS EXPECTED, WORKS AS EXPECTED IN POINT.CPP
 //pair<int,int> clickablelabels::getClickLocation(QPoint Point){
