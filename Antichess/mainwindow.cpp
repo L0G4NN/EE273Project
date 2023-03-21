@@ -97,7 +97,7 @@ void MainWindow::updateGUI(vector<string> setup){
             label->setFlat(true);
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
-            cout << "Drawing icon @: " << a << "," << b << ". ";
+            //cout << "Drawing icon @: " << a << "," << b << ". ";
             label->setIcon(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
 
             connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
@@ -107,7 +107,7 @@ void MainWindow::updateGUI(vector<string> setup){
 
         }
     }
-    cout << endl;
+    cout << "Icons drawn successfully" << endl;
 
 }
 

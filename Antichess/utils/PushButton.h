@@ -8,4 +8,4 @@
 
 QPushButton::QPushButton(QWidget *parent = nullptr){
 
-}};
+};

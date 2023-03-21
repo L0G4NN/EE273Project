@@ -3,7 +3,7 @@
 
 #include <QPoint>
 #include "../../../Antichess/utils/clickablelabels.h"
-#include "C:\Users\Elias\Documents\UNI\Year 2\EE273\Semester 2\GroupProject\EE273Project\Antichess\mainwindow.h"
+#include "../mainwindow.h"
 #include "board.h"
 
 #endif // POINTS_H

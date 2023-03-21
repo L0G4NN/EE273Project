@@ -27,7 +27,7 @@ public:
     bool isSetup();
     bool resetBoard(bool reset_flag);
     std::vector<std::string> setFEN(std::stringstream& setup);
-    void readFEN();
+    char readFEN();
     vector<pair<int,int>> showMoves();
     map<char,QPixmap> icons;
 
