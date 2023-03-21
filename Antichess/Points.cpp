@@ -50,56 +50,36 @@ void Points::showMoves(){
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
     switch(piece_char) {
-            case 'p': //bPawn
-                cout << "pPawn\n";
+            case 'p': //Pawn
+            case 'P':
+                cout << "Pawn\n";
                 break;
 
-            case 'P': //wPawn
-                cout << "wPawn\n";
+            case 'r': //Rook
+            case 'R':
+                cout << "Rook\n";
                 break;
 
-            case 'r': //bRook
-                cout << "bRook\n";
+            case 'n': //Knight
+            case 'N':
+                cout << "Knigth\n";
                 break;
 
-            case 'R': //wRook
-                cout << "wRook\n";
+            case 'b':
+            case 'B': //Bishop
+                cout << "Bishop\n";
                 break;
 
-            case 'n': //bKnight
-                cout << "bKnight\n";
+            case 'q': //Queen
+            case 'Q':
+                cout << "Queen\n";
                 break;
 
-            case 'N': //wKnight
-                cout << "wKnigth\n";
-                break;
-
-            case 'b': //bBishop
-                cout << "bBishop\n";
-                break;
-
-            case 'B': //wBishop
-                cout << "wBishop\n";
-                break;
-
-            case 'q': //bQueen
-                cout << "bQueen\n";
-                break;
-
-            case 'Q': //wQueen
-                cout << "wQueen\n";
-                break;
-
-            case 'k': //bKing
-                cout << "bKing\n";
-                break;
-
-            case 'K': //wKnight
-                cout << "wKing\n";
+            case 'k': //King
+            case 'K':
+                cout << "King\n";
                 break;
 
     }
-
-
 
 }
