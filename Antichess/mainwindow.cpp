@@ -31,7 +31,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //draw the board onto the screen
     QPixmap pix("../Antichess/images/background.png");
-    Board gameBoard;
+    gameBoard = new Board;
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -45,16 +45,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButtonClicked()));
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
     //connect(ui->resetButton, SIGNAL(clicked()), this, SLOT(on_resetButton_clicked()));
-    /*QPushButton *label = new QPushButton;
-    label->setFlat(true);
-    label->setFixedSize(50,50);
-    label->setIconSize(QSize(50,50));
-    //cout << "Drawing icon @: " << a << "," << b << ". ";
-    label->setIcon(QPixmap("../Antichess/images/Pieces/bishop_w.svg")); //icons.at(setup[a][b]
-    connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
-    //label->lower();
-    ui->squares->addWidget(label,3,4);
-*/
+
+
     setCentralWidget(stackedWidget);
 
     //import chess board image
@@ -68,8 +60,8 @@ MainWindow::MainWindow(QWidget *parent)
 
     Scene->addPixmap(pixmap.scaledToHeight(512));
     ui->boardGraphic->setScene(Scene);
-    vector<string> init = gameBoard.setBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
-    updateGUI(init);
+    gameBoard->setBoard("RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr");
+    updateGUI();
 
 
     //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
@@ -83,12 +75,12 @@ MainWindow::~MainWindow()
 }
 
 
-void MainWindow::updateGUI(vector<string> setup){
+void MainWindow::updateGUI(){
 
 
     for(int a =0;a<8;a++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
-        if(setup[a][0] == '8'){
+        if(gameBoard->currentFEN[a][0] == '8'){
             continue;
         }
         for(int b =0; b<8;b++){
@@ -98,7 +90,7 @@ void MainWindow::updateGUI(vector<string> setup){
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
             //cout << "Drawing icon @: " << a << "," << b << ". ";
-            label->setIcon(gameBoard.icons.at(setup[a][b])); //icons.at(setup[a][b]
+            label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[7-a][b])); //icons.at(setup[a][b]
 
             connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
             //label->lower();
@@ -115,10 +107,9 @@ void MainWindow::keyPressed(){
 
 
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
+    //cout<<gameBoard->currentFEN[pos->x()][pos->y()];
+
     Points point(pos);
-
-
-
 
 }
 
@@ -160,7 +151,7 @@ void MainWindow::on_exitGame_clicked()
 void MainWindow::on_resetButton_clicked()
 {
     bool reset_flag = true;
-    gameBoard.resetBoard(reset_flag);
+    gameBoard->resetBoard(reset_flag);
 
 }
 

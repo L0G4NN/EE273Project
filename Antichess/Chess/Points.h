@@ -16,6 +16,7 @@ class Points: public QPoint, public Board, public clickablelabels, public MainWi
 public:
     Points();
     Points(clickablelabels* label);
+    Points(vector<string> FEN);
     pair<int,int> getClickLocation();
     void showMoves();
 

@@ -8,6 +8,7 @@
 #include "Knight.h"
 #include "Rook.h"
 #include "../mainwindow.h"
+#include "Points.h"
 
 #include "Pieces.h"
 
@@ -83,7 +84,7 @@ Board::~Board()
 
 }
 
-vector<string> Board::setBoard(string FEN )
+void Board::setBoard(string FEN )
 {
     this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
 
@@ -93,9 +94,9 @@ vector<string> Board::setBoard(string FEN )
 
      //Forsyth Edward Notation: https://www.chessprogramming.org/Forsyth-Edwards_Notation
     std::stringstream startBoard(FEN);
-    board = setFEN(startBoard);
+    currentFEN = setFEN(startBoard);
 
-    return board;
+
 }
 
 
@@ -136,13 +137,14 @@ vector<std::string> Board::setFEN(stringstream& setup){
 
 //}
 
-char Board::readFEN() {
-
-    //Take the location to be read
-
-
-    //return char
+char Board::readFEN(int x, int y) {
     char piece_char;
+    piece_char = currentFEN[x][y];
+    //cerr<<piece_char<<endl;
+    //Take the location to be read
+    //cout<<piece_char<<endl;
+    //return char
+
     return piece_char;
 
 }

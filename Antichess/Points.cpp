@@ -10,6 +10,7 @@ Points::Points(){
 
 }
 
+
 Points::Points(QPushButton* pos){
 
     //QPixmap dot("../Antichess/images/dot2.svg");
@@ -18,7 +19,8 @@ Points::Points(QPushButton* pos){
     //cout<<pos->x()<<","<<pos->width()<<endl;
 
     m_x = floor(pos->x()/pos->width());
-    m_y = floor(7-(pos->y()/pos->height())); //translates pixel postion to vector coordinate
+    m_y = floor(7-(pos->y()/pos->height()));
+    //translates pixel postion to vector coordinate
 
     getClickLocation();
     showMoves();
@@ -43,59 +45,59 @@ void Points::showMoves(){
     //get the current click location and identify what piece is on the board
 
     //switch case to determine how that piece moves around the board
-
-    char piece_char = 'k'; //rn manually setting the case statments
+    cout<<m_x<<","<<m_y<<endl;
+    char piece_char = gameBoard->readFEN(m_y,m_x); //rn manually setting the case statments
 
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
     switch(piece_char) {
-            case 'p': //bPawn
-                cout << "pPawn\n";
+            case 'p' : //bPawn
+                cerr << "bPawn\n";
                 break;
 
             case 'P': //wPawn
-                cout << "wPawn\n";
+                cerr << "wPawn\n";
                 break;
 
             case 'r': //bRook
-                cout << "bRook\n";
+                cerr << "bRook\n";
                 break;
 
             case 'R': //wRook
-                cout << "wRook\n";
+                cerr << "wRook\n";
                 break;
 
             case 'n': //bKnight
-                cout << "bKnight\n";
+                cerr << "bKnight\n";
                 break;
 
             case 'N': //wKnight
-                cout << "wKnigth\n";
+                cerr << "wKnight\n";
                 break;
 
             case 'b': //bBishop
-                cout << "bBishop\n";
+                cerr << "bBishop\n";
                 break;
 
             case 'B': //wBishop
-                cout << "wBishop\n";
+                cerr << "wBishop\n";
                 break;
 
             case 'q': //bQueen
-                cout << "bQueen\n";
+                cerr << "bQueen\n";
                 break;
 
             case 'Q': //wQueen
-                cout << "wQueen\n";
+                cerr << "wQueen\n";
                 break;
 
             case 'k': //bKing
-                cout << "bKing\n";
+                cerr << "bKing\n";
                 break;
 
             case 'K': //wKnight
-                cout << "wKing\n";
+                cerr << "wKing\n";
                 break;
 
     }

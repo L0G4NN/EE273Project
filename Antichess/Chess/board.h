@@ -23,13 +23,14 @@ public:
     Board();
     ~Board();
 
-    std::vector<std::string> setBoard(string FEN); //uknown args atm
+    void setBoard(string FEN); //uknown args atm
     bool isSetup();
     bool resetBoard(bool reset_flag);
     std::vector<std::string> setFEN(std::stringstream& setup);
-    char readFEN();
+    char readFEN(int x, int y);
     vector<pair<int,int>> showMoves();
     map<char,QPixmap> icons;
+    vector<string> currentFEN;
 
 
 
@@ -47,7 +48,7 @@ private:
 
     std::vector<std::vector<int>> boardVector;
 protected:
-    vector<string> board;
+
 
 
 

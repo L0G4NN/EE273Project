@@ -29,7 +29,7 @@ class MainWindow : public QMainWindow
 public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
-    void updateGUI(vector<string> setup);
+    void updateGUI();
 
 
 
@@ -51,7 +51,7 @@ private slots:
 
 protected:
     Ui::MainWindow *ui;
-    Board gameBoard;
+    Board* gameBoard;
     vector<pair<int,int>> m_moves;
 
 private:
