@@ -42,7 +42,7 @@ MainWindow::MainWindow(QWidget *parent)
     stackedWidget->setCurrentIndex(0);
 
     //implementation of buttons
-    connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButtonClicked()));
+    connect(ui->startButton, SIGNAL(clicked()), this, SLOT(on_startButton_clicked()));
     connect(ui->mainMenuButton, SIGNAL(clicked()), this, SLOT(on_mainMenuButton_clicked()));
     //connect(ui->resetButton, SIGNAL(clicked()), this, SLOT(on_resetButton_clicked()));
 
@@ -89,13 +89,13 @@ void MainWindow::updateGUI(){
             label->setFlat(true);
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
+            label->setCheckable(true);
             //cout << "Drawing icon @: " << a << "," << b << ". ";
-            label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[7-a][b])); //icons.at(setup[a][b]
+            label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[a][b])); //icons.at(setup[a][b]
 
-            connect(label, SIGNAL(clicked()), this, SLOT(keyPressed()));
-            //label->lower();
+            connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
+
             ui->squares->addWidget(label,a,b,Qt::AlignCenter);
-
 
         }
     }
@@ -103,21 +103,44 @@ void MainWindow::updateGUI(){
 
 }
 
-void MainWindow::keyPressed(){
+void MainWindow::keyPressed(bool checked){
 
 
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
     //cout<<gameBoard->currentFEN[pos->x()][pos->y()];
-
     Points point(pos);
+    vector<pair<int,int>> moves = point.getMoves();
+
+
+    if(checked){
+
+
+    for(int a = 0;a<15;a++){
+
+        QPushButton *mLabel = new QPushButton;
+        mLabel->setFlat(true);
+        mLabel->setFixedSize(54,56);
+        mLabel->setIconSize(QSize(50,50));
+
+        //cout << "Drawing icon @: " << a << "," << b << ". ";
+        mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
+
+
+        connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed()));
+        //label->lower();
+        ui->squares->addWidget(mLabel,moves[a].first,moves[a].second,Qt::AlignCenter);
+
+    }
+    }
+
+    else{
+        cerr<<"unchecked"<<endl;
+
+
+    }
 
 }
 
-
-vector<pair<int,int>> MainWindow::getMoves(){
-
-    return m_moves ;
-}
 
 
 void MainWindow::on_startButton_clicked()

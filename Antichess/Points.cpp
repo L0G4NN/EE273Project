@@ -23,7 +23,9 @@ Points::Points(QPushButton* pos){
     //translates pixel postion to vector coordinate
 
     getClickLocation();
-    showMoves();
+    //showMoves();
+
+
 
 
     //std::cout  << "piece selected @ : " << m_x << ", " << m_y << std::endl; //show coordinates where clicked
@@ -38,7 +40,7 @@ pair<int,int> Points::getClickLocation(){
 }
 
 
-void Points::showMoves(){
+vector<pair<int,int>> Points::getMoves(){
 
     //QPixmap dot("../Antichess/images/dot2.svg");
 
@@ -51,13 +53,17 @@ void Points::showMoves(){
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
+    //I DONT THINK THE ORIGIN IS BOTTOM LEFT ANYMORE- NEED SOME INVESTIGATION
     switch(piece_char) {
             case 'p' : //bPawn
                 cerr << "bPawn\n";
+                moves.push_back({(m_x)+1,(m_y)+1});
+
                 break;
 
             case 'P': //wPawn
                 cerr << "wPawn\n";
+                moves.push_back({(m_x)+1,(m_y)+1});
                 break;
 
             case 'r': //bRook
@@ -78,10 +84,25 @@ void Points::showMoves(){
 
             case 'b': //bBishop
                 cerr << "bBishop\n";
+                for (int a = 0; a <=7; a++)
+                {
+
+                     moves.push_back({a,a+(m_y-m_x)});
+                     moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
+
+                }
                 break;
 
             case 'B': //wBishop
                 cerr << "wBishop\n";
+                for (int a = 0; a <=7; a++)
+                {
+
+                     moves.push_back({a,a+(m_y-m_x)});
+                     moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
+
+                }
+
                 break;
 
             case 'q': //bQueen
@@ -102,6 +123,8 @@ void Points::showMoves(){
 
     }
 
+
+    return moves;
 
 
 }

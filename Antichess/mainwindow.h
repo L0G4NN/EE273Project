@@ -35,7 +35,7 @@ public:
 
 private slots:
 
-    void keyPressed();
+    void keyPressed(bool checked);
 
     void on_startButton_clicked();
 
@@ -47,12 +47,11 @@ private slots:
 
     void on_resetButton_clicked();
 
-    vector<pair<int,int>> getMoves();
 
 protected:
     Ui::MainWindow *ui;
     Board* gameBoard;
-    vector<pair<int,int>> m_moves;
+
 
 private:
     QStackedWidget *stackedWidget;
