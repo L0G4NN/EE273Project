@@ -114,7 +114,7 @@ void MainWindow::keyPressed(bool checked){
     Points point(pos);
 
     vector<pair<int,int>> moves = point.getMoves();
-
+    vector<QPushButton*> buttons;
 
     if(checked){
 
@@ -126,6 +126,8 @@ void MainWindow::keyPressed(bool checked){
         mLabel->setFixedSize(54,56);
         mLabel->setIconSize(QSize(50,50));
 
+
+        buttons.push_back(mLabel);
         //cout << "Drawing icon @: " << a << "," << b << ". ";
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
@@ -138,8 +140,11 @@ void MainWindow::keyPressed(bool checked){
     }
     }
 
-    else{
-        cerr<<"unchecked"<<endl;
+    if(!checked){
+        cout<<"unchecked"<<endl;
+        for(int x = 0; x<8 ;x++){
+            buttons[0]->deleteLater();
+        }
 
 
     }
