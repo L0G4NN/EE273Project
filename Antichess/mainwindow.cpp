@@ -79,12 +79,12 @@ void MainWindow::updateGUI(){
 
 
 
-    for(int a =0;a<8;a++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
+    for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
-        if(gameBoard->currentFEN[a][0] == '8'){
+        if(gameBoard->currentFEN[0][b] == '8'){
             continue;
         }
-        for(int b =0; b<8;b++){
+        for(int a =0; a<8;a++){
 
             cout<<a<<","<<b<<endl;
             QPushButton *label = new QPushButton;
