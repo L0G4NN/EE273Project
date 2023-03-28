@@ -139,7 +139,7 @@ vector<std::string> Board::setFEN(stringstream& setup){
 
 char Board::readFEN(int x, int y) {
     char piece_char;
-    piece_char = currentFEN[x][y];
+    piece_char = currentFEN[y][x];
     //cerr<<piece_char<<endl;
     //Take the location to be read
     //cout<<piece_char<<endl;

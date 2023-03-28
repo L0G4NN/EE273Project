@@ -78,6 +78,7 @@ MainWindow::~MainWindow()
 void MainWindow::updateGUI(){
 
 
+
     for(int a =0;a<8;a++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
         if(gameBoard->currentFEN[a][0] == '8'){
@@ -85,6 +86,7 @@ void MainWindow::updateGUI(){
         }
         for(int b =0; b<8;b++){
 
+            cout<<a<<","<<b<<endl;
             QPushButton *label = new QPushButton;
             label->setFlat(true);
             label->setFixedSize(54,56);
@@ -92,10 +94,11 @@ void MainWindow::updateGUI(){
             label->setCheckable(true);
             //cout << "Drawing icon @: " << a << "," << b << ". ";
             label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[a][b])); //icons.at(setup[a][b]
-
+            cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
 
             ui->squares->addWidget(label,a,b,Qt::AlignCenter);
+
 
         }
     }
@@ -109,6 +112,7 @@ void MainWindow::keyPressed(bool checked){
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
     //cout<<gameBoard->currentFEN[pos->x()][pos->y()];
     Points point(pos);
+
     vector<pair<int,int>> moves = point.getMoves();
 
 
@@ -129,6 +133,7 @@ void MainWindow::keyPressed(bool checked){
         connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed()));
         //label->lower();
         ui->squares->addWidget(mLabel,moves[a].first,moves[a].second,Qt::AlignCenter);
+
 
     }
     }
