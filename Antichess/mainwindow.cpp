@@ -57,7 +57,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     Scene = new QGraphicsScene(this);
 
-
+    ui->squares->setOriginCorner(Qt::BottomLeftCorner);
     Scene->addPixmap(pixmap.scaledToHeight(512));
     ui->boardGraphic->setScene(Scene);
     gameBoard->setBoard("RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr");
@@ -81,7 +81,7 @@ void MainWindow::updateGUI(){
 
     for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
-        if(gameBoard->currentFEN[0][b] == '8'){
+        if(gameBoard->currentFEN[b][0] == '8'){
             continue;
         }
         for(int a =0; a<8;a++){
@@ -93,11 +93,11 @@ void MainWindow::updateGUI(){
             label->setIconSize(QSize(50,50));
             label->setCheckable(true);
             //cout << "Drawing icon @: " << a << "," << b << ". ";
-            label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[a][b])); //icons.at(setup[a][b]
+            label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[b][a])); //icons.at(setup[a][b]
             cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
 
-            ui->squares->addWidget(label,a,b,Qt::AlignCenter);
+            ui->squares->addWidget(label,b,a,Qt::AlignCenter);
 
 
         }
