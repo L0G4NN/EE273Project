@@ -92,7 +92,6 @@ void MainWindow::updateGUI(){
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
             label->setCheckable(true);
-            //cout << "Drawing icon @: " << a << "," << b << ". ";
             label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[b][a])); //icons.at(setup[a][b]
             cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
@@ -120,6 +119,7 @@ void MainWindow::keyPressed(bool checked){
 
 
     for(int a = 0;a<15;a++){
+         cout<<buttons.size()<<endl;
 
         QPushButton *mLabel = new QPushButton;
         mLabel->setFlat(true);
@@ -132,9 +132,11 @@ void MainWindow::keyPressed(bool checked){
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
 
-        connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed()));
+       // connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
         //label->lower();
         ui->squares->addWidget(mLabel,moves[a].first,moves[a].second,Qt::AlignCenter);
+
+
 
 
     }
@@ -142,8 +144,12 @@ void MainWindow::keyPressed(bool checked){
 
     if(!checked){
         cout<<"unchecked"<<endl;
+
         for(int x = 0; x<8 ;x++){
-            buttons[0]->deleteLater();
+
+
+
+
         }
 
 

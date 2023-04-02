@@ -88,6 +88,7 @@ vector<pair<int,int>> Points::getMoves(){
                 for (int a = 0; a <=7; a++)
                 {
 
+
                      moves.push_back({a,a+(m_y-m_x)});
                      moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
 
@@ -96,8 +97,9 @@ vector<pair<int,int>> Points::getMoves(){
 
             case 'B': //wBishop
                 cerr << "wBishop\n";
-                for (int a = 0; a <=7; a++)
+                for (int a = 1; a <=7; a++)
                 {
+
 
                      moves.push_back({a,a+(m_y-m_x)});
                      moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
@@ -123,7 +125,6 @@ vector<pair<int,int>> Points::getMoves(){
                 break;
 
     }
-
 
     return moves;
 
