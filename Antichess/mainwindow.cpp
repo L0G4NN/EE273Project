@@ -86,14 +86,14 @@ void MainWindow::updateGUI(){
         }
         for(int a =0; a<8;a++){
 
-            cout<<a<<","<<b<<endl;
+            //cout<<a<<","<<b<<endl;
             QPushButton *label = new QPushButton;
             label->setFlat(true);
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
             label->setCheckable(true);
             label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[b][a])); //icons.at(setup[a][b]
-            cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
+            //cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
 
             ui->squares->addWidget(label,b,a,Qt::AlignCenter);
@@ -119,8 +119,9 @@ void MainWindow::keyPressed(bool checked){
 
 
     for(int a = 0;a<15;a++){
-         cout<<buttons.size()<<endl;
+        //cout<<buttons.size()<<endl;
 
+        //setup a new move label
         QPushButton *mLabel = new QPushButton;
         mLabel->setFlat(true);
         mLabel->setFixedSize(54,56);
@@ -128,22 +129,21 @@ void MainWindow::keyPressed(bool checked){
 
 
         buttons.push_back(mLabel);
-        //cout << "Drawing icon @: " << a << "," << b << ". ";
+        //cout << "Drawing mLabels @: " << a << "," << b << endl; //b undeclared
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
 
-       // connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
+        //connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
         //label->lower();
-        ui->squares->addWidget(mLabel,moves[a].first,moves[a].second,Qt::AlignCenter);
 
-
+        //ui->squares->addWidget(mLabel, moves[a].first, moves[a].second, Qt::AlignCenter); //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
 
 
     }
     }
 
     if(!checked){
-        cout<<"unchecked"<<endl;
+    cout << "unchecked " << endl;
 
         for(int x = 0; x<8 ;x++){
 
@@ -161,7 +161,7 @@ void MainWindow::keyPressed(bool checked){
 
 void MainWindow::on_startButton_clicked()
 {
-    std::cerr << "START GAME PRESSED\n";
+    //std::cerr << "START GAME PRESSED\n";
     stackedWidget->setCurrentWidget(ui->Game);
 }
 
@@ -175,7 +175,7 @@ void MainWindow::on_rulesButton_clicked()
 
 void MainWindow::on_mainMenuButton_clicked()
 {
-    std::cerr << "GOING TO MAIN MENU\n";
+    //std::cerr << "GOING TO MAIN MENU\n";
     stackedWidget->setCurrentWidget(ui->StartPage);
 }
 

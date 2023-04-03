@@ -41,24 +41,26 @@ pair<int,int> Points::getClickLocation(){
 
 
 vector<pair<int,int>> Points::getMoves(){
-    cout<<"Current cord"<<m_x<<","<<m_y<<endl;
+    cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
 
     //QPixmap dot("../Antichess/images/dot2.svg");
 
     //get the current click location and identify what piece is on the board
 
     //switch case to determine how that piece moves around the board
-    cout<<m_x<<","<<m_y<<endl;
+    //cout<<m_x<<","<<m_y<<endl;
     char piece_char = gameBoard->readFEN(m_x,m_y); //rn manually setting the case statments
 
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
     //I DONT THINK THE ORIGIN IS BOTTOM LEFT ANYMORE- NEED SOME INVESTIGATION
+
     switch(piece_char) {
             case 'p' : //bPawn
                 cerr << "bPawn\n";
-                moves.push_back({(m_x)+1,(m_y)+1});
+                moves.push_back({(m_x)-1,(m_y)-1});
+                //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
 
                 break;
 

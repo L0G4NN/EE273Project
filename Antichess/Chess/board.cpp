@@ -108,6 +108,7 @@ bool Board::resetBoard(bool reset_flag)
         std::cerr << "Resetting game!\n";
         //Board::setBoard(); //currently causes crashes when enabled
         //Board.setFEN(this->defaultBoard);
+
         return true;
 
     }
