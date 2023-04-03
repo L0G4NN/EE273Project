@@ -109,7 +109,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
                                            //seems as if all peices are behaving like bishops
 
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
-    cout << gameBoard->currentFEN[pos->x()][pos->y()];
+    //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
     Points point(pos);
 
     vector<pair<int,int>> moves = point.getMoves();
@@ -129,11 +129,8 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
         buttons.push_back(mLabel);
-<<<<<<< Updated upstream
         //cout << "Drawing mLabels @: " << a << "," << b << endl; //b undeclared
-=======
         //cout << "\nmoves available @: " << a << "," << a << ". ";
->>>>>>> Stashed changes
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
 

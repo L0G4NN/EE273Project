@@ -54,25 +54,17 @@ vector<pair<int,int>> Points::getMoves(){
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
-<<<<<<< Updated upstream
     //I DONT THINK THE ORIGIN IS BOTTOM LEFT ANYMORE- NEED SOME INVESTIGATION
-=======
->>>>>>> Stashed changes
 
     switch(piece_char) {
             case 'p' : //bPawn
-                cerr << "bPawn\n";
-<<<<<<< Updated upstream
-                moves.push_back({(m_x)-1,(m_y)-1});
                 //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
-=======
->>>>>>> Stashed changes
 
                 if(m_x == 6) { //if pawn is at default start pos it can move 2 places
-                    moves.push_back({(m_x),(m_y)+2});
+                    moves.push_back({(m_x),(m_y)-2});
                 }
                 else {
-                    moves.push_back({(m_x),(m_y)+1}); //default movement
+                    moves.push_back({(m_x),(m_y)-1}); //default movement
                 }
                 break;
 
