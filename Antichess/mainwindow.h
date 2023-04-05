@@ -59,6 +59,7 @@ private:
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;
     QPainter gridPainter;
+    vector<QPushButton*> buttons;
 
     int m_x;
     int m_y;

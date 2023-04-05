@@ -41,6 +41,7 @@ pair<int,int> Points::getClickLocation(){
 
 
 vector<pair<int,int>> Points::getMoves(){
+    moves.clear();
     cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
 
     //QPixmap dot("../Antichess/images/dot2.svg");
@@ -98,9 +99,10 @@ vector<pair<int,int>> Points::getMoves(){
 
             case 'b': //bBishop
                 cerr << "bBishop\n";
-                for (int a = 0; a <=7; a++)
+                for (int a = 2; a <=10; a++)
                 {
-
+                    if(a+(m_y-m_x) < 0){
+                    continue;}
 
                      moves.push_back({a,a+(m_y-m_x)});
                      moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
@@ -110,9 +112,8 @@ vector<pair<int,int>> Points::getMoves(){
 
             case 'B': //wBishop
                 cerr << "wBishop\n";
-                for (int a = 1; a <=7; a++)
+                for (int a = 0; a <=7; a++)
                 {
-
 
                      moves.push_back({a,a+(m_y-m_x)});
                      moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
@@ -138,6 +139,8 @@ vector<pair<int,int>> Points::getMoves(){
                 break;
 
     }
+    for(auto a : moves){
+       cout<<a.first<<","<<a.second<<"\n";    }
 
     return moves;
 

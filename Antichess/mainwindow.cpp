@@ -93,10 +93,11 @@ void MainWindow::updateGUI(){
             label->setIconSize(QSize(50,50));
             label->setCheckable(true);
             label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[b][a])); //icons.at(setup[a][b]
+            label->lower();
             //cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
 
-            ui->squares->addWidget(label,b,a,Qt::AlignCenter);
+            ui->squares->addWidget(label,b,a,1,1,Qt::AlignCenter);
 
 
         }
@@ -108,23 +109,31 @@ void MainWindow::updateGUI(){
 void MainWindow::keyPressed(bool checked){ //Possible error here need to investigate
                                            //seems as if all peices are behaving like bishops
 
+
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
     //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
     Points point(pos);
+    cout<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
+
 
     vector<pair<int,int>> moves = point.getMoves();
-    vector<QPushButton*> buttons;
+
 
     if(checked){
+     buttons.clear();
+     cout<<"Checked"<<endl;
 
-
-    for(int a = 0;a<15;a++){
+    for(auto b : moves){
         //cout<<buttons.size()<<endl;
-
+        //cout<<b.first<<","<<b.second<<endl;
         //setup a new move label
+        if(b.first == floor(pos->x()/pos->width()) and b.second == floor(7-(pos->y()/pos->height()))){
+            cout<<"hit"<<endl;
+            continue;
+        }
         QPushButton *mLabel = new QPushButton;
         mLabel->setFlat(true);
-        mLabel->setFixedSize(54,56);
+        mLabel->setFixedSize(45,45);
         mLabel->setIconSize(QSize(50,50));
 
 
@@ -134,10 +143,11 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
 
-        //connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
-        //label->lower();
+        connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
+        mLabel->raise();
 
-        //ui->squares->addWidget(mLabel, moves[a].first, moves[a].second, Qt::AlignCenter); //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
+        ui->squares->addWidget(mLabel, b.second, b.first, Qt::AlignCenter); //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
+
 
 
     }
@@ -145,16 +155,14 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
     if(!checked){
     cout << "unchecked " << endl;
+    for(auto c:buttons){
 
-        for(int x = 0; x<8 ;x++){
-
-
-
+        c->deleteLater();
 
         }
 
-
     }
+
 
 }
 
