@@ -32,5 +32,9 @@ private:
     bool clicked;
     vector<pair<int,int>> moves;
 
+    vector<pair<int,int>>::iterator it;
+
+
+
 
 };

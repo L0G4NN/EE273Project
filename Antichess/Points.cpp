@@ -60,24 +60,15 @@ vector<pair<int,int>> Points::getMoves(){
     switch(piece_char) {
             case 'p' : //bPawn
                 //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
-
-                if(m_x == 6) { //if pawn is at default start pos it can move 2 places
-                    moves.push_back({(m_x),(m_y)-2});
-                }
-                else {
                     moves.push_back({(m_x),(m_y)-1}); //default movement
-                }
+
                 break;
 
             case 'P': //wPawn
                 cerr << "wPawn\n";
 
-                if(m_x == 1) { //if pawn is at default start pos it can move 2 places
-                    moves.push_back({(m_x),(m_y)+2});
-                }
-                else {
                     moves.push_back({(m_x),(m_y)+1}); //default movement
-                }
+
                 break;
 
 
@@ -99,13 +90,11 @@ vector<pair<int,int>> Points::getMoves(){
 
             case 'b': //bBishop
                 cerr << "bBishop\n";
-                for (int a = 2; a <=10; a++)
+                for (int a = 0; a <=7; a++)
                 {
-                    if(a+(m_y-m_x) < 0){
-                    continue;}
 
-                     moves.push_back({a,a+(m_y-m_x)});
-                     moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
+                     moves.push_back({a,abs(a+(m_y-m_x))});
+                     moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
 
                 }
                 break;
@@ -115,8 +104,8 @@ vector<pair<int,int>> Points::getMoves(){
                 for (int a = 0; a <=7; a++)
                 {
 
-                     moves.push_back({a,a+(m_y-m_x)});
-                     moves.push_back({a,(2*m_y) - (a+(m_y-m_x))});
+                     moves.push_back({a,abs(a+(m_y-m_x))});
+                     moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
 
                 }
 
@@ -139,6 +128,11 @@ vector<pair<int,int>> Points::getMoves(){
                 break;
 
     }
+
+
+    it = unique(moves.begin(),moves.end());
+    moves.resize(distance(moves.begin(),it));
+
     for(auto a : moves){
        cout<<a.first<<","<<a.second<<"\n";    }
 

@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     //draw the board onto the screen
     QPixmap pix("../Antichess/images/background.png");
     gameBoard = new Board;
+    prev = new QPushButton;
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -109,8 +110,9 @@ void MainWindow::updateGUI(){
 void MainWindow::keyPressed(bool checked){ //Possible error here need to investigate
                                            //seems as if all peices are behaving like bishops
 
-
+    prev -> setChecked(false);
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
+    prev = pos;
     //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
     Points point(pos);
     cout<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
@@ -121,6 +123,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
     if(checked){
      buttons.clear();
+
      cout<<"Checked"<<endl;
 
     for(auto b : moves){
@@ -131,10 +134,13 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
             cout<<"hit"<<endl;
             continue;
         }
+
+
         QPushButton *mLabel = new QPushButton;
         mLabel->setFlat(true);
         mLabel->setFixedSize(45,45);
         mLabel->setIconSize(QSize(50,50));
+
 
 
         buttons.push_back(mLabel);
