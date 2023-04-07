@@ -4,6 +4,7 @@
 #include "Chess/board.h"
 #include <QPushButton>
 #include <QPoint>
+#include <algorithm>
 
 
 Points::Points(){
@@ -39,9 +40,20 @@ pair<int,int> Points::getClickLocation(){
     return{m_x,m_y};
 }
 
+bool isLegal(pair<int,int> b){
+
+    if(b.first >7 or b.second > 7){
+        return false;
+    }
+
+    return true;
+
+}
+
 
 vector<pair<int,int>> Points::getMoves(){
     moves.clear();
+    int x = 0;
     cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
 
     //QPixmap dot("../Antichess/images/dot2.svg");
@@ -74,28 +86,62 @@ vector<pair<int,int>> Points::getMoves(){
 
             case 'r': //bRook
                 cerr << "bRook\n";
+
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                }
                 break;
 
             case 'R': //wRook
                 cerr << "wRook\n";
+
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                }
                 break;
 
             case 'n': //bKnight
                 cerr << "bKnight\n";
+                moves.push_back({m_x+1,m_y+2});
+                moves.push_back({m_x+2,m_y+1});
+
+                moves.push_back({m_x+1,abs(m_y-2)});
+                moves.push_back({m_x+2,abs(m_y-1)});
+
+                moves.push_back({abs(m_x-1),m_y+2});
+                moves.push_back({abs(m_x-2),m_y+1});
+
+                moves.push_back({abs(m_x-1),abs(m_y-2)});
+                moves.push_back({abs(m_x-2),abs(m_y-1)});
+
+                for(auto a : moves){
+                    cout<<a.first<<","<<a.second<<endl;
+                }
                 break;
 
             case 'N': //wKnight
                 cerr << "wKnight\n";
+                moves.push_back({m_x+1,m_y+2});
+                moves.push_back({m_x+2,m_y+1});
+
+                moves.push_back({abs(m_x-1),m_y+2});
+                moves.push_back({abs(m_x-2),m_y+1});
+
+                moves.push_back({m_x+1,abs(m_y-2)});
+                moves.push_back({m_x+2,abs(m_y-1)});
+
+                moves.push_back({abs(m_x-1),abs(m_y-2)});
+                moves.push_back({abs(m_x-2),abs(m_y-1)});
                 break;
 
             case 'b': //bBishop
                 cerr << "bBishop\n";
                 for (int a = 0; a <=7; a++)
                 {
-
                      moves.push_back({a,abs(a+(m_y-m_x))});
                      moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
-
                 }
                 break;
 
@@ -103,24 +149,36 @@ vector<pair<int,int>> Points::getMoves(){
                 cerr << "wBishop\n";
                 for (int a = 0; a <=7; a++)
                 {
-
                      moves.push_back({a,abs(a+(m_y-m_x))});
                      moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
-
                 }
 
                 break;
 
             case 'q': //bQueen
                 cerr << "bQueen\n";
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                    moves.push_back({a,abs(a+(m_y-m_x))});
+                    moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
+                }
                 break;
 
             case 'Q': //wQueen
                 cerr << "wQueen\n";
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                    moves.push_back({a,abs(a+(m_y-m_x))});
+                    moves.push_back({a,abs((2*m_y) - (a+(m_y-m_x)))});
+                }
                 break;
 
             case 'k': //bKing
                 cerr << "bKing\n";
+
+
                 break;
 
             case 'K': //wKnight
@@ -130,11 +188,19 @@ vector<pair<int,int>> Points::getMoves(){
     }
 
 
-    it = unique(moves.begin(),moves.end());
-    moves.resize(distance(moves.begin(),it));
 
-    for(auto a : moves){
-       cout<<a.first<<","<<a.second<<"\n";    }
+    it = unique(moves.begin(),moves.end());
+    newit = remove_if(moves.begin(),moves.end(),[](pair<int,int> b){return (b.first > 7 or b.second > 7);});
+    moves.resize(distance(moves.begin(),newit));
+
+
+
+
+
+
+    for(auto b: moves){
+       cout<<"new2"<<b.first<<","<<b.second<<"\n";
+    }
 
     return moves;
 

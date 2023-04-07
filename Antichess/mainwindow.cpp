@@ -33,6 +33,9 @@ MainWindow::MainWindow(QWidget *parent)
     QPixmap pix("../Antichess/images/background.png");
     gameBoard = new Board;
     prev = new QPushButton;
+    buttons = new vector<QPushButton*>;
+
+
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -122,7 +125,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
     if(checked){
-     buttons.clear();
+     buttons->clear();
 
      cout<<"Checked"<<endl;
 
@@ -143,7 +146,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
 
-        buttons.push_back(mLabel);
+        buttons->push_back(mLabel);
         //cout << "Drawing mLabels @: " << a << "," << b << endl; //b undeclared
         //cout << "\nmoves available @: " << a << "," << a << ". ";
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
@@ -161,7 +164,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
     if(!checked){
     cout << "unchecked " << endl;
-    for(auto c:buttons){
+    for(auto c:*buttons){
 
         c->deleteLater();
 

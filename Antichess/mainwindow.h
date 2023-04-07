@@ -57,9 +57,9 @@ private:
     QStackedWidget *stackedWidget;
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
-    //QGraphicsPixmapItem *board;
-    QPainter gridPainter;
-    vector<QPushButton*> buttons;
+    //QGraphicsPixmapItem *board;  
+    vector<QPushButton*> *buttons;
+
 
     QPushButton *prev;
     int m_x;
