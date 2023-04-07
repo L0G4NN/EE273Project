@@ -47,6 +47,8 @@ private slots:
 
     void on_resetButton_clicked();
 
+    void dotPressed();
+
 
 protected:
     Ui::MainWindow *ui;
@@ -58,7 +60,8 @@ private:
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;  
-    vector<QPushButton*> *buttons;
+    vector<QPushButton*> *buttons,*pieces;
+
 
 
     QPushButton *prev;

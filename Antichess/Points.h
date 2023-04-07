@@ -19,7 +19,7 @@ public:
     Points(QPushButton* pos);
     pair<int,int> getClickLocation();
     vector<pair<int,int>> getMoves();
-    bool isLegal(pair<int,int>);
+
 
 private slots:
     void onClick();

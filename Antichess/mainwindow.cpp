@@ -34,6 +34,8 @@ MainWindow::MainWindow(QWidget *parent)
     gameBoard = new Board;
     prev = new QPushButton;
     buttons = new vector<QPushButton*>;
+    pieces = new vector<QPushButton*>;
+
 
 
     ui->Start_image->setPixmap(pix);
@@ -64,7 +66,7 @@ MainWindow::MainWindow(QWidget *parent)
     ui->squares->setOriginCorner(Qt::BottomLeftCorner);
     Scene->addPixmap(pixmap.scaledToHeight(512));
     ui->boardGraphic->setScene(Scene);
-    gameBoard->setBoard("RNBQKBNR/PPPPPPPP/8/8/8/8/pppppppp/rnbqkbnr");
+    gameBoard->setBoard("RNBQKBNR/PPPPPPPP/88888888/88888888/88888888/88888888/pppppppp/rnbqkbnr");
     updateGUI();
 
 
@@ -82,15 +84,15 @@ MainWindow::~MainWindow()
 void MainWindow::updateGUI(){
 
 
-
     for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
-        if(gameBoard->currentFEN[b][0] == '8'){
-            continue;
-        }
+
         for(int a =0; a<8;a++){
 
             //cout<<a<<","<<b<<endl;
+            if(gameBoard->currentFEN[b][a] == '8'){
+                continue;
+            }
             QPushButton *label = new QPushButton;
             label->setFlat(true);
             label->setFixedSize(54,56);
@@ -100,6 +102,7 @@ void MainWindow::updateGUI(){
             label->lower();
             //cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
+            pieces->push_back(label);
 
             ui->squares->addWidget(label,b,a,1,1,Qt::AlignCenter);
 
@@ -107,6 +110,31 @@ void MainWindow::updateGUI(){
         }
     }
     cout << "Icons drawn successfully" << endl;
+
+}
+
+
+void MainWindow:: dotPressed(){
+
+    cout<<"dot pressed"<<endl;
+    QPushButton* pos = qobject_cast<QPushButton*>(sender());
+    cout<<pos->x()<<","<<pos->y();
+
+    cout<<"Point Position is: "<<floor(pos->x()/(pos->width()))<<","<<floor(7-(pos->y()/(pos->height())))<<endl;
+    cout<<"Piece position is: "<<floor(prev->x()/prev->width())<<","<<floor(7-(prev->y()/prev->height()))<<endl;
+    cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
+    cout<<gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))]<<endl;
+
+    std::swap(gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))],gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]);
+    cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
+
+    for(auto c: gameBoard->currentFEN){
+        cout<<c<<endl;
+    }
+    updateGUI();
+
+
+
 
 }
 
@@ -130,18 +158,21 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
      cout<<"Checked"<<endl;
 
     for(auto b : moves){
-        //cout<<buttons.size()<<endl;
-        //cout<<b.first<<","<<b.second<<endl;
+        cout<<b.first<<","<<b.second<<endl;
         //setup a new move label
         if(b.first == floor(pos->x()/pos->width()) and b.second == floor(7-(pos->y()/pos->height()))){
             cout<<"hit"<<endl;
             continue;
         }
 
+        if(gameBoard->currentFEN[b.second][b.first] != '8'){
+            continue;
+        }
+
 
         QPushButton *mLabel = new QPushButton;
         mLabel->setFlat(true);
-        mLabel->setFixedSize(45,45);
+        mLabel->setFixedSize(54,56);
         mLabel->setIconSize(QSize(50,50));
 
 
@@ -152,8 +183,9 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
 
 
-        connect(mLabel, SIGNAL(clicked()), this, SLOT(keyPressed(bool)));
+        connect(mLabel, SIGNAL(clicked()), this, SLOT(dotPressed()));
         mLabel->raise();
+
 
         ui->squares->addWidget(mLabel, b.second, b.first, Qt::AlignCenter); //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
 

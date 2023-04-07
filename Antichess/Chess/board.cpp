@@ -6,6 +6,7 @@
 #include "Pawn.h"
 #include "Bishop.h"
 #include "Knight.h"
+#include "blank.h"
 #include "Rook.h"
 #include "../mainwindow.h"
 #include "Points.h"
@@ -59,6 +60,7 @@ Board::Board()
     Knight wKnight('w');
     Rook wRook('w');
     Pawn wPawn('w');
+    Blank blank;
 
     icons = {
         {'k',bKing.getIcon()},
@@ -74,7 +76,7 @@ Board::Board()
         {'N',wKnight.getIcon()},
         {'R',wRook.getIcon()},
         {'P',wPawn.getIcon()},
-        {'8',wPawn.getIcon()}
+        {'8',blank.getIcon()}
     };
 
 }

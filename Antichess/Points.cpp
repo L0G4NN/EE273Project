@@ -40,16 +40,6 @@ pair<int,int> Points::getClickLocation(){
     return{m_x,m_y};
 }
 
-bool isLegal(pair<int,int> b){
-
-    if(b.first >7 or b.second > 7){
-        return false;
-    }
-
-    return true;
-
-}
-
 
 vector<pair<int,int>> Points::getMoves(){
     moves.clear();
@@ -117,7 +107,7 @@ vector<pair<int,int>> Points::getMoves(){
                 moves.push_back({abs(m_x-2),abs(m_y-1)});
 
                 for(auto a : moves){
-                    cout<<a.first<<","<<a.second<<endl;
+                    //cout<<a.first<<","<<a.second<<endl;
                 }
                 break;
 
@@ -190,17 +180,11 @@ vector<pair<int,int>> Points::getMoves(){
 
 
     it = unique(moves.begin(),moves.end());
+    moves.resize(distance(moves.begin(),it));
+
     newit = remove_if(moves.begin(),moves.end(),[](pair<int,int> b){return (b.first > 7 or b.second > 7);});
     moves.resize(distance(moves.begin(),newit));
 
-
-
-
-
-
-    for(auto b: moves){
-       cout<<"new2"<<b.first<<","<<b.second<<"\n";
-    }
 
     return moves;
 
