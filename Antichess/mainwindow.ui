@@ -782,6 +782,19 @@ color: &quot;yellow&quot;;</string>
         <normaloff>.</normaloff>.</iconset>
       </property>
      </widget>
+     <widget class="QLabel" name="turnLabel">
+      <property name="geometry">
+       <rect>
+        <x>810</x>
+        <y>160</y>
+        <width>141</width>
+        <height>61</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
     </widget>
    </widget>
   </widget>

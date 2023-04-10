@@ -59,10 +59,8 @@ vector<pair<int,int>> Points::getMoves(){
     char piece_char = gameBoard->readFEN(m_x,m_y);
     cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
 
-    //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
     //could be done by viewing were they are drawn in mainwindow::updateGUI()
-    //I DONT THINK THE ORIGIN IS BOTTOM LEFT ANYMORE- NEED SOME INVESTIGATION
 
     switch(piece_char) {
             case 'p' : //bPawn
