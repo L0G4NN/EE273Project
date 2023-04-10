@@ -32,6 +32,7 @@ MainWindow::MainWindow(QWidget *parent)
     //draw the board onto the screen
     QPixmap pix("../Antichess/images/background.png");
     gameBoard = new Board;
+    gameBoard->MoveCounter();
     prev = new QPushButton;
     buttons = new vector<QPushButton*>;
     pieces = new vector<QPushButton*>;

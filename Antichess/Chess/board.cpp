@@ -348,3 +348,24 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
 
 }
+
+
+
+
+char Board::whosTurn(char playerTurn) {
+    if(this->countMoves % 2 == 0 || this->countMoves == 0) {    //if even then its whites turn
+        this->playTurn = 'w';
+    }
+    else { //if not even then its blacks turn
+        this->playTurn ='b';
+    }
+    return this->playTurn;
+}
+
+int Board::MoveCounter() {
+    //if a move is played increment by movecount
+    //TODO: count every time a move is played
+    countMoves++;
+    cout << "MOVECOUNT: " << countMoves << endl;
+    return countMoves;
+}

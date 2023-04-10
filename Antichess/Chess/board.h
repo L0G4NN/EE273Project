@@ -41,6 +41,8 @@ public:
      */
 
     bool isOccupied(int x, int y);
+    char whosTurn(char playTurn);
+    int MoveCounter();
 
 private:
 
@@ -51,6 +53,8 @@ private:
     std::vector<std::vector<int>> boardVector;
     vector<pair<int,int>>::iterator it,newit;
 protected:
+    char playTurn = 'w'; //white always starts first
+    int countMoves{-1}; //init to -1 so game starts at 0 after first pass of updateGUI()
 
 
 
