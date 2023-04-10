@@ -67,10 +67,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     ui->squares->setOriginCorner(Qt::BottomLeftCorner);
     Scene->addPixmap(pixmap.scaledToHeight(512));
+
     ui->boardGraphic->setScene(Scene);
     gameBoard->setBoard("RNBQKBNR/PPPPPPPP/88888888/88888888/88888888/88888888/pppppppp/rnbqkbnr");
     updateGUI();
-
 
     //QLayoutItem *item = ui->gridLayout->itemAtPosition(2,2);
 
@@ -132,7 +132,6 @@ void MainWindow::updateGUI(){
     }
     cout << "Icons drawn successfully" << endl;
     buttons = new vector<QPushButton*>;
-
 
 
 
@@ -274,6 +273,22 @@ void MainWindow::on_resetButton_clicked()
 {
     bool reset_flag = true;
     gameBoard->resetBoard(reset_flag);
+
+    //check if game is reset or not
+
+
+    if(gameBoard->isReset() == true){
+    gameBoard->setBoard("RNBQKBNR/PPPPPPPP/88888888/88888888/88888888/88888888/pppppppp/rnbqkbnr");
+
+    //Also reset move counters to zero 0
+    gameBoard->setCounter(-1); //-1 as updateGUI will increment by 1
+
+    updateGUI(); //call immediate update GUI request
+
+    }
+    else {
+    ;
+    }
 
 }
 

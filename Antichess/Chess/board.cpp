@@ -86,7 +86,7 @@ Board::~Board()
 
 }
 
-void Board::setBoard(string FEN )
+void Board::setBoard(string FEN)
 {
     this->boardVector.resize(this->rows, std::vector<int>(this->cols)); //set an 8x8 2D vector
 
@@ -108,17 +108,19 @@ bool Board::resetBoard(bool reset_flag)
     {
         //reset the game
         std::cerr << "Resetting game!\n";
-        //Board::setBoard(); //currently causes crashes when enabled
-        //Board.setFEN(this->defaultBoard);
-
-        return true;
-
+        this->reset_flag = true;
     }
     else
     {
         std::cerr << "An error occured resetting the board\n";
-        return false;
+        this->reset_flag = false;
     }
+    return this->reset_flag;
+}
+
+bool Board::isReset() {
+    cout << "reset status: " << this->reset_flag << endl;
+    return this->reset_flag;
 }
 
 vector<std::string> Board::setFEN(stringstream& setup){
@@ -686,6 +688,11 @@ char Board::whosTurn() {
     }
     //cout << "It is: " << this->playTurn << " turn" << endl;
     return this->playTurn;
+}
+
+void Board::setCounter(int counter){
+    this->countMoves = counter;
+
 }
 
 int Board::MoveCounter() {

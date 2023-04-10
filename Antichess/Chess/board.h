@@ -25,7 +25,10 @@ public:
 
     void setBoard(string FEN); //uknown args atm
     bool isSetup();
+
     bool resetBoard(bool reset_flag);
+    bool isReset();
+
     std::vector<std::string> setFEN(std::stringstream& setup);
     char readFEN(int x, int y);
     vector<pair<int,int>> showMoves();
@@ -42,10 +45,13 @@ public:
 
     bool isOccupied(int x, int y);
     char whosTurn();
+    void setCounter(int counter);
     int MoveCounter();
     int getCount();
 
 private:
+
+    string defaultBoard = "RNBQKBNR/PPPPPPPP/88888888/88888888/88888888/88888888/pppppppp/rnbqkbnr";
 
     int rows = 8; //chess board is 8x8 size
     int cols = 8;
@@ -58,6 +64,8 @@ private:
     char playTurn = 'w'; //white always starts first
 
 protected:
-    //std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
+
+    bool reset_flag{false};
+
 };
 
