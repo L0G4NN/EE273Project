@@ -84,6 +84,7 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateGUI(){
 
+    gameBoard->MoveCounter(); //update the move counter to increase by 1 every time a move is played to determine whos turn it is
     prev = new QPushButton;
 
     for(auto c: *pieces){
@@ -94,8 +95,8 @@ void MainWindow::updateGUI(){
     for(auto c:*buttons){
 
         c->deleteLater();
-
         }
+
     pieces -> clear();
     buttons -> clear();
 
@@ -120,8 +121,6 @@ void MainWindow::updateGUI(){
             pieces->push_back(label);
 
             ui->squares->addWidget(label,b,a,1,1,Qt::AlignCenter);
-
-
         }
     }
     cout << "Icons drawn successfully" << endl;

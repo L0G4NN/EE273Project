@@ -1,21 +1,14 @@
-
-
-#include "King.h"
 #include <vector>
 #include <QString>
 #include <sstream>
 #include <iostream>
 #include <map>
-#include "Pieces.h"
-#include "King.h"
-#include "Queen.h"
-#include "Pawn.h"
-#include "Bishop.h"
-#include "Knight.h"
-#include "Rook.h"
+#include <string>
+#include <QPixmap>
 #include <vector>
 #pragma once
 
+using namespace std;
 class Board {
 
 
@@ -24,7 +17,6 @@ public:
     ~Board();
 
     void setBoard(string FEN); //uknown args atm
-    bool isSetup();
     bool resetBoard(bool reset_flag);
     std::vector<std::string> setFEN(std::stringstream& setup);
     char readFEN(int x, int y);
@@ -32,14 +24,8 @@ public:
     map<char,QPixmap> icons;
     vector<string> currentFEN;
 
-
-
-    /*possible funcs
-     * bool isNewGame();
-     * bool or int playerTurn();
-     */
-
-    bool isOccupied(int x, int y);
+    char whosTurn(char playTurn);
+    int MoveCounter();
 
 private:
 
@@ -47,12 +33,11 @@ private:
     int cols = 8;
 
     std::vector<std::vector<int>> boardVector;
+
+    char playTurn = 'w'; //white always starts first
+    int countMoves{-1}; //init to -1 so game starts at 0 after first pass of updateGUI()
+
 protected:
-
-
-
-
-
     //std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 };
 
