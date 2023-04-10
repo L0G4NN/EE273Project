@@ -151,3 +151,200 @@ char Board::readFEN(int x, int y) {
     return piece_char;
 
 }
+
+vector<pair<int,int>> Board::getMoves(QPushButton* pos){
+
+    moves.clear();
+    int m_x = floor(pos->x()/pos->width());
+    int m_y = floor(7-(pos->y()/pos->height()));
+
+    int x = 0;
+    cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
+    for(auto c: this->currentFEN){
+        cout<<c<<endl;
+    }
+
+    //QPixmap dot("../Antichess/images/dot2.svg");
+
+    //get the current click location and identify what piece is on the board
+
+    //switch case to determine how that piece moves around the board
+    //cout<<m_x<<","<<m_y<<endl;
+    char piece_char = this->readFEN(m_x,m_y);
+    cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
+
+    //calculate all the available moves for that type of piece
+    //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
+    //could be done by viewing were they are drawn in mainwindow::updateGUI()
+    //I DONT THINK THE ORIGIN IS BOTTOM LEFT ANYMORE- NEED SOME INVESTIGATION
+
+    switch(piece_char) {
+            case 'p' : //bPawn
+                //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
+                    moves.push_back({(m_x),(m_y)-1});
+                    cout<<"pawn selected"<<endl;//default movement
+
+                break;
+
+            case 'P': //wPawn
+                cerr << "wPawn\n";
+                cout<<"pawn selected"<<endl;
+
+                    moves.push_back({(m_x),(m_y)+1}); //default movement
+
+                break;
+
+
+            case 'r': //bRook
+                cerr << "bRook\n";
+
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                }
+                break;
+
+            case 'R': //wRook
+                cerr << "wRook\n";
+
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,abs(m_y)});
+                }
+                break;
+
+            case 'n': //bKnight
+                cerr << "bKnight\n";
+                moves.push_back({m_x+1,m_y+2});
+                moves.push_back({m_x+2,m_y+1});
+
+                moves.push_back({m_x+1,abs(m_y-2)});
+                moves.push_back({m_x+2,abs(m_y-1)});
+
+                moves.push_back({abs(m_x-1),m_y+2});
+                moves.push_back({abs(m_x-2),m_y+1});
+
+                moves.push_back({abs(m_x-1),abs(m_y-2)});
+                moves.push_back({abs(m_x-2),abs(m_y-1)});
+
+                for(auto a : moves){
+                    //cout<<a.first<<","<<a.second<<endl;
+                }
+                break;
+
+            case 'N': //wKnight
+                cerr << "wKnight\n";
+                moves.push_back({m_x+1,m_y+2});
+                moves.push_back({m_x+2,m_y+1});
+
+                moves.push_back({(m_x-1),m_y+2});
+                moves.push_back({(m_x-2),m_y+1});
+
+                moves.push_back({m_x+1,(m_y-2)});
+                moves.push_back({m_x+2,(m_y-1)});
+
+                moves.push_back({(m_x-1),(m_y-2)});
+                moves.push_back({(m_x-2),(m_y-1)});
+                break;
+
+            case 'b': //bBishop
+                cerr << "bBishop\n";
+                for (int a = 0; a <=7; a++)
+                {
+                     moves.push_back({a,(a+(m_y-m_x))});
+                     moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+                }
+                break;
+
+            case 'B': //wBishop
+                cerr << "wBishop\n";
+                for (int a = m_x; a <=7; a++)
+                {
+                     moves.push_back({a,(m_y+(a-m_x))});
+                     moves.push_back({a,(m_y-(a-m_x))});
+
+                }
+
+                for (int a = m_x; a >=0; a--)
+                {
+                     moves.push_back({a,(m_y+(m_x-a))});
+                     moves.push_back({a,(m_y-(m_x-a))});
+
+                }
+
+                break;
+
+            case 'q': //bQueen
+                cerr << "bQueen\n";
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,abs(a)});
+                    moves.push_back({a,(m_y)});
+                    moves.push_back({a,(a+(m_y-m_x))});
+                    moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+                }
+                break;
+
+            case 'Q': //wQueen
+                cerr << "wQueen\n";
+                for(int a = 0; a<= 7; a++){
+                    moves.push_back({m_x,(a)});
+                    moves.push_back({a,(m_y)});
+                    moves.push_back({a,(a+(m_y-m_x))});
+                    moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+                }
+                break;
+
+            case 'k': //bKing
+                cerr << "bKing\n";
+                moves.push_back({m_x,m_y+1});
+                moves.push_back({m_x,m_y-1});
+
+                moves.push_back({m_x+1,m_y});
+                moves.push_back({m_x-1,m_y});
+
+                moves.push_back({m_x+1,m_y+1});
+                moves.push_back({m_x+1,m_y-1});
+
+                moves.push_back({m_x-1,m_y+1});
+                moves.push_back({m_x-1,m_y-1});
+
+
+                break;
+
+            case 'K': //wKing
+                cerr << "wKing\n";
+                moves.push_back({m_x,m_y+1});
+                moves.push_back({m_x,m_y-1});
+
+                moves.push_back({m_x+1,m_y});
+                moves.push_back({m_x-1,m_y});
+
+                moves.push_back({m_x+1,m_y+1});
+                moves.push_back({m_x+1,m_y-1});
+
+                moves.push_back({m_x-1,m_y+1});
+                moves.push_back({m_x-1,m_y-1});
+
+                break;
+
+    }
+
+
+
+    it = unique(moves.begin(),moves.end());
+    moves.resize(distance(moves.begin(),it));
+
+    newit = remove_if(moves.begin(),moves.end(),[](pair<int,int> b){return (b.first > 7 or b.second > 7 or b.first <0 or b.second <0);});
+    moves.resize(distance(moves.begin(),newit));
+    for(auto c: moves){
+        cout<<c.first<<","<<c.second<<endl;
+
+    }
+
+
+
+
+    return moves;
+
+
+}

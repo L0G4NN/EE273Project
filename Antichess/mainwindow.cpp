@@ -164,15 +164,13 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
     prev -> setChecked(false);
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
-    Points point(pos);
     prev = pos;
     //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
 
     cout<<"Current Position"<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
 
 
-
-    vector<pair<int,int>> moves = point.getMoves();
+    vector<pair<int,int>> moves = gameBoard->getMoves(pos);
 
 
     if(checked){
@@ -183,7 +181,6 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
     for(auto b : moves){
-        cout<<b.first<<","<<b.second<<endl;
         //setup a new move label
         if(b.first == floor(pos->x()/pos->width()) and b.second == floor(7-(pos->y()/pos->height()))){
             cout<<"hit"<<endl;
@@ -203,7 +200,6 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
         buttons->push_back(mLabel);
-        cout<<"Size is"<<buttons->size()<<endl;
         //cout << "Drawing mLabels @: " << a << "," << b << endl; //b undeclared
         //cout << "\nmoves available @: " << a << "," << a << ". ";
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]

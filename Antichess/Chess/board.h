@@ -13,7 +13,7 @@
 #include "Bishop.h"
 #include "Knight.h"
 #include "Rook.h"
-#include <vector>
+#include <QPushButton>
 #pragma once
 
 class Board {
@@ -29,6 +29,7 @@ public:
     std::vector<std::string> setFEN(std::stringstream& setup);
     char readFEN(int x, int y);
     vector<pair<int,int>> showMoves();
+    vector<pair<int,int>> getMoves(QPushButton* pos);
     map<char,QPixmap> icons;
     vector<string> currentFEN;
 
@@ -45,8 +46,10 @@ private:
 
     int rows = 8; //chess board is 8x8 size
     int cols = 8;
+    vector<pair<int,int>> moves;
 
     std::vector<std::vector<int>> boardVector;
+    vector<pair<int,int>>::iterator it,newit;
 protected:
 
 
