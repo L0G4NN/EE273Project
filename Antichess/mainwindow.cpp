@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
 
 
 
+
     ui->Start_image->setPixmap(pix);
 
     //link multiple widgets together for different pages
@@ -83,6 +84,20 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateGUI(){
 
+    prev = new QPushButton;
+
+    for(auto c: *pieces){
+        c->deleteLater();
+
+    }
+
+    for(auto c:*buttons){
+
+        c->deleteLater();
+
+        }
+    pieces -> clear();
+    buttons -> clear();
 
     for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
@@ -110,11 +125,16 @@ void MainWindow::updateGUI(){
         }
     }
     cout << "Icons drawn successfully" << endl;
+    buttons = new vector<QPushButton*>;
+
+
+
 
 }
 
 
 void MainWindow:: dotPressed(){
+
 
     cout<<"dot pressed"<<endl;
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
@@ -127,10 +147,10 @@ void MainWindow:: dotPressed(){
 
     std::swap(gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))],gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]);
     cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
+    cout<<"Should be pawn"<<gameBoard->currentFEN[2][5]<<endl;
 
-    for(auto c: gameBoard->currentFEN){
-        cout<<c<<endl;
-    }
+
+
     updateGUI();
 
 
@@ -140,22 +160,27 @@ void MainWindow:: dotPressed(){
 
 void MainWindow::keyPressed(bool checked){ //Possible error here need to investigate
                                            //seems as if all peices are behaving like bishops
+    //buttons = new vector<QPushButton*>;
 
     prev -> setChecked(false);
     QPushButton* pos = qobject_cast<QPushButton*>(sender());
+    Points point(pos);
     prev = pos;
     //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
-    Points point(pos);
-    cout<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
+
+    cout<<"Current Position"<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
+
 
 
     vector<pair<int,int>> moves = point.getMoves();
 
 
     if(checked){
-     buttons->clear();
 
-     cout<<"Checked"<<endl;
+    //buttons->clear();
+    cout<<"Checked"<<endl;
+    cout<<"Moves size "<<moves.size()<<endl;
+
 
     for(auto b : moves){
         cout<<b.first<<","<<b.second<<endl;
@@ -178,6 +203,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
         buttons->push_back(mLabel);
+        cout<<"Size is"<<buttons->size()<<endl;
         //cout << "Drawing mLabels @: " << a << "," << b << endl; //b undeclared
         //cout << "\nmoves available @: " << a << "," << a << ". ";
         mLabel->setIcon(QPixmap("../Antichess/images/dot2.svg")); //icons.at(setup[a][b]
@@ -187,22 +213,27 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
         mLabel->raise();
 
 
-        ui->squares->addWidget(mLabel, b.second, b.first, Qt::AlignCenter); //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
+        ui->squares->addWidget(mLabel, b.second, b.first, Qt::AlignCenter);
+        //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
 
 
 
-    }
+        }
+
+
     }
 
     if(!checked){
     cout << "unchecked " << endl;
+
     for(auto c:*buttons){
 
         c->deleteLater();
 
         }
-
+    buttons->clear();
     }
+
 
 
 }

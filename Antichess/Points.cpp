@@ -42,9 +42,13 @@ pair<int,int> Points::getClickLocation(){
 
 
 vector<pair<int,int>> Points::getMoves(){
+
     moves.clear();
     int x = 0;
     cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
+    for(auto c: gameBoard->currentFEN){
+        cout<<c<<endl;
+    }
 
     //QPixmap dot("../Antichess/images/dot2.svg");
 
@@ -52,7 +56,8 @@ vector<pair<int,int>> Points::getMoves(){
 
     //switch case to determine how that piece moves around the board
     //cout<<m_x<<","<<m_y<<endl;
-    char piece_char = gameBoard->readFEN(m_x,m_y); //rn manually setting the case statments
+    char piece_char = gameBoard->readFEN(m_x,m_y);
+    cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
 
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
@@ -62,12 +67,14 @@ vector<pair<int,int>> Points::getMoves(){
     switch(piece_char) {
             case 'p' : //bPawn
                 //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
-                    moves.push_back({(m_x),(m_y)-1}); //default movement
+                    moves.push_back({(m_x),(m_y)-1});
+                    cout<<"pawn selected"<<endl;//default movement
 
                 break;
 
             case 'P': //wPawn
                 cerr << "wPawn\n";
+                cout<<"pawn selected"<<endl;
 
                     moves.push_back({(m_x),(m_y)+1}); //default movement
 
@@ -184,6 +191,8 @@ vector<pair<int,int>> Points::getMoves(){
 
     newit = remove_if(moves.begin(),moves.end(),[](pair<int,int> b){return (b.first > 7 or b.second > 7);});
     moves.resize(distance(moves.begin(),newit));
+
+
 
 
     return moves;

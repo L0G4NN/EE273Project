@@ -2,6 +2,7 @@
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
+
 #include "Chess/board.h"
 #include <QMainWindow>
 #include <QGraphicsRectItem>
@@ -61,6 +62,7 @@ private:
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;  
     vector<QPushButton*> *buttons,*pieces;
+
 
 
 
