@@ -86,6 +86,12 @@ MainWindow::~MainWindow()
 void MainWindow::updateGUI(){
 
     gameBoard->MoveCounter(); //update the move counter to increase by 1 every time a move is played to determine whos turn it is
+
+    //update GUI to say whos turn it is
+    char turn_char = gameBoard->whosTurn();
+    QString labelString = QString("MOVE: %1 TURN: %2").arg(gameBoard->getCount()).arg(turn_char);
+    ui->turnLabel->setText(labelString);
+
     prev = new QPushButton;
 
     for(auto c: *pieces){

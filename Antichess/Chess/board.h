@@ -41,8 +41,9 @@ public:
      */
 
     bool isOccupied(int x, int y);
-    char whosTurn(char playTurn);
+    char whosTurn();
     int MoveCounter();
+    int getCount();
 
 private:
 
@@ -52,14 +53,11 @@ private:
 
     std::vector<std::vector<int>> boardVector;
     vector<pair<int,int>>::iterator it,newit;
-protected:
+
+    int countMoves{-2}; //init to -2 so game starts at 0 after updateGUI() has initialised the board
     char playTurn = 'w'; //white always starts first
-    int countMoves{-1}; //init to -1 so game starts at 0 after first pass of updateGUI()
 
-
-
-
-
+protected:
     //std::stringstream startBoard("rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR");
 };
 
