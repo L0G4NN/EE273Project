@@ -198,19 +198,78 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
             case 'r': //bRook
                 cerr << "bRook\n";
 
-                for(int a = 0; a<= 7; a++){
+                for(int a = m_y+1; a<= 7; a++){
+
                     moves.push_back({m_x,abs(a)});
-                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
                 }
+
+                for(int a = m_y-1; a>= 0; a--){
+
+                    moves.push_back({m_x,abs(a)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x+1; a<= 7; a++){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x-1; a>= 0; a--){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+
                 break;
 
             case 'R': //wRook
-                cerr << "wRook\n";
 
-                for(int a = 0; a<= 7; a++){
+                cerr << "bRook\n";
+
+                for(int a = m_y+1; a<= 7; a++){
+
                     moves.push_back({m_x,abs(a)});
-                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
                 }
+
+                for(int a = m_y-1; a>= 0; a--){
+
+                    moves.push_back({m_x,abs(a)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x+1; a<= 7; a++){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x-1; a>= 0; a--){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+
                 break;
 
             case 'n': //bKnight
@@ -248,50 +307,316 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                 break;
 
             case 'b': //bBishop
+
                 cerr << "bBishop\n";
-                for (int a = 0; a <=7; a++)
+                for (int a = m_x+1; a <=7; a++)
                 {
-                     moves.push_back({a,(a+(m_y-m_x))});
-                     moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+                    moves.push_back({a,(m_y+(a-m_x))});
+                    if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
+
+                        if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+
                 }
-                break;
+
+                for (int a = m_x+1; a <=7; a++)
+                {
+
+                    moves.push_back({a,(m_y-(a-m_x))});
+                    if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+
+                        if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y+(m_x-a))});
+                    if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
+                        if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y-(m_x-a))});
+                    if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
+
+                        if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+            break;
+
+
+
+
+
+
 
             case 'B': //wBishop
+
                 cerr << "wBishop\n";
-                for (int a = m_x; a <=7; a++)
+                for (int a = m_x+1; a <=7; a++)
                 {
-                     moves.push_back({a,(m_y+(a-m_x))});
-                     moves.push_back({a,(m_y-(a-m_x))});
+                    moves.push_back({a,(m_y+(a-m_x))});
+                    if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
+
+                        if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
 
                 }
 
-                for (int a = m_x; a >=0; a--)
+                for (int a = m_x+1; a <=7; a++)
                 {
-                     moves.push_back({a,(m_y+(m_x-a))});
-                     moves.push_back({a,(m_y-(m_x-a))});
+
+                    moves.push_back({a,(m_y-(a-m_x))});
+                    if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+
+                        if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
 
                 }
 
-                break;
+                for (int a = m_x-1; a >=0; a--)
+                {
 
-            case 'q': //bQueen
-                cerr << "bQueen\n";
-                for(int a = 0; a<= 7; a++){
+                    moves.push_back({a,(m_y+(m_x-a))});
+                    if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
+                        if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y-(m_x-a))});
+                    if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
+
+                        if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+            break;
+
+
+
+            case 'q' : //bQueen
+
+                for (int a = m_x+1; a <=7; a++)
+                {
+                    moves.push_back({a,(m_y+(a-m_x))});
+                    if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
+
+                        if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+
+                }
+
+                for (int a = m_x+1; a <=7; a++)
+                {
+
+                    moves.push_back({a,(m_y-(a-m_x))});
+                    if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+
+                        if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y+(m_x-a))});
+                    if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
+                        if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y-(m_x-a))});
+                    if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
+
+                        if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for(int a = m_y+1; a<= 7; a++){
+
                     moves.push_back({m_x,abs(a)});
-                    moves.push_back({a,(m_y)});
-                    moves.push_back({a,(a+(m_y-m_x))});
-                    moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
                 }
+
+                for(int a = m_y-1; a>= 0; a--){
+
+                    moves.push_back({m_x,abs(a)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x+1; a<= 7; a++){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x-1; a>= 0; a--){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+
                 break;
+
 
             case 'Q': //wQueen
-                cerr << "wQueen\n";
-                for(int a = 0; a<= 7; a++){
-                    moves.push_back({m_x,(a)});
-                    moves.push_back({a,(m_y)});
-                    moves.push_back({a,(a+(m_y-m_x))});
-                    moves.push_back({a,((2*m_y) - (a+(m_y-m_x)))});
+
+                for (int a = m_x+1; a <=7; a++)
+                {
+                    moves.push_back({a,(m_y+(a-m_x))});
+                    if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
+
+                        if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+
                 }
+
+                for (int a = m_x+1; a <=7; a++)
+                {
+
+                    moves.push_back({a,(m_y-(a-m_x))});
+                    if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+
+                        if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y+(m_x-a))});
+                    if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
+                        if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for (int a = m_x-1; a >=0; a--)
+                {
+
+                    moves.push_back({a,(m_y-(m_x-a))});
+                    if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
+
+                        if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
+                            cout<<"occupied"<<endl;
+                            break;
+                        }
+                    }
+
+                 }
+
+                for(int a = m_y+1; a<= 7; a++){
+
+                    moves.push_back({m_x,abs(a)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_y-1; a>= 0; a--){
+
+                    moves.push_back({m_x,abs(a)});
+                    if(this->currentFEN[abs(a)][m_x] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x+1; a<= 7; a++){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+                for(int a = m_x-1; a>= 0; a--){
+
+                    moves.push_back({a,abs(m_y)});
+                    if(this->currentFEN[abs(m_y)][a] != '8'){
+                        break;
+                    }
+                }
+
+
                 break;
 
             case 'k': //bKing
