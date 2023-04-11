@@ -183,17 +183,30 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
     switch(piece_char) {
             case 'p' : //bPawn
                 //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
-                    moves.push_back({(m_x),(m_y)-1});
-                    cout<<"pawn selected"<<endl;//default movement
+                    //if pawn is on its starting pos, it can move up to 2 places, otherwise 1
 
+                    if(m_y == 6) {
+                        moves.push_back({(m_x),(m_y)-1});
+                        moves.push_back({(m_x),(m_y)-2});
+                    }
+                    else {
+                        moves.push_back({(m_x),(m_y)-1});
+                    }
+                    //cout<<"pawn selected"<<endl;//default movement
                 break;
 
             case 'P': //wPawn
                 cerr << "wPawn\n";
                 cout<<"pawn selected"<<endl;
 
-                    moves.push_back({(m_x),(m_y)+1}); //default movement
-
+                if(m_y == 1) {
+                        moves.push_back({(m_x),(m_y)+1});
+                        moves.push_back({(m_x),(m_y)+2});
+                }
+                else {
+                        moves.push_back({(m_x),(m_y)+1});
+                }
+                //cout<<"pawn selected"<<endl;//default movement
                 break;
 
 
