@@ -48,6 +48,8 @@ public:
     void setCounter(int counter);
     int MoveCounter();
     int getCount();
+    bool takePiece;
+    pair<int,int> takeablePiece;
 
 private:
 

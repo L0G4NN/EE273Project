@@ -162,9 +162,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
     int x = 0;
     cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
-    for(auto c: this->currentFEN){
-        cout<<c<<endl;
-    }
+
 
     //QPixmap dot("../Antichess/images/dot2.svg");
 
@@ -250,12 +248,17 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
             case 'R': //wRook
 
-                cerr << "bRook\n";
+                cerr << "wRook\n";
 
                 for(int a = m_y+1; a<= 7; a++){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(islower(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+
+                        }
                         break;
                     }
                 }
@@ -264,6 +267,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(islower(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+
+                        }
                         break;
                     }
                 }
@@ -272,6 +280,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(islower(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+
+                        }
                         break;
                     }
                 }
@@ -280,6 +293,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(islower(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+
+                        }
                         break;
                     }
                 }

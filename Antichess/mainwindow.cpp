@@ -85,6 +85,8 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateGUI(){
 
+
+
     gameBoard->MoveCounter(); //update the move counter to increase by 1 every time a move is played to determine whos turn it is
 
     //update GUI to say whos turn it is
@@ -131,6 +133,25 @@ void MainWindow::updateGUI(){
         }
     }
     cout << "Icons drawn successfully" << endl;
+    for(auto c: gameBoard->currentFEN){
+        cout<<c<<endl;
+    }
+
+    for(auto c:*pieces){
+
+        //call get moves
+        gameBoard->getMoves(c);
+        //if takePiece is true
+        if(gameBoard->takePiece == true){
+            //swap the position of the selected piece with the takeable piece and blank the selected piece position
+            std::swap(gameBoard->currentFEN[floor(7-(c->y()/(c->height())))][floor(c->x()/(c->width()))],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
+            gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first] = '8';
+            gameBoard->takePiece = false;
+            }
+        }
+
+
+
     buttons = new vector<QPushButton*>;
 
 
