@@ -209,7 +209,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
 
             case 'r': //bRook
-                cerr << "bRook\n";
+                //cerr << "bRook\n";
 
                 for(int a = m_y+1; a<= 7; a++){
 
@@ -257,6 +257,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                         if(islower(this->currentFEN[abs(a)][m_x])){
                             takeablePiece = {m_x,abs(a)};
                             takePiece = true;
+                            break;
 
                         }
                         break;
@@ -270,6 +271,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                         if(islower(this->currentFEN[abs(a)][m_x])){
                             takeablePiece = {m_x,abs(a)};
                             takePiece = true;
+                            break;
 
                         }
                         break;
@@ -283,6 +285,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                         if(islower(this->currentFEN[abs(m_y)][a])){
                             takeablePiece = {a,abs(m_y)};
                             takePiece = true;
+                            break;
 
                         }
                         break;
@@ -296,6 +299,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                         if(islower(this->currentFEN[abs(m_y)][a])){
                             takeablePiece = {a,abs(m_y)};
                             takePiece = true;
+                            break;
 
                         }
                         break;

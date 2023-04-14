@@ -138,16 +138,23 @@ void MainWindow::updateGUI(){
     }
 
     for(auto c:*pieces){
-
+        cout<<c<<endl;
         //call get moves
-        gameBoard->getMoves(c);
+        //gameBoard->getMoves(c);
         //if takePiece is true
+        c->click();
         if(gameBoard->takePiece == true){
+            std::swap(gameBoard->currentFEN[floor(7-(c->y()/c->height()))][floor(c->x()/c->width())],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
+        }
+        gameBoard->takePiece = false;
+        //c->setChecked(false);
+        //c->setChecked(false);
+        /*if(gameBoard->takePiece == true){
             //swap the position of the selected piece with the takeable piece and blank the selected piece position
             std::swap(gameBoard->currentFEN[floor(7-(c->y()/(c->height())))][floor(c->x()/(c->width()))],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
             gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first] = '8';
             gameBoard->takePiece = false;
-            }
+            }*/
         }
 
 
