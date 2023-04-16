@@ -17,7 +17,6 @@
 #include "blank.h"
 #include "Rook.h"
 #include "../mainwindow.h"
-#include "Points.h"
 
 #include "Pieces.h"
 
@@ -162,14 +161,15 @@ char Board::readFEN(int x, int y) {
 
 }
 
-vector<pair<int,int>> Board::getMoves(QPushButton* pos){
+vector<pair<int,int>> Board::getMoves(int z,int y){
+
 
     moves.clear();
-     m_x = floor(pos->x()/pos->width());
-     m_y = floor(7-(pos->y()/pos->height()));
+     m_x = z;
+     m_y = y;
 
     int x = 0;
-    cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
+    //cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
 
 
     //QPixmap dot("../Antichess/images/dot2.svg");
@@ -179,8 +179,8 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
     //switch case to determine how that piece moves around the board
     //cout<<m_x<<","<<m_y<<endl;
     char piece_char = this->readFEN(m_x,m_y);
-    cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
-    cout<<"takePiece"<<takePiece<<endl;
+    //cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
+    //cout<<"takePiece"<<takePiece<<endl;
 
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares
@@ -224,6 +224,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(isupper(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -232,6 +237,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(isupper(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -240,6 +250,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(isupper(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -248,6 +263,11 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(isupper(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -362,12 +382,18 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y+(a-m_x)][a])){
+                                takeablePiece = {a,m_y+(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
                             break;
                         }
                     }
-
-
                 }
+
+
 
                 for (int a = m_x+1; a <=7; a++)
                 {
@@ -377,6 +403,12 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y-(a-m_x)][a])){
+                                takeablePiece = {a,m_y-(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
                             break;
                         }
                     }
@@ -390,11 +422,16 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                     if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                         if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y+(m_x-a)][a])){
+                                takeablePiece = {a,m_y+(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
+                }
 
-                 }
 
                 for (int a = m_x-1; a >=0; a--)
                 {
@@ -404,11 +441,16 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y-(m_x-a)][a])){
+                                takeablePiece = {a,m_y-(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
 
-                 }
+                }
 
             break;
 
@@ -428,12 +470,18 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(islower(this->currentFEN[m_y+(a-m_x)][a])){
+                                takeablePiece = {a,m_y+(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
                             break;
                         }
                     }
-
-
                 }
+
+
 
                 for (int a = m_x+1; a <=7; a++)
                 {
@@ -443,6 +491,12 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(islower(this->currentFEN[m_y-(a-m_x)][a])){
+                                takeablePiece = {a,m_y-(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
                             break;
                         }
                     }
@@ -456,11 +510,16 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
                     if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                         if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(islower(this->currentFEN[m_y+(m_x-a)][a])){
+                                takeablePiece = {a,m_y+(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
+                }
 
-                 }
 
                 for (int a = m_x-1; a >=0; a--)
                 {
@@ -470,11 +529,16 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
                         if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(islower(this->currentFEN[m_y-(m_x-a)][a])){
+                                takeablePiece = {a,m_y-(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
 
-                 }
+                }
 
             break;
 

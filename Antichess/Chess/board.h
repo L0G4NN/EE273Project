@@ -36,7 +36,7 @@ public:
     std::vector<std::string> setFEN(std::stringstream& setup);
     char readFEN(int x, int y);
     vector<pair<int,int>> showMoves();
-    vector<pair<int,int>> getMoves(QPushButton* pos);
+    vector<pair<int,int>> getMoves(int z , int y);
     map<char,QPixmap> icons;
     vector<string> currentFEN;
 

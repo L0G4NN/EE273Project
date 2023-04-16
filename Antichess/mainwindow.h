@@ -70,7 +70,8 @@ private:
     //QGraphicsPixmapItem *board;  
     vector<QPushButton*> *buttons,pieces;
     void checkForTake();
-
+    int takeCount = 0;
+    char turn_char;
 
     QPushButton *prev;
     int m_x;

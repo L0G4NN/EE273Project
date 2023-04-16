@@ -7,7 +7,6 @@
  */
 
 #include "clickableLabels.h"
-#include "../../../Antichess/chess/Points.h"
 #include "../mainwindow.h"
 #include "../../../Antichess/Chess/Pieces.h"
 #include "QAbstractButton.h"

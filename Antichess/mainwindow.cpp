@@ -38,6 +38,7 @@ MainWindow::MainWindow(QWidget *parent)
 
     //draw the board onto the screen
     QPixmap pix("../Antichess/images/background.png");
+    takeCount = 0;
     gameBoard = new Board;
     gameBoard->MoveCounter();
     prev = new QPushButton;
@@ -93,11 +94,11 @@ MainWindow::~MainWindow()
 void MainWindow::updateGUI(){
 
 
-
+    gameBoard->takePiece = false;
     gameBoard->MoveCounter(); //update the move counter to increase by 1 every time a move is played to determine whos turn it is
 
     //update GUI to say whos turn it is
-    char turn_char = gameBoard->whosTurn();
+    turn_char = gameBoard->whosTurn();
     QString labelString = QString("MOVE: %1 TURN: %2").arg(gameBoard->getCount()).arg(turn_char);
     ui->turnLabel->setText(labelString);
 
@@ -139,7 +140,7 @@ void MainWindow::updateGUI(){
 
             ui->squares->addWidget(label,b,a,1,1,Qt::AlignCenter);
             pieces.push_back(label);
-            cout<<"Size of pieces "<<pieces.size()<<endl;
+
 
             //gameBoard->getMoves(label);
         }
@@ -154,8 +155,10 @@ void MainWindow::updateGUI(){
 
 
 
+    gameBoard->takePiece = false;
 
-    checkForTake();
+
+
     buttons = new vector<QPushButton*>;
 
 
@@ -166,29 +169,34 @@ void MainWindow::checkForTake(){
 
 
 
-    for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
+    for(int b =0; b<8 and gameBoard->takePiece == false ;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
 
-        for(int a =0; a<8;a++){
+        for(int a =0; a<8 and gameBoard->takePiece == false ;a++){
 
-            QMouseEvent amongus = QMouseEvent(QEvent::MouseButtonPress,QPoint(a,b),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);
-            QApplication::sendEvent(ui->squares,&amongus);
+            gameBoard->getMoves(b,a);
+            if(gameBoard->takePiece == true){
 
-            QMouseEvent amongus2 = QMouseEvent(QEvent::MouseButtonRelease,QPoint(a,b),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);
+                if((turn_char == 'w' and isupper(gameBoard->currentFEN[a][b]) or (turn_char == 'b' and islower(gameBoard->currentFEN[a][b])))){
+                    continue;
 
-            if(gameBoard->takePiece){
+            }
 
-                cout<<"Attacking piece "<<gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x]<<endl;
-                cout<<"Taking piece "<<gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]<<endl;
-                swap(gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
-                gameBoard->takePiece = false;
-                updateGUI();
+                swap(gameBoard->currentFEN[a][b],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
+                gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x] = '8';
+                gameBoard->MoveCounter();
+
+                //cout<<"Attacking piece "<<gameBoard->m_x<<","<<gameBoard->m_y<<endl;
+                //cout<<"Taking piece "<<gameBoard->takeablePiece.first<<"'"<<gameBoard->takeablePiece.second<<endl;
 
             }
 
 
         }
     }
+    updateGUI();
+
+
 
 
 }
@@ -209,10 +217,10 @@ void MainWindow::dotPressed(){
     std::swap(gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))],gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]);
     cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
 
-
-
     gameBoard->takePiece = false;
-    updateGUI();
+    checkForTake();
+
+
 
 
 
@@ -231,7 +239,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
     cout<<"Current Position"<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
 
 
-    vector<pair<int,int>> moves = gameBoard->getMoves(pos);
+    vector<pair<int,int>> moves = gameBoard->getMoves(floor(pos->x()/pos->width()),floor(7-(pos->y()/pos->height())));
 
 
     if(checked){
