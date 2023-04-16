@@ -1,3 +1,11 @@
+/* filename King.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "King.h"
 
 King::King(char colour){

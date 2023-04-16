@@ -1,3 +1,11 @@
+/* filename Pawn.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef PAWN_H
 #define PAWN_H
 #include "Pieces.h"

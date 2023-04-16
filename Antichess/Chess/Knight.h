@@ -1,3 +1,11 @@
+/* filename Knight.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef KNIGHT_H
 #define KNIGHT_H
 #include "Pieces.h"

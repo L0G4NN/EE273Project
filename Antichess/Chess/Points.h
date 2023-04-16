@@ -1,3 +1,15 @@
+/* filename points.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
+
+//DO WE NEED THIS FILE ANYMORE? DUPLICATE OF POINTS.H IN THE MAIN FILE DIR
+
+
 #ifndef POINTS_H
 #define POINTS_H
 

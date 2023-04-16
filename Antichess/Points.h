@@ -1,3 +1,11 @@
+/* filename points.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef POINTS_H
 #define POINTS_H
 

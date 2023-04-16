@@ -1,4 +1,10 @@
-//#pragma once
+/* filename mainwindow.h
+ * header file for mainwindow.cpp
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 

@@ -1,4 +1,10 @@
-
+/* filename board.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
 
 #include "King.h"
 #include <vector>

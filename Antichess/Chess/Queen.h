@@ -1,3 +1,11 @@
+/* filename Queen.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef QUEEN_H
 #define QUEEN_H
 #include "Pieces.h"

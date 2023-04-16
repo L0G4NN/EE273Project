@@ -1,3 +1,11 @@
+/* filename Rook.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef ROOK_H
 #define ROOK_H
 #include "Pieces.h"

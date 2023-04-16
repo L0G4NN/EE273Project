@@ -1,3 +1,11 @@
+/* filename clickablelabels.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef CLICKABLELABELS_H
 #define CLICKABLELABELS_H
 

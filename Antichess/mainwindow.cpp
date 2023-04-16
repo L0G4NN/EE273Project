@@ -1,3 +1,10 @@
+/* filename mainwindow.cpp
+ * generates the gameplay loop for the Antichess game itself
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
 
 //#include "mainwindow.h"
 #include "./ui_mainwindow.h"
@@ -11,7 +18,6 @@
 #include "Chess/Knight.h"
 #include "Chess/Rook.h"
 #include "Points.h"
-#include "Chess/move.h"
 #include "utils/clickableLabels.h"
 #include <QtCore>
 #include <QDesktopServices>

@@ -1,3 +1,10 @@
+/* filename King.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
 
 #ifndef KING_H
 #define KING_H

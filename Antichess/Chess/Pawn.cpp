@@ -1,3 +1,11 @@
+/* filename Pawn.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Pawn.h"
 #include <iostream>
 using namespace std;

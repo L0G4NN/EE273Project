@@ -1,3 +1,11 @@
+/* filename Bishop.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef BISHOP_H
 #define BISHOP_H
 #include "Pieces.h"

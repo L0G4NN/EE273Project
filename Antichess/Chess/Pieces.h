@@ -1,3 +1,11 @@
+/* filename Pieces.h
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #ifndef PIECES_H
 #define PIECES_H
 #pragma once

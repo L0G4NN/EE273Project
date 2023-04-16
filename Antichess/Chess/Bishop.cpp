@@ -1,3 +1,11 @@
+/* filename Bishop.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Bishop.h"
 
 Bishop::Bishop(char colour){

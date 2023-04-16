@@ -18,8 +18,6 @@ set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
         mainwindow.h
-        Chess/move.h
-        Chess/move.cpp
         Chess/board.h
         Chess/board.cpp
         Chess/Pieces.h
@@ -42,10 +40,6 @@ set(PROJECT_SOURCES
         Points.h
         utils/clickableLabels.h
         utils/clickableLabels.cpp
-        utils/PushButton.h
-        utils/PushButton.cpp
-
-
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

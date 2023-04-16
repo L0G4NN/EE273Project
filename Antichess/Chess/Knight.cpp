@@ -1,3 +1,11 @@
+/* filename Knight.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Knight.h"
 
 Knight::Knight(char colour){

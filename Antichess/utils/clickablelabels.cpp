@@ -1,3 +1,11 @@
+/* filename clickablelabels.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "clickableLabels.h"
 #include "../../../Antichess/chess/Points.h"
 #include "../mainwindow.h"

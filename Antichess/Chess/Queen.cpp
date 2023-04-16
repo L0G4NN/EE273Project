@@ -1,3 +1,11 @@
+/* filename Queen.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Queen.h"
 
 Queen::Queen(char colour){

@@ -1,3 +1,11 @@
+/* filename Rook.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Rook.h"
 
 Rook::Rook(char colour){

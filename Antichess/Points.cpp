@@ -1,3 +1,11 @@
+/* filename points.cpp
+ * [Description]
+ * Last updated: [DD:MM:YYYY]
+ * Description of latest update:
+ *
+ *
+ */
+
 #include "Points.h"
 #include "../../../Antichess/utils/clickablelabels.h"
 #include "./ui_mainwindow.h"
