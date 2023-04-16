@@ -72,9 +72,6 @@ private:
     void checkForTake();
 
 
-
-
-
     QPushButton *prev;
     int m_x;
     int m_y;

@@ -30,8 +30,6 @@ public:
     ~Board();
 
     void setBoard(string FEN); //uknown args atm
-    bool isSetup();
-
     bool resetBoard(bool reset_flag);
     bool isReset();
 

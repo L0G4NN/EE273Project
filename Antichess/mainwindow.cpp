@@ -162,7 +162,7 @@ void MainWindow::updateGUI(){
 
 }
 
-void MainWindow:: checkForTake(){
+void MainWindow::checkForTake(){
 
 
 
@@ -194,7 +194,7 @@ void MainWindow:: checkForTake(){
 }
 
 
-void MainWindow:: dotPressed(){
+void MainWindow::dotPressed(){
 
 
     cout<<"dot pressed"<<endl;
@@ -272,12 +272,8 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
         ui->squares->addWidget(mLabel, b.second, b.first, Qt::AlignCenter);
-        //THIS LINE CAUSING THE PROGRAM CRASHES WHEN INVESTIGATED IN THE DEBUGGER
-
-
 
         }
-
 
     }
 
@@ -332,8 +328,6 @@ void MainWindow::on_resetButton_clicked()
     gameBoard->resetBoard(reset_flag);
 
     //check if game is reset or not
-
-
     if(gameBoard->isReset() == true){
     gameBoard->setBoard("RNBQKBNR/PPPPPPPP/88888888/88888888/88888888/88888888/pppppppp/rnbqkbnr");
 

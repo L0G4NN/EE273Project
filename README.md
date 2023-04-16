@@ -9,3 +9,6 @@ or download the folder as zip
 3. If there is build errors in QtCreator delete folder `build-Antichess...`
 
 ---
+### **UML DIAGRAMS**
+All diagrams are made using the draw.io app
+https://www.diagrams.net/
