@@ -34,6 +34,7 @@ public:
 
 
 
+
 private slots:
 
     void keyPressed(bool checked);
@@ -61,7 +62,9 @@ private:
     QGraphicsScene *Scene;
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;  
-    vector<QPushButton*> *buttons,*pieces;
+    vector<QPushButton*> *buttons,pieces;
+    void checkForTake();
+
 
 
 

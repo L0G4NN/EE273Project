@@ -157,8 +157,8 @@ char Board::readFEN(int x, int y) {
 vector<pair<int,int>> Board::getMoves(QPushButton* pos){
 
     moves.clear();
-    int m_x = floor(pos->x()/pos->width());
-    int m_y = floor(7-(pos->y()/pos->height()));
+     m_x = floor(pos->x()/pos->width());
+     m_y = floor(7-(pos->y()/pos->height()));
 
     int x = 0;
     cout << "Current cord: " << m_x << "," << m_y << endl; //get current piece location
@@ -172,6 +172,7 @@ vector<pair<int,int>> Board::getMoves(QPushButton* pos){
     //cout<<m_x<<","<<m_y<<endl;
     char piece_char = this->readFEN(m_x,m_y);
     cout<<"Piece is"<<piece_char<<endl;//rn manually setting the case statments
+    cout<<"takePiece"<<takePiece<<endl;
 
     //calculate all the available moves for that type of piece
     //filter out which moves are available / unavailable based upon if any other pieces occupy those squares

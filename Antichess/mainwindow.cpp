@@ -21,6 +21,7 @@
 #include <QGraphicsScene>
 #include <QVBoxLayout>
 #include <iostream>
+#include <QMouseEvent>
 
 
 MainWindow::MainWindow(QWidget *parent)
@@ -35,7 +36,7 @@ MainWindow::MainWindow(QWidget *parent)
     gameBoard->MoveCounter();
     prev = new QPushButton;
     buttons = new vector<QPushButton*>;
-    pieces = new vector<QPushButton*>;
+    //pieces = new vector<QPushButton*>;
 
 
 
@@ -96,8 +97,9 @@ void MainWindow::updateGUI(){
 
     prev = new QPushButton;
 
-    for(auto c: *pieces){
+    for(auto c: pieces){
         c->deleteLater();
+
 
     }
 
@@ -106,7 +108,7 @@ void MainWindow::updateGUI(){
         c->deleteLater();
         }
 
-    pieces -> clear();
+    pieces.clear();
     buttons -> clear();
 
     for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
@@ -127,9 +129,13 @@ void MainWindow::updateGUI(){
             label->lower();
             //cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
             connect(label, SIGNAL(toggled(bool)), this, SLOT(keyPressed(bool)));
-            pieces->push_back(label);
+
 
             ui->squares->addWidget(label,b,a,1,1,Qt::AlignCenter);
+            pieces.push_back(label);
+            cout<<"Size of pieces "<<pieces.size()<<endl;
+
+            //gameBoard->getMoves(label);
         }
     }
     cout << "Icons drawn successfully" << endl;
@@ -137,30 +143,46 @@ void MainWindow::updateGUI(){
         cout<<c<<endl;
     }
 
-    for(auto c:*pieces){
-        cout<<c<<endl;
-        //call get moves
-        //gameBoard->getMoves(c);
-        //if takePiece is true
-        c->click();
-        if(gameBoard->takePiece == true){
-            std::swap(gameBoard->currentFEN[floor(7-(c->y()/c->height()))][floor(c->x()/c->width())],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
-        }
-        gameBoard->takePiece = false;
-        //c->setChecked(false);
-        //c->setChecked(false);
-        /*if(gameBoard->takePiece == true){
-            //swap the position of the selected piece with the takeable piece and blank the selected piece position
-            std::swap(gameBoard->currentFEN[floor(7-(c->y()/(c->height())))][floor(c->x()/(c->width()))],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
-            gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first] = '8';
-            gameBoard->takePiece = false;
-            }*/
-        }
+
+    //cout<<"Number of elements"<<pieces->size()/pieces[0].size()<<endl;
 
 
 
+
+    checkForTake();
     buttons = new vector<QPushButton*>;
 
+
+
+}
+
+void MainWindow:: checkForTake(){
+
+
+
+    for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
+
+
+        for(int a =0; a<8;a++){
+
+            QMouseEvent amongus = QMouseEvent(QEvent::MouseButtonPress,QPoint(a,b),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);
+            QApplication::sendEvent(ui->squares,&amongus);
+
+            QMouseEvent amongus2 = QMouseEvent(QEvent::MouseButtonRelease,QPoint(a,b),Qt::LeftButton,Qt::LeftButton,Qt::NoModifier);
+
+            if(gameBoard->takePiece){
+
+                cout<<"Attacking piece "<<gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x]<<endl;
+                cout<<"Taking piece "<<gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]<<endl;
+                swap(gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
+                gameBoard->takePiece = false;
+                updateGUI();
+
+            }
+
+
+        }
+    }
 
 
 }
@@ -180,10 +202,10 @@ void MainWindow:: dotPressed(){
 
     std::swap(gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))],gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]);
     cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
-    cout<<"Should be pawn"<<gameBoard->currentFEN[2][5]<<endl;
 
 
 
+    gameBoard->takePiece = false;
     updateGUI();
 
 
@@ -214,6 +236,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
 
     for(auto b : moves){
+        cout<<"Dot pos" <<endl;
         //setup a new move label
         if(b.first == floor(pos->x()/pos->width()) and b.second == floor(7-(pos->y()/pos->height()))){
             cout<<"hit"<<endl;
