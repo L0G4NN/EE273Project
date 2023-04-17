@@ -6,20 +6,9 @@
  *
  */
 
-#include "board.h"
-#include "Pieces.h"
-#include "Pieces.h"
-#include "King.h"
-#include "Queen.h"
-#include "Pawn.h"
-#include "Bishop.h"
-#include "Knight.h"
-#include "blank.h"
-#include "Rook.h"
+
 #include "../mainwindow.h"
-
-#include "Pieces.h"
-
+#include "board.h"
 
 /*Each team requires
 * 1 king

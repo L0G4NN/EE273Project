@@ -1,8 +1,8 @@
 /* filename clickablelabels.h
- * [Description]
- * Last updated: [DD:MM:YYYY]
+ * changes the QLabels on the game board to be clickable by the user.
+ * Last updated: [17:04:2023]
  * Description of latest update:
- *
+ * Removed unused functions for code cleanup.
  *
  */
 
@@ -33,13 +33,8 @@ public:
     explicit clickablelabels(QWidget *parent = nullptr);
     void mousePressEvent(QMouseEvent *event);
 
-signals:
-    void mouse_pressed();
-    void mouse_pos(); //unsure if needed yet
-
 private:
     int clickCount{0};
-    //pair<int,int> getClickLocation(QPoint point);//initialised to zero so that clickCount is properly initialised to 0 - issue caused otherwise
 
 };
 

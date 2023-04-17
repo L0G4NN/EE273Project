@@ -6,7 +6,6 @@
  *
  */
 
-#include "King.h"
 #include <vector>
 #include <QString>
 #include <sstream>
@@ -18,6 +17,7 @@
 #include "Pawn.h"
 #include "Bishop.h"
 #include "Knight.h"
+#include "blank.h"
 #include "Rook.h"
 #include <QPushButton>
 #pragma once
