@@ -1,9 +1,8 @@
 /* filename Pieces.cpp
- * [Description]
- * Last updated: [DD:MM:YYYY]
+ * Last updated: [17:04:2023]
  * Description of latest update:
  *
- *
+ *  Removed unused variables - code cleanup
  */
 
 #include <iostream>
@@ -42,7 +41,6 @@ vector<int> Pieces::getCords()
 }
 
 void Pieces::setIcon(QString address){
-    QPixmap icon;
     this->icon = address;
 }
 
