@@ -57,6 +57,8 @@ public:
     int m_x = 0;
     int m_y = 0;
 
+    bool takenFlag = false;
+
 
 private:
 
@@ -70,7 +72,7 @@ private:
     vector<pair<int,int>>::iterator it,newit;
 
     int countMoves{-2}; //init to -2 so game starts at 0 after updateGUI() has initialised the board
-    char playTurn = 'w'; //white always starts first
+    char playTurn = 'W'; //white always starts first
 
 protected:
 

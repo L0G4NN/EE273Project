@@ -131,7 +131,14 @@ void MainWindow::updateGUI(){
             label->setFlat(true);
             label->setFixedSize(54,56);
             label->setIconSize(QSize(50,50));
-            label->setCheckable(true);
+            if(gameBoard->getCount() % 2 != 0 and islower(gameBoard->currentFEN[b][a]) or (gameBoard->getCount() % 2 == 0 and isupper(gameBoard->currentFEN[b][a]))){
+               label->setCheckable(true);
+            }
+
+            else{
+                label->setCheckable(false);
+            }
+
             label->setIcon(gameBoard->icons.at(gameBoard->currentFEN[b][a])); //icons.at(setup[a][b]
             label->lower();
             //cout<<"Piece is "<<gameBoard->readFEN(a,b)<<endl;
@@ -159,6 +166,7 @@ void MainWindow::updateGUI(){
 
 
 
+
     buttons = new vector<QPushButton*>;
 
 
@@ -168,7 +176,7 @@ void MainWindow::updateGUI(){
 void MainWindow::checkForTake(){
 
 
-
+    gameBoard->takenFlag = false;
     for(int b =0; b<8 and gameBoard->takePiece == false ;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
 
@@ -177,14 +185,16 @@ void MainWindow::checkForTake(){
             gameBoard->getMoves(b,a);
             if(gameBoard->takePiece == true){
 
-                if((turn_char == 'w' and isupper(gameBoard->currentFEN[a][b]) or (turn_char == 'b' and islower(gameBoard->currentFEN[a][b])))){
+                if((turn_char == 'W' and isupper(gameBoard->currentFEN[a][b]) or (turn_char == 'B' and islower(gameBoard->currentFEN[a][b])))){
                     continue;
 
             }
-
+                gameBoard->takenFlag = true;
+                cout<<"Takeable piece is "<<gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]<<endl;
                 swap(gameBoard->currentFEN[a][b],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
                 gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x] = '8';
                 gameBoard->MoveCounter();
+
 
                 //cout<<"Attacking piece "<<gameBoard->m_x<<","<<gameBoard->m_y<<endl;
                 //cout<<"Taking piece "<<gameBoard->takeablePiece.first<<"'"<<gameBoard->takeablePiece.second<<endl;
@@ -219,6 +229,7 @@ void MainWindow::dotPressed(){
 
     gameBoard->takePiece = false;
     checkForTake();
+
 
 
 

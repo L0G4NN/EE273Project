@@ -542,6 +542,13 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                         if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y+(a-m_x)][a])){
+                                takeablePiece = {a,m_y+(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
+
                             break;
                         }
                     }
@@ -557,6 +564,12 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                         if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y-(a-m_x)][a])){
+                                takeablePiece = {a,m_y-(a-m_x)};
+                                takePiece = true;
+                                break;
+
+                            }
                             break;
                         }
                     }
@@ -570,6 +583,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                         if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y+(m_x-a)][a])){
+                                takeablePiece = {a,m_y+(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
@@ -584,6 +602,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                         if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
                             cout<<"occupied"<<endl;
+                            if(isupper(this->currentFEN[m_y-(m_x-a)][a])){
+                                takeablePiece = {a,m_y-(m_x-a)};
+                                takePiece = true;
+                                break;
+                            }
                             break;
                         }
                     }
@@ -594,6 +617,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(isupper(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -602,6 +630,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                     moves.push_back({m_x,abs(a)});
                     if(this->currentFEN[abs(a)][m_x] != '8'){
+                        if(isupper(this->currentFEN[abs(a)][m_x])){
+                            takeablePiece = {m_x,abs(a)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -610,6 +643,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(isupper(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -618,6 +656,11 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
                     moves.push_back({a,abs(m_y)});
                     if(this->currentFEN[abs(m_y)][a] != '8'){
+                        if(isupper(this->currentFEN[abs(m_y)][a])){
+                            takeablePiece = {a,abs(m_y)};
+                            takePiece = true;
+                            break;
+                        }
                         break;
                     }
                 }
@@ -626,130 +669,248 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                 break;
 
 
-            case 'Q': //wQueen
+    case 'Q' : //wQueen
 
-                for (int a = m_x+1; a <=7; a++)
-                {
-                    moves.push_back({a,(m_y+(a-m_x))});
-                    if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
+        for (int a = m_x+1; a <=7; a++)
+        {
+            moves.push_back({a,(m_y+(a-m_x))});
+            if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
 
-                        if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
-                            break;
-                        }
+                if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
+                    cout<<"occupied"<<endl;
+                    if(islower(this->currentFEN[m_y+(a-m_x)][a])){
+                        takeablePiece = {a,m_y+(a-m_x)};
+                        takePiece = true;
+                        break;
+
                     }
 
-
+                    break;
                 }
+            }
 
-                for (int a = m_x+1; a <=7; a++)
-                {
 
-                    moves.push_back({a,(m_y-(a-m_x))});
-                    if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+        }
 
-                        if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
-                            break;
-                        }
+        for (int a = m_x+1; a <=7; a++)
+        {
+
+            moves.push_back({a,(m_y-(a-m_x))});
+            if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
+
+                if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
+                    cout<<"occupied"<<endl;
+                    if(islower(this->currentFEN[m_y-(a-m_x)][a])){
+                        takeablePiece = {a,m_y-(a-m_x)};
+                        takePiece = true;
+                        break;
+
                     }
-
+                    break;
                 }
+            }
 
-                for (int a = m_x-1; a >=0; a--)
-                {
+        }
 
-                    moves.push_back({a,(m_y+(m_x-a))});
-                    if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
-                        if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
-                            break;
-                        }
-                    }
+        for (int a = m_x-1; a >=0; a--)
+        {
 
-                 }
-
-                for (int a = m_x-1; a >=0; a--)
-                {
-
-                    moves.push_back({a,(m_y-(m_x-a))});
-                    if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
-
-                        if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
-                            break;
-                        }
-                    }
-
-                 }
-
-                for(int a = m_y+1; a<= 7; a++){
-
-                    moves.push_back({m_x,abs(a)});
-                    if(this->currentFEN[abs(a)][m_x] != '8'){
+            moves.push_back({a,(m_y+(m_x-a))});
+            if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
+                if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
+                    cout<<"occupied"<<endl;
+                    if(islower(this->currentFEN[m_y+(m_x-a)][a])){
+                        takeablePiece = {a,m_y+(m_x-a)};
+                        takePiece = true;
                         break;
                     }
+                    break;
                 }
+            }
 
-                for(int a = m_y-1; a>= 0; a--){
+         }
 
-                    moves.push_back({m_x,abs(a)});
-                    if(this->currentFEN[abs(a)][m_x] != '8'){
+        for (int a = m_x-1; a >=0; a--)
+        {
+
+            moves.push_back({a,(m_y-(m_x-a))});
+            if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
+
+                if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
+                    cout<<"occupied"<<endl;
+                    if(islower(this->currentFEN[m_y-(m_x-a)][a])){
+                        takeablePiece = {a,m_y-(m_x-a)};
+                        takePiece = true;
                         break;
                     }
+                    break;
                 }
+            }
 
-                for(int a = m_x+1; a<= 7; a++){
+         }
 
-                    moves.push_back({a,abs(m_y)});
-                    if(this->currentFEN[abs(m_y)][a] != '8'){
-                        break;
-                    }
+        for(int a = m_y+1; a<= 7; a++){
+
+            moves.push_back({m_x,abs(a)});
+            if(this->currentFEN[abs(a)][m_x] != '8'){
+                if(islower(this->currentFEN[abs(a)][m_x])){
+                    takeablePiece = {m_x,abs(a)};
+                    takePiece = true;
+                    break;
                 }
-
-                for(int a = m_x-1; a>= 0; a--){
-
-                    moves.push_back({a,abs(m_y)});
-                    if(this->currentFEN[abs(m_y)][a] != '8'){
-                        break;
-                    }
+                break;
                 }
+            }
 
 
+        for(int a = m_y-1; a>= 0; a--){
+
+            moves.push_back({m_x,abs(a)});
+            if(this->currentFEN[abs(a)][m_x] != '8'){
+                if(islower(this->currentFEN[abs(a)][m_x])){
+                    takeablePiece = {m_x,abs(a)};
+                    takePiece = true;
+                    break;
+                }
+                break;
+                }
+            }
+
+
+        for(int a = m_x+1; a<= 7; a++){
+
+            moves.push_back({a,abs(m_y)});
+            if(this->currentFEN[abs(m_y)][a] != '8'){
+                if(islower(this->currentFEN[abs(m_y)][a])){
+                    takeablePiece = {a,abs(m_y)};
+                    takePiece = true;
+                    break;
+                }
+                break;
+                }
+            }
+
+
+        for(int a = m_x-1; a>= 0; a--){
+
+            moves.push_back({a,abs(m_y)});
+            if(this->currentFEN[abs(m_y)][a] != '8'){
+                if(islower(this->currentFEN[abs(m_y)][a])){
+                    takeablePiece = {a,abs(m_y)};
+                    takePiece = true;
+                    break;
+                }
                 break;
 
-            case 'k': //bKing
-                cerr << "bKing\n";
-                moves.push_back({m_x,m_y+1});
-                moves.push_back({m_x,m_y-1});
-
-                moves.push_back({m_x+1,m_y});
-                moves.push_back({m_x-1,m_y});
-
-                moves.push_back({m_x+1,m_y+1});
-                moves.push_back({m_x+1,m_y-1});
-
-                moves.push_back({m_x-1,m_y+1});
-                moves.push_back({m_x-1,m_y-1});
+            }
+        }
 
 
-                break;
+        break;
 
-            case 'K': //wKing
-                cerr << "wKing\n";
-                moves.push_back({m_x,m_y+1});
-                moves.push_back({m_x,m_y-1});
+    case 'k': //bKing
+        cerr << "bKing\n";
+        moves.push_back({m_x,m_y+1});
+        if(isupper(this->currentFEN[m_y+1][m_x])){
+            takeablePiece = {m_x,m_y+1};
+            takePiece = true;
+        }
+        moves.push_back({m_x,m_y-1});
+        if(isupper(this->currentFEN[m_y-1][m_x])){
+            takeablePiece = {m_x,m_y-1};
+            takePiece = true;
+        }
 
-                moves.push_back({m_x+1,m_y});
-                moves.push_back({m_x-1,m_y});
+        moves.push_back({m_x+1,m_y});
+        if(isupper(this->currentFEN[m_y][m_x+1])){
+            takeablePiece = {m_x+1,m_y};
+            takePiece = true;
+        }
+        moves.push_back({m_x-1,m_y});
+        if(isupper(this->currentFEN[m_y][m_x-1])){
+            takeablePiece = {m_x-1,m_y};
+            takePiece = true;
+        }
 
-                moves.push_back({m_x+1,m_y+1});
-                moves.push_back({m_x+1,m_y-1});
 
-                moves.push_back({m_x-1,m_y+1});
-                moves.push_back({m_x-1,m_y-1});
+        moves.push_back({m_x+1,m_y+1});
+        if(isupper(this->currentFEN[m_y+1][m_x+1])){
+            takeablePiece = {m_x+1,m_y+1};
+            takePiece = true;
+        }
+        moves.push_back({m_x+1,m_y-1});
+        if(isupper(this->currentFEN[m_y-1][m_x+1])){
+            takeablePiece = {m_x+1,m_y-1};
+            takePiece = true;
+        }
 
-                break;
+
+        moves.push_back({m_x-1,m_y+1});
+        if(isupper(this->currentFEN[m_y+1][m_x-1])){
+            takeablePiece = {m_x-1,m_y+1};
+            takePiece = true;
+        }
+
+        moves.push_back({m_x-1,m_y-1});
+        if(isupper(this->currentFEN[m_y-1][m_x-1])){
+            takeablePiece = {m_x-1,m_y-1};
+            takePiece = true;
+        }
+
+
+        break;
+
+    case 'K': //bKing
+        cerr << "bKing\n";
+        moves.push_back({m_x,m_y+1});
+        if(islower(this->currentFEN[m_y+1][m_x])){
+            takeablePiece = {m_x,m_y+1};
+            takePiece = true;
+        }
+        moves.push_back({m_x,m_y-1});
+        /*if(islower(this->currentFEN[m_y-1][m_x])){
+            takeablePiece = {m_x,m_y-1};
+            takePiece = true;
+        }*/
+
+        moves.push_back({m_x+1,m_y});
+        if(islower(this->currentFEN[m_y][m_x+1])){
+            takeablePiece = {m_x+1,m_y};
+            takePiece = true;
+        }
+        moves.push_back({m_x-1,m_y});
+        if(islower(this->currentFEN[m_y][m_x-1])){
+            takeablePiece = {m_x-1,m_y};
+            takePiece = true;
+        }
+
+
+        moves.push_back({m_x+1,m_y+1});
+        if(islower(this->currentFEN[m_y+1][m_x+1])){
+            takeablePiece = {m_x+1,m_y+1};
+            takePiece = true;
+        }
+        /*moves.push_back({m_x+1,m_y-1});
+        if(islower(this->currentFEN[m_y-1][m_x+1])){
+            takeablePiece = {m_x+1,m_y-1};
+            takePiece = true;
+        }*/
+
+
+        moves.push_back({m_x-1,m_y+1});
+        if(islower(this->currentFEN[m_y+1][m_x-1])){
+            takeablePiece = {m_x-1,m_y+1};
+            takePiece = true;
+        }
+
+        /*moves.push_back({m_x-1,m_y-1});
+        if(islower(this->currentFEN[m_y-1][m_x-1])){
+            takeablePiece = {m_x-1,m_y-1};
+            takePiece = true;
+        }*/
+
+
+        break;
 
     }
 
@@ -778,10 +939,10 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
 char Board::whosTurn() {
     if(this->countMoves % 2 == 0 || this->countMoves == 0) {    //if even then its whites turn
-        this->playTurn = 'w';
+        this->playTurn = 'W';
     }
     else { //if not even then its blacks turn
-        this->playTurn = 'b';
+        this->playTurn = 'B';
     }
     //cout << "It is: " << this->playTurn << " turn" << endl;
     return this->playTurn;
