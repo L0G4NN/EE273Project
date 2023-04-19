@@ -158,11 +158,7 @@ void MainWindow::updateGUI(){
     }
 
 
-    //cout<<"Number of elements"<<pieces->size()/pieces[0].size()<<endl;
-
-
-
-    gameBoard->takePiece = false;
+    //cout<<"Number of elements"<<pieces->size()/pieces[0].size()<<endl
 
 
 
@@ -182,14 +178,15 @@ void MainWindow::checkForTake(){
 
         for(int a =0; a<8 and gameBoard->takePiece == false ;a++){
 
+            if((turn_char == 'W' and isupper(gameBoard->currentFEN[a][b]) or (turn_char == 'B' and islower(gameBoard->currentFEN[a][b])))){
+                continue;
+
+            }
+
             gameBoard->getMoves(b,a);
             if(gameBoard->takePiece == true){
 
-                if((turn_char == 'W' and isupper(gameBoard->currentFEN[a][b]) or (turn_char == 'B' and islower(gameBoard->currentFEN[a][b])))){
-                    continue;
 
-            }
-                gameBoard->takenFlag = true;
                 cout<<"Takeable piece is "<<gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]<<endl;
                 swap(gameBoard->currentFEN[a][b],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
                 gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x] = '8';
