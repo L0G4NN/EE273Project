@@ -203,10 +203,6 @@ void MainWindow::checkForWin(){
     }
 
 
-
-
-
-
 }
 
 
@@ -216,12 +212,14 @@ void MainWindow::announceWin(char pieceType){
 
         case('b'):
             cout<<"black wins"<<endl;
+            on_resetButton_clicked();
         break;
 
 
 
         case('w'):
             cout<<"white wins"<<endl;
+            on_resetButton_clicked();
         break;
 
     }
