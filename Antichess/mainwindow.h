@@ -69,7 +69,14 @@ private:
     QGraphicsRectItem *rect;
     //QGraphicsPixmapItem *board;  
     vector<QPushButton*> *buttons,pieces;
+
     void checkForTake();
+    void checkForWin();
+    void announceWin(char pieceType);
+
+    int whiteCount;
+    int blackCount;
+
     int takeCount = 0;
     char turn_char;
 

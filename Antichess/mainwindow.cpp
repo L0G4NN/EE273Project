@@ -160,7 +160,7 @@ void MainWindow::updateGUI(){
 
     //cout<<"Number of elements"<<pieces->size()/pieces[0].size()<<endl
 
-
+    checkForWin();
 
 
     buttons = new vector<QPushButton*>;
@@ -169,10 +169,68 @@ void MainWindow::updateGUI(){
 
 }
 
+
+void MainWindow::checkForWin(){
+
+
+    whiteCount = 0;
+    blackCount = 0;
+    for(int b =0; b<8;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
+
+
+        for(int a =0; a<8;a++){
+
+            if(isupper(gameBoard->currentFEN[b][a])){
+                whiteCount += 1;
+            }
+
+            else if(islower(gameBoard->currentFEN[b][a])){
+                blackCount += 1;
+            }
+
+
+        }
+
+    }
+    if(whiteCount == 0){
+        announceWin('w');
+
+    }
+
+    else if(blackCount == 0){
+        announceWin('b');
+
+    }
+
+
+
+
+
+
+}
+
+
+void MainWindow::announceWin(char pieceType){
+
+    switch (pieceType){
+
+        case('b'):
+            cout<<"black wins"<<endl;
+        break;
+
+
+
+        case('w'):
+            cout<<"white wins"<<endl;
+        break;
+
+    }
+}
+
 void MainWindow::checkForTake(){
 
 
-    gameBoard->takenFlag = false;
+
     for(int b =0; b<8 and gameBoard->takePiece == false ;b++){ //WHEN FEN NOTATION IS CHANGED TO "rnbqkbnr/pppppppp/8/8/4P3/8/PPP1PPPP/RNBQKBNR" PROGRAM CRASHES
 
 
