@@ -2,7 +2,7 @@
  * [Description]
  * Last updated: [DD:MM:YYYY]
  * Description of latest update:
- *
+ * Identified bug location using debugger
  *
  */
 
@@ -178,10 +178,10 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
     switch(piece_char) {
             case 'p' : //bPawn
-                //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
-                    //if pawn is on its starting pos, it can move up to 2 places, otherwise 1
+    //cerr << "available move drawn at: " << m_x - 1 << " ," << m_y - 1 << endl;
+    //if pawn is on its starting pos, it can move up to 2 places, otherwise 1
                     if(m_x < 7 and m_y < 7){
-                        if(isupper(this->currentFEN[m_y-1][m_x+1])){
+                        if(isupper(this->currentFEN[m_y-1][m_x+1])){ //crashes occur on this line
                             takePiece = true;
                             takeablePiece = {m_x+1,m_y-1};
 
