@@ -240,7 +240,7 @@ void MainWindow::checkForTake(){
             if(gameBoard->takePiece == true){
 
 
-                cout<<"Takeable piece is "<<gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]<<endl;
+
                 swap(gameBoard->currentFEN[a][b],gameBoard->currentFEN[gameBoard->takeablePiece.second][gameBoard->takeablePiece.first]);
                 gameBoard->currentFEN[gameBoard->m_y][gameBoard->m_x] = '8';
                 gameBoard->MoveCounter();
@@ -265,17 +265,10 @@ void MainWindow::checkForTake(){
 void MainWindow::dotPressed(){
 
 
-    cout<<"dot pressed"<<endl;
-    QPushButton* pos = qobject_cast<QPushButton*>(sender());
-    cout<<pos->x()<<","<<pos->y();
 
-    cout<<"Point Position is: "<<floor(pos->x()/(pos->width()))<<","<<floor(7-(pos->y()/(pos->height())))<<endl;
-    cout<<"Piece position is: "<<floor(prev->x()/prev->width())<<","<<floor(7-(prev->y()/prev->height()))<<endl;
-    cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
-    cout<<gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))]<<endl;
+    QPushButton* pos = qobject_cast<QPushButton*>(sender());
 
     std::swap(gameBoard->currentFEN[floor(7-(pos->y()/(pos->height())))][floor(pos->x()/(pos->width()))],gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]);
-    cout<<gameBoard->currentFEN[floor(7-(prev->y()/prev->height()))][floor(prev->x()/prev->width())]<<endl;
 
     gameBoard->takePiece = false;
     checkForTake();
