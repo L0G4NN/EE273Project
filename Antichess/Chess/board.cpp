@@ -210,8 +210,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                 break;
 
             case 'P': //wPawn
-                cerr << "wPawn\n";
-                cout<<"pawn selected"<<endl;
+
 
                 if(m_x < 7 and m_y < 7){
                     if(islower(this->currentFEN[m_y+1][m_x+1])){
@@ -285,7 +284,6 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
             case 'R': //wRook
 
-                cerr << "wRook\n";
 
                 for(int a = m_y+1; a<= 7; a++){
 
@@ -327,7 +325,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                 break;
 
             case 'n': //bKnight
-                cerr << "bKnight\n";
+
                 moves.push_back({m_x+1,m_y+2});
 
                 moves.push_back({m_x+2,m_y+1});
@@ -355,7 +353,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                 break;
 
             case 'N': //wKnight
-                cerr << "wKnight\n";
+
 
                 moves.push_back({m_x+1,m_y+2});
 
@@ -386,14 +384,14 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
 
             case 'b': //bBishop
 
-                cerr << "bBishop\n";
+
                 for (int a = m_x+1; a <=7; a++)
                 {
                     moves.push_back({a,(m_y+(a-m_x))});
                     if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
 
                         if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -409,7 +407,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
 
                         if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -423,7 +421,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     moves.push_back({a,(m_y+(m_x-a))});
                     if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                         if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -438,7 +436,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
 
                         if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -458,7 +456,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
 
                         if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -474,7 +472,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
 
                         if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -488,7 +486,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     moves.push_back({a,(m_y+(m_x-a))});
                     if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                         if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -503,7 +501,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
                     if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
 
                         if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
-                            cout<<"occupied"<<endl;
+
 
                             break;
                         }
@@ -523,7 +521,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
 
                 if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
 
                     break;
@@ -540,7 +538,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
 
                 if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -554,7 +552,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             moves.push_back({a,(m_y+(m_x-a))});
             if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                 if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -569,7 +567,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
 
                 if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -628,7 +626,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y+(a-m_x) >= 0 and m_y+(a-m_x) <=7){
 
                 if(this->currentFEN[m_y+(a-m_x)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
 
                     break;
@@ -645,7 +643,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y-(a-m_x) >= 0 and (m_y-(a-m_x)) <=7){
 
                 if(this->currentFEN[m_y-(a-m_x)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -659,7 +657,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             moves.push_back({a,(m_y+(m_x-a))});
             if(m_y+(m_x-a) >= 0  and m_y+(m_x-a) <= 7){
                 if(this->currentFEN[m_y+(m_x-a)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -674,7 +672,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
             if(m_y-(m_x-a) >= 0 and m_y-(m_x-a) <= 7){
 
                 if(this->currentFEN[m_y-(m_x-a)][a] != '8'){
-                    cout<<"occupied"<<endl;
+
 
                     break;
                 }
@@ -726,7 +724,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
         break;
 
     case 'k': //bKing
-        cerr << "bKing\n";
+
         moves.push_back({m_x,m_y+1});
 
         moves.push_back({m_x,m_y-1});
@@ -747,7 +745,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
         break;
 
     case 'K': //bKing
-        cerr << "bKing\n";
+
         moves.push_back({m_x,m_y+1});
 
         moves.push_back({m_x,m_y-1});       
@@ -776,7 +774,7 @@ vector<pair<int,int>> Board::getMoves(int z,int y){
     newit = remove_if(moves.begin(),moves.end(),[](pair<int,int> b){return (b.first > 7 or b.second > 7 or b.first <0 or b.second <0);});
     moves.resize(distance(moves.begin(),newit));
     for(auto c: moves){
-        if(islower(this->currentFEN[m_y][m_x]) and isupper(this->currentFEN[c.second][c.first]) or isupper(this->currentFEN[m_y][m_x]) and islower(this->currentFEN[c.second][c.first]) and this->currentFEN[m_y][m_x] != 'P' and this->currentFEN[m_y][m_x] != 'p' )  {
+        if(((islower(this->currentFEN[m_y][m_x]) and isupper(this->currentFEN[c.second][c.first]) or (isupper(this->currentFEN[m_y][m_x])) and islower(this->currentFEN[c.second][c.first]))) and this->currentFEN[m_y][m_x] != 'P' and this->currentFEN[m_y][m_x] != 'p' )  {
             takePiece = true;
             takeablePiece = {c.first,c.second};
             break;
@@ -812,7 +810,7 @@ int Board::MoveCounter() {
     //if a move is played increment by movecount
     //TODO: count every time a move is played
     countMoves++;
-    cout << "MOVECOUNT: " << countMoves << endl;
+
 
     this->whosTurn();
 

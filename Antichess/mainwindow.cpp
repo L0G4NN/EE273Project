@@ -129,7 +129,7 @@ void MainWindow::updateGUI(){
             }
             QPushButton *label = new QPushButton;
             label->setFlat(true);
-            label->setFixedSize(54,56);
+            label->setFixedSize(54,54);
             label->setIconSize(QSize(50,50));
             if(gameBoard->getCount() % 2 != 0 and islower(gameBoard->currentFEN[b][a]) or (gameBoard->getCount() % 2 == 0 and isupper(gameBoard->currentFEN[b][a]))){
                label->setCheckable(true);
@@ -153,9 +153,6 @@ void MainWindow::updateGUI(){
         }
     }
     cout << "Icons drawn successfully" << endl;
-    for(auto c: gameBoard->currentFEN){
-        cout<<c<<endl;
-    }
 
 
     //cout<<"Number of elements"<<pieces->size()/pieces[0].size()<<endl
@@ -300,7 +297,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
     prev = pos;
     //cout << gameBoard->currentFEN[pos->x()][pos->y()]; //ALSO CAUSING CRASHING SOMETIMES
 
-    cout<<"Current Position"<< floor(pos->x()/pos->width())<<","<<floor(7-(pos->y()/pos->height()))<<endl;
+
 
 
     vector<pair<int,int>> moves = gameBoard->getMoves(floor(pos->x()/pos->width()),floor(7-(pos->y()/pos->height())));
@@ -308,16 +305,15 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
 
     if(checked){
 
-    //buttons->clear();
-    cout<<"Checked"<<endl;
-    cout<<"Moves size "<<moves.size()<<endl;
+
+
 
 
     for(auto b : moves){
-        cout<<"Dot pos" <<endl;
+
         //setup a new move label
         if(b.first == floor(pos->x()/pos->width()) and b.second == floor(7-(pos->y()/pos->height()))){
-            cout<<"hit"<<endl;
+
             continue;
         }
 
@@ -350,7 +346,7 @@ void MainWindow::keyPressed(bool checked){ //Possible error here need to investi
     }
 
     if(!checked){
-    cout << "unchecked " << endl;
+
 
     for(auto c:*buttons){
 
