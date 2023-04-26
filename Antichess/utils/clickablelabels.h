@@ -15,6 +15,7 @@
 #include <QPoint>
 #include <vector>
 #pragma once
+//to include in ui_mainwindow.h -- #include "../../../Antichess/utils/clickablelabels.h"
 
 
 using namespace std;
@@ -23,8 +24,6 @@ using namespace std;
  *  CREATE THE CLICKABLELABELS CLASS INHERTITED FROM QLABEL
  *  PROMOTE EACH QLABEL IN THE GRID TO A CLIKCABLE LABEL TYPE -- ui_mainwindow.h
 */
-
-//to include in ui_mainwindow.h -- #include "../../../Antichess/utils/clickablelabels.h"
 
 class clickablelabels : public QLabel
 {

@@ -26,7 +26,6 @@ clickablelabels::clickablelabels(QWidget *parent)
 
 void clickablelabels::mousePressEvent(QMouseEvent *event)
 {
-    //TODO: setup that only one piece is selected at a given time
     clickCount +=1;
     //emit mouse_pressed();
 
@@ -37,12 +36,6 @@ void clickablelabels::mousePressEvent(QMouseEvent *event)
     if(clickCount == 2){
         this->setStyleSheet("background-color: rgb(0,0,0,0)");
         clickCount = 0;}
-
-
-    //Points point(this);
-
-    //this->getClickLocation(point);
-
 }
 
 
