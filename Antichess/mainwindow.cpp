@@ -93,7 +93,9 @@ MainWindow::~MainWindow()
 
 void MainWindow::updateGUI(){
 
-
+    for(auto b: gameBoard->currentFEN){
+        cout<<b<<endl;
+    }
     gameBoard->takePiece = false;
     gameBoard->MoveCounter(); //update the move counter to increase by 1 every time a move is played to determine whos turn it is
 
